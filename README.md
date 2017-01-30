@@ -8,5 +8,24 @@ By the way, Pudel is quite customizable: You can edit all the strings and labels
 Additionally, there is a cleanup-script that can be run via a cronjob. It will delete all the polls that haven't been changed for a certain number of days (you can set this up, too).  
 
 # Requirements
-PHP 5.4 or higher  
-A MySql Database  
+- PHP 5.4 or higher  
+- A MySql database  
+
+# Installation
+This is fairly easy if you know how to create a new MySql-database and how to upload files to your webserver. If you don't, try to find out how these things are done beforehand - it's easy to find tutorials on this on the internet!
+- Create an empty MySql database on your server
+- Download Pudel as .zip-archive from this repository
+- Extract the contents of the archive into a new directory (e.g. "pudel")
+- Edit the config.php file and insert the database's credentials (read comments!)
+- Upload the pudel-directory to your server (root-directory or somewhere else)
+- Access the install.php through your server (e.g. domain.com/pudel/install.php)
+- If everything is fine, Pudel will tell you so.
+- Delete the install.php from your server
+- Enjoy
+
+# Packaged Software/Media
+Pudel makes use of the following third-party software and media:
+- Medoo: https://github.com/catfan/Medoo
+- jQuery: https://github.com/jquery/jquery
+- Icons: http://www.iconmonstr.de
+
