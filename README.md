@@ -24,8 +24,9 @@ This is fairly easy if you know how to create a new MySql-database and how to up
 - Enjoy
 
 # Packaged Software/Media
-Pudel makes use of the following third-party software and media:
-- Medoo: https://github.com/catfan/Medoo
-- jQuery: https://github.com/jquery/jquery
-- Icons: http://www.iconmonstr.de
+Pudel makes use of the following software/media and says "Thank you!" to:
+- [Medoo](https://github.com/catfan/Medoo)
+- [Datepicker](https://github.com/fengyuanchen/datepicker)
+- [jQuery](https://github.com/jquery/jquery)
+- [Icons from Iconmonstr.de](http://www.iconmonstr.de)
 
