@@ -1,3 +1,5 @@
+# COMING SOON!
+
 # Pudel
 flexible webapp for scheduling and polls
 
