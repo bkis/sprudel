@@ -37,5 +37,5 @@ Pudel makes use of the following software/media and says *Thank you!* to:
 - [Datepicker](https://github.com/fengyuanchen/datepicker)
 - [jQuery](https://github.com/jquery/jquery)
 - [clipboard.js](https://github.com/zenorocha/clipboard.js)
-- [Icons from Iconmonstr.de](http://www.iconmonstr.de)
+- [Icons from iconmonstr.de](http://www.iconmonstr.de)
 
