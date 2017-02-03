@@ -4,16 +4,18 @@
 flexible webapp for scheduling and polls
 
 # Description
-Pudel is a self-hosted WebApp based on PHP and MySql. It offers simple polls for scheduling events, but it's not limited to polling dates. You may also create polls to plan who's bringing the salad to your next BBQ party.  
-Pudel is meant to be easy to use and offers all the relevant features you need for a scheduling poll - no more no less.  
-    
-Every created poll is accessible through an unique URL you can send to everyone you want to participate. The entries are displayed in a clear, simple way and can be removed or updated right in the poll.  
-By the way, Pudel is quite customizable: You can edit all the strings and labels displayed in the app by changing them in the config.php file.  
-Additionally, there is a cleanup-script that can be run via a cronjob. It will delete all the polls that haven't been changed for a certain number of days (you can set this up, too).  
+Pudel is a self-hosted WebApp based on PHP and MySql. It offers simple polls for scheduling events, but it's not limited to polling dates. You may also create polls to plan who's bringing bringing what for the buffet or how you should name your firstborn or whatever.  
+Pudel is meant to be easy to use and offers all the relevant features you need for a (scheduling) poll - no more no less.  
 
 # Features
-- coming soon...
-- coming soon...
+- easy, clean polls for events (dates) or anything you want, really
+- yes/no/maybe options
+- unique URL for sharing and accessing a poll
+- entries can be removed or overridden
+- commenting feature
+- easily customizable: all the labels can be set to custom strings, so you can change the language and all
+- cleanup-script included for deleting polls that have been inactive for more than X days (can be run via cronjob)
+- one-click copying of the poll URL
 
 # Requirements
 - PHP 5.4 or higher  
@@ -26,7 +28,7 @@ This is fairly easy *if* you know how to create a new MySql-database and how to 
 - Extract the contents of the archive into a new directory (e.g. "pudel")
 - Edit the config.php file and insert the database's credentials (read comments!)
 - Upload the pudel-directory to your server (root-directory or somewhere else)
-- Access the install.php through your server (e.g. domain.com/pudel/install.php)
+- Access the install.php through your browser (e.g. domain.com/pudel/install.php)
 - If everything is fine, Pudel will tell you so.
 - Delete the install.php from your server
 - Enjoy
