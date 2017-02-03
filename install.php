@@ -18,7 +18,7 @@
 	// create table "entries"
 	$query = "CREATE TABLE `entries` (
 			`poll` varchar(32) NOT NULL,
-			`date` varchar(16) NOT NULL,
+			`date` varchar(32) NOT NULL,
 			`name` varchar(32) NOT NULL,
 			`value` tinyint(4) NOT NULL,
 			KEY `poll` (`poll`,`name`)

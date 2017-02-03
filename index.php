@@ -53,7 +53,7 @@
 		    </li>
 		    <li>
 		        <label><?php echo P_NEW_FORM_DATES ?> <span class="required">*</span></label>
-		        <input type="text" name="dates[]" maxlength="16" class="dateInput field-long" data-toggle="datepicker" required="true" placeholder="<?php echo P_NEW_FORM_DATES_PLACEHOLDER ?>" />
+		        <input type="text" name="dates[]" maxlength="32" class="dateInput field-long" data-toggle="datepicker" required="true" placeholder="<?php echo P_NEW_FORM_DATES_PLACEHOLDER ?>" />
 		    </li>
 		    <li>
 		    	<img src="img/icon-more.png" class="btnFormDate" id="btnMore"/>
