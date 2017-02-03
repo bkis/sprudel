@@ -1,0 +1,61 @@
+.pudelform {
+    margin: 0px auto;
+    width: 400px;
+    max-width: 100%;
+}
+.pudelform li {
+    padding: 0;
+    display: block;
+    list-style: none;
+    margin: 10px 0 0 0;
+}
+.pudelform label{
+    margin:0 0 3px 0;
+    padding:0px;
+    display:block;
+}
+.pudelform input[type=text],
+.pudelform input[type=date],
+.pudelform input[type=datetime],
+.pudelform input[type=number],
+.pudelform input[type=search],
+.pudelform input[type=time],
+.pudelform input[type=url],
+.pudelform input[type=email],
+textarea,
+select{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border:1px solid #BEBEBE;
+    padding: 7px;
+    margin:0px;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none; 
+}
+.pudelform .field-divided{
+    width: 49%;
+}
+
+.pudelform .field-long{
+    width: 100%;
+}
+.pudelform .field-select{
+    width: 100%;
+}
+.pudelform .field-textarea{
+    height: 100px;
+}
+.pudelform input[type=submit], .pudelform input[type=button]{
+    background: #363636;
+    padding: 8px 15px 8px 15px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+.pudelform .required{
+    color: #cb4335;
+}
