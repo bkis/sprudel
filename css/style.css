@@ -246,8 +246,9 @@ button {
 
 .schedule input[type=submit].save {
     background:url(../img/icon-save.png) no-repeat;
-    background-position: center center;
+    background-position: left center;
     cursor:pointer;
+    
     width: 24px;
     height: 24px;
 }

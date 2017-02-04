@@ -84,7 +84,7 @@
 				}
 			?>
 			<td class="schedule-submit">
-				<input type="submit" value="" class="save" />
+				<input type="submit" value="<?php echo P_ENTRY_SAVE ?>" class="save" />
 			</td>
 		</form>
 	</tr>

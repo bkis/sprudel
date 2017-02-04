@@ -73,6 +73,7 @@
 	$(document).ready(function() {
 
 		$("#titleInput").focus();
+		$("#btnLess").css("cursor", "default");
 
 		var datepickerOptions = {
 			trigger: '#btnDate',
@@ -86,12 +87,13 @@
 
 		$("#btnMore").click(function() {
 			$(".dateInput").last().datepicker('destroy');
-            $(".dateInput").last().after("<input type='text' name='dates[]' class='dateInput field-long' required='true' style='margin-top: 4px;' />");
+            $(".dateInput").last().after("<input type='text' name='dates[]' maxlength='32' class='dateInput field-long' data-toggle='datepicker' required='true' style='margin-top: 4px;' />");
             $(".dateInput").last().val($(".dateInput:nth-last-child(2)").val());
             $(".dateInput").last().focus();
             $(".dateInput").last().select();
 			$(".dateInput").last().datepicker(datepickerOptions);
 			$("#btnLess").attr("src", "img/icon-less.png");
+			$("#btnLess").css("cursor", "pointer");
         });
 
         $("#btnLess").click(function() {
@@ -102,13 +104,8 @@
             $(".dateInput").last().datepicker(datepickerOptions);
             if ($(".dateInput").size() == 1){
             	$("#btnLess").attr("src", "img/icon-less-disabled.png");
+            	$("#btnLess").css("cursor", "default");
             }
-        });
-
-        $("#btnDate").click(function() { //TODO: DATEPICKER (res schon drin!)
-        	//$(".dateInput").last().val("<?php echo $currDate ?>");
-            //$(".dateInput").last().focus();
-            //$(".dateInput").last().select();
         });
 
 	});

@@ -29,7 +29,7 @@
 	// create table "dates"
 	$query = "CREATE TABLE `dates` (
 			`poll` varchar(32) NOT NULL,
-			`date` varchar(16) NOT NULL,
+			`date` varchar(32) NOT NULL,
 			`sort` tinyint(4) NOT NULL,
 			KEY `poll` (`poll`)
 		) ENGINE=InnoDB DEFAULT CHARSET=utf8";
