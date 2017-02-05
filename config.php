@@ -28,6 +28,7 @@
 	define('P_HTML_PAGE_TITLE', 'Pudel');			// title of html page
 	define('P_INDEX_TITLE', 'Pudel');				// title shown in page header area
 	define('P_INDEX_SUBTITLE', 'scheduling polls');	// subtitle shown in page header area
+	define('P_ENTRY_SAVE', 'Save');	// new entry save button text
 	define('P_RESULTS', 'Result');					// poll results row text
 	define('P_REMOVE_CONFIRM', 'Do you really want to remove');	// confirmation text when removing an entry (followed by name)
 	define('P_COMMENT_HEADING', 'Comments');		// comments section heading
