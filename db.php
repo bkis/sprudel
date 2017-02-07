@@ -5,10 +5,10 @@
 
 	$database = new medoo([
 		'database_type' => 'mysql',
-		'database_name' => P_DB_NAME,
-		'server' => P_DB_SERVER,
-		'username' => P_DB_USERNAME,
-		'password' => P_DB_PASSWORD,
+		'database_name' => SPR_DB_NAME,
+		'server' => SPR_DB_SERVER,
+		'username' => SPR_DB_USERNAME,
+		'password' => SPR_DB_PASSWORD,
 		'charset' => 'utf8'
 	]);
 

@@ -42,18 +42,18 @@
 
 <div class="centerBox">
 	<form action="index.php" method="post">
-		<ul class="pudelform">
+		<ul class="sprudelform">
 		    <li>
-		        <label><?php echo P_NEW_FORM_TITLE ?> <span class="required">*</span></label>
-		        <input type="text" name="title" class="field-long" required="true" id="titleInput" placeholder="<?php echo P_NEW_FORM_TITLE_PLACEHOLDER ?>" />
+		        <label><?php echo SPR_NEW_FORM_TITLE ?> <span class="required">*</span></label>
+		        <input type="text" name="title" class="field-long" required="true" id="titleInput" placeholder="<?php echo SPR_NEW_FORM_TITLE_PLACEHOLDER ?>" />
 		    </li>
 		    <li>
-		        <label><?php echo P_NEW_FORM_DESCRIPTION ?> </label>
-		        <textarea name="details" class="field-long field-textarea" placeholder="<?php echo P_NEW_FORM_DETAILS_PLACEHOLDER ?>"></textarea>
+		        <label><?php echo SPR_NEW_FORM_DESCRIPTION ?> </label>
+		        <textarea name="details" class="field-long field-textarea" placeholder="<?php echo SPR_NEW_FORM_DETAILS_PLACEHOLDER ?>"></textarea>
 		    </li>
 		    <li>
-		        <label><?php echo P_NEW_FORM_DATES ?> <span class="required">*</span></label>
-		        <input type="text" name="dates[]" maxlength="32" class="dateInput field-long" data-toggle="datepicker" required="true" placeholder="<?php echo P_NEW_FORM_DATES_PLACEHOLDER ?>" />
+		        <label><?php echo SPR_NEW_FORM_DATES ?> <span class="required">*</span></label>
+		        <input type="text" name="dates[]" maxlength="32" class="dateInput field-long" data-toggle="datepicker" required="true" placeholder="<?php echo SPR_NEW_FORM_DATES_PLACEHOLDER ?>" />
 		    </li>
 		    <li>
 		    	<img src="img/icon-more.png" class="btnFormDate" id="btnMore"/>
@@ -61,7 +61,7 @@
 		    	<img src="img/icon-calendar.png" class="btnFormDate" id="btnDate"/>
 		    </li>
 		    <li class="content-right">
-		        <input type="submit" value="<?php echo P_NEW_FORM_SUBMIT ?>" />
+		        <input type="submit" value="<?php echo SPR_NEW_FORM_SUBMIT ?>" />
 		    </li>
 		</ul>
 	</form>
@@ -77,10 +77,10 @@
 
 		var datepickerOptions = {
 			trigger: '#btnDate',
-			format: '<?php echo P_DATEPICKER_FORMAT ?>',
+			format: '<?php echo SPR_DATEPICKER_FORMAT ?>',
 			autoHide: 'true',
 			weekStart: 1,
-			language: '<?php echo P_DATEPICKER_LANG ?>'
+			language: '<?php echo SPR_DATEPICKER_LANG ?>'
 		};
 
 		$(".dateInput").last().datepicker(datepickerOptions);

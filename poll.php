@@ -73,7 +73,7 @@
 		<form action="entry.php" method="post">
 			<input type="hidden" name="poll" value="<?php echo $id ?>"/>
 			<td class="schedule-name-input">
-				<input type="text" id='name-input' name="name" maxlength="32" placeholder="<?php echo P_POLL_NAME ?>" required="true" />
+				<input type="text" id='name-input' name="name" maxlength="32" placeholder="<?php echo SPR_POLL_NAME ?>" required="true" />
 			</td>
 			<?php
 				foreach ($dates as $date) {
@@ -84,7 +84,7 @@
 				}
 			?>
 			<td class="schedule-submit">
-				<input type="submit" value="<?php echo P_ENTRY_SAVE ?>" class="save" />
+				<input type="submit" value="<?php echo SPR_ENTRY_SAVE ?>" class="save" />
 			</td>
 		</form>
 	</tr>
@@ -96,7 +96,7 @@
 	?>
 	<tr class="schedule-results valign-middle">
 		<td>
-			<?php echo P_RESULTS ?>
+			<?php echo SPR_RESULTS ?>
 		</td>
 		<?php
 			foreach ($dates as $date) {
@@ -116,7 +116,7 @@
 
 <!-- COMMENTS LIST -->
 <div class="centerBox">
-	<h2><?php echo P_COMMENT_HEADING ?></h2><br>
+	<h2><?php echo SPR_COMMENT_HEADING ?></h2><br>
 	<?php
 		$comments = $database->select("comments", "*", ["poll" => $id]);
 		if (sizeof($comments) > 0){
@@ -128,7 +128,7 @@
 				echo "</div>";
 			}
 		} else {
-			echo P_COMMENT_NONE;
+			echo SPR_COMMENT_NONE;
 		}
 		
 	?>
@@ -136,19 +136,19 @@
 
 <!-- COMMENTS FORM -->
 <div class="centerBox">
-	<form action="comment.php" method="post" class="pudelform">
+	<form action="comment.php" method="post" class="sprudelform">
 		<input type="hidden" name="poll" value="<?php echo $id ?>"/>
-		<ul class="pudelform">
+		<ul class="sprudelform">
 		    <li>
-		        <label><?php echo P_COMMENT_NAME ?> <span class="required">*</span></label>
+		        <label><?php echo SPR_COMMENT_NAME ?> <span class="required">*</span></label>
 		        <input type="text" name="name" maxlength="32" class="field-long" required="true" />
 		    </li>
 		    <li>
-		        <label><?php echo P_COMMENT_TEXT ?> <span class="required">*</span></label>
+		        <label><?php echo SPR_COMMENT_TEXT ?> <span class="required">*</span></label>
 		        <textarea name="text" maxlength="512" class="field-long field-textarea" required="true"></textarea>
 		    </li>
 		    <li class="content-right">
-		        <input type="submit" value="<?php echo P_COMMENT_SUBMIT ?>" />
+		        <input type="submit" value="<?php echo SPR_COMMENT_SUBMIT ?>" />
 		    </li>
 		</ul>
 	</form>
@@ -171,13 +171,13 @@
 		    $("#name-input").focus();
 		});
 		clipboard.on('error', function(e) {
-		    alert("<?php echo P_URL_COPY_ERROR ?>");
+		    alert("<?php echo SPR_URL_COPY_ERROR ?>");
 		    $("#name-input").focus();
 		});
 
 		//delete button functionality
 		$(".schedule-delete").click(function(){
-			if (confirm("<?php echo P_REMOVE_CONFIRM ?> '" + $(this).attr("data-name") + "' ?")){
+			if (confirm("<?php echo SPR_REMOVE_CONFIRM ?> '" + $(this).attr("data-name") + "' ?")){
 				$.post( "delete.php", { poll: $(this).attr("data-poll"), name: $(this).attr("data-name") } ).done( function() {
 					location.href = location.href;
 				});

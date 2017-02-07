@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title><?php echo P_HTML_PAGE_TITLE ?></title>
+	<title><?php echo SPR_HTML_PAGE_TITLE ?></title>
 	<meta name="robots" content="noindex,nofollow">
 
 	<!-- Mobile Specific Metas
@@ -56,7 +56,7 @@
 		<div class="noscript" style="display: table; overflow: hidden;">
 			<div style="display: table-cell; vertical-align: middle;">
 				<div>
-				 	<?php echo P_NO_JS_MSG ?>
+				 	<?php echo SPR_NO_JS_MSG ?>
 				</div>
 			</div>
 		</div>
@@ -69,8 +69,8 @@
 			</a>
 		</div>
 		<div id="info">
-			<h1><?php echo (isset($poll) ? $poll["title"] : P_INDEX_TITLE); ?></h1>
-			<p class="details"><?php echo (isset($poll) ? $poll["details"] : P_INDEX_SUBTITLE); ?></p>
+			<h1><?php echo (isset($poll) ? $poll["title"] : SPR_INDEX_TITLE); ?></h1>
+			<p class="details"><?php echo (isset($poll) ? $poll["details"] : SPR_INDEX_SUBTITLE); ?></p>
 			<?php
 				if (isset($poll)){
 					echo "<br><img src='img/icon-copy.png' id='btnCopy' data-clipboard-target='#urlInfo' /><span id='urlInfo'></span>";

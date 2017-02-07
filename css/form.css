@@ -1,27 +1,27 @@
-.pudelform {
+.sprudelform {
     margin: 0px auto;
     width: 400px;
     max-width: 100%;
 }
-.pudelform li {
+.sprudelform li {
     padding: 0;
     display: block;
     list-style: none;
     margin: 10px 0 0 0;
 }
-.pudelform label{
+.sprudelform label{
     margin:0 0 3px 0;
     padding:0px;
     display:block;
 }
-.pudelform input[type=text],
-.pudelform input[type=date],
-.pudelform input[type=datetime],
-.pudelform input[type=number],
-.pudelform input[type=search],
-.pudelform input[type=time],
-.pudelform input[type=url],
-.pudelform input[type=email],
+.sprudelform input[type=text],
+.sprudelform input[type=date],
+.sprudelform input[type=datetime],
+.sprudelform input[type=number],
+.sprudelform input[type=search],
+.sprudelform input[type=time],
+.sprudelform input[type=url],
+.sprudelform input[type=email],
 textarea,
 select{
     box-sizing: border-box;
@@ -36,26 +36,26 @@ select{
     -o-transition: all 0.30s ease-in-out;
     outline: none; 
 }
-.pudelform .field-divided{
+.sprudelform .field-divided{
     width: 49%;
 }
 
-.pudelform .field-long{
+.sprudelform .field-long{
     width: 100%;
 }
-.pudelform .field-select{
+.sprudelform .field-select{
     width: 100%;
 }
-.pudelform .field-textarea{
+.sprudelform .field-textarea{
     height: 100px;
 }
-.pudelform input[type=submit], .pudelform input[type=button]{
+.sprudelform input[type=submit], .sprudelform input[type=button]{
     background: #363636;
     padding: 8px 15px 8px 15px;
     border: none;
     color: #fff;
     cursor: pointer;
 }
-.pudelform .required{
+.sprudelform .required{
     color: #cb4335;
 }

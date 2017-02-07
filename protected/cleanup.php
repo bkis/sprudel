@@ -7,23 +7,23 @@
 
 	$database = new medoo([
 		'database_type' => 'mysql',
-		'database_name' => P_DB_NAME,
-		'server' => P_DB_SERVER,
-		'username' => P_DB_USERNAME,
-		'password' => P_DB_PASSWORD,
+		'database_name' => SPR_DB_NAME,
+		'server' => SPR_DB_SERVER,
+		'username' => SPR_DB_USERNAME,
+		'password' => SPR_DB_PASSWORD,
 		'charset' => 'utf8'
 	]);
 
 	echo PHP_EOL;
-	echo "Pudel cleanup routine" . PHP_EOL;
+	echo "Sprudel cleanup routine" . PHP_EOL;
 	echo "*********************" . PHP_EOL;
 	echo PHP_EOL;
-	echo "Removing every poll that was inactive for at least " . P_DELETE_AFTER . " days." . PHP_EOL;
+	echo "Removing every poll that was inactive for at least " . SPR_DELETE_AFTER . " days." . PHP_EOL;
 	echo "(you may change this value in config.php)" . PHP_EOL;
 	echo PHP_EOL;
 
 	//minimum last changed date
-	$minDate = date("Y-m-d H:i:s", strtotime('-' . P_DELETE_AFTER . ' days', time()));
+	$minDate = date("Y-m-d H:i:s", strtotime('-' . SPR_DELETE_AFTER . ' days', time()));
 
 	//get IDs of polls to delete
 	$trash = $database->select("polls", "poll", ["changed[<]" => $minDate]);

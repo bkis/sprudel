@@ -70,12 +70,13 @@ div.noscript{
 }
 
 #logo {
-    width: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
     float: left;
 }
 
 #info {
-    margin-left: 120px;
+    margin-left: 100px;
 }
 
 p.details {
