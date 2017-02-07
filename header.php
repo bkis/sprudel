@@ -35,7 +35,7 @@
 	<!-- CSS
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" href="css/form.css">
+	<link rel="stylesheet" href="css/form.min.css">
 	<link rel="stylesheet" href="css/style.css">
 
 	<!-- JQUERY
@@ -44,8 +44,8 @@
 
 	<!-- DATEPICKER
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-	<link rel="stylesheet" href="res/datepicker/datepicker.css">
-	<script type="text/javascript" src="res/datepicker/datepicker.js"></script>
+	<link rel="stylesheet" href="res/datepicker/datepicker.min.css">
+	<script type="text/javascript" src="res/datepicker/datepicker.min.js"></script>
 
 	<!-- CLIPBOARD
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->

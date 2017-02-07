@@ -62,7 +62,7 @@
 			}
 
 			echo "<td class='schedule-delete' data-poll='$id' data-name='$pName'>";
-			echo "<img src='img/icon-delete.png' alt='delete row'/></td>";
+			//echo "<img src='img/icon-delete.png' alt='delete row'/></td>";
 			echo "</tr>";
 		}
 	?>

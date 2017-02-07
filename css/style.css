@@ -173,7 +173,8 @@ td.schedule-delete{
     width: 24px;
     height: 24px;
     cursor: pointer;
-    background-color: #565656;
+    background: #565656 url(../img/icon-delete.png) no-repeat;
+    background-position: center center;
 }
 
 td.schedule-submit{
