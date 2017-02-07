@@ -1,4 +1,6 @@
-# COMING SOON!
+# in beta / feel free to try / not fully tested
+
+![Sprudel Logo](https://raw.githubusercontent.com/bkis/sprudel/master/img/logo-dark.png)
 
 # Sprudel
 flexible webapp for scheduling and polls
