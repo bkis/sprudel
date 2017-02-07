@@ -123,6 +123,7 @@ table.schedule td {
     padding: 4px;
     line-height: 0;
     color: #fff;
+    min-width: 24px;
 }
 
 tr.valign-middle td{
@@ -153,7 +154,7 @@ td.schedule-name-input {
 }
 
 tr.schedule-results {
-    font-size: 90%;
+    font-size: 80%;
     background-color: #999;
     border-top: 15px solid #fff;
 }
@@ -164,7 +165,6 @@ tr.schedule-results td {
 }
 
 tr.schedule-results td.top {
-    font-weight: bold;
     background-color: #229954;
 }
 
