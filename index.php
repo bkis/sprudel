@@ -55,7 +55,7 @@
 		    </li>
 		    <li>
 		        <label><?php echo SPR_NEW_FORM_DATES ?> <span class="required">*</span></label>
-		        <input type="text" name="dates[]" maxlength="32" class="dateInput field-long" data-toggle="datepicker" required="true" placeholder="<?php echo SPR_NEW_FORM_DATES_PLACEHOLDER ?>" style="margin-bottom: 5px;" />
+		        <input type="text" name="dates[]" maxlength="32" class="dateInput field-long" data-toggle="datepicker" required="true" placeholder="<?php echo SPR_NEW_FORM_DATES_PLACEHOLDER ?>" style="margin-bottom: 8px;" />
 		    </li>
 		    <li>
 		    	<img src="img/icon-more.png" class="btnFormDate" id="btnMore"/>
