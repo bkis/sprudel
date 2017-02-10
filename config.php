@@ -28,7 +28,6 @@
 	define('SPR_HTML_PAGE_TITLE', 'Sprudel');			// title of html page
 	define('SPR_INDEX_TITLE', 'Sprudel');				// title shown in page header area
 	define('SPR_INDEX_SUBTITLE', 'scheduling polls');	// subtitle shown in page header area
-	define('SPR_ENTRY_SAVE', 'Save');	// new entry save button text
 	define('SPR_RESULTS', 'Result');					// poll results row text
 	define('SPR_REMOVE_CONFIRM', 'Do you really want to remove');	// confirmation text when removing an entry (followed by name)
 	define('SPR_COMMENT_HEADING', 'Comments');		// comments section heading
