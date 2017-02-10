@@ -47,6 +47,15 @@
 	define('SPR_NEW_FORM_DETAILS_PLACEHOLDER', 'Your participants may also like a short description of what this poll is all about, right?');
 	define('SPR_NEW_FORM_DATES_PLACEHOLDER', 'Type what you want or pick a date with the calendar button!');
 	define('SPR_NEW_FORM_SUBMIT', 'Create');
+
+	//datepicker
+	define('SPR_DATEPICKER_MONDAY', 'Monday');		// datepicker translation for monday
+	define('SPR_DATEPICKER_TUESDAY', 'Tuesday');		// datepicker translation for monday
+	define('SPR_DATEPICKER_WEDNESDAY', 'Wednesday');		// datepicker translation for monday
+	define('SPR_DATEPICKER_THURSDAY', 'Thursday');		// datepicker translation for monday
+	define('SPR_DATEPICKER_FRIDAY', 'Friday');		// datepicker translation for monday
+	define('SPR_DATEPICKER_SATURDAY', 'Saturday');		// datepicker translation for monday
+	define('SPR_DATEPICKER_SUNDAY', 'Sunday');		// datepicker translation for monday
 	define('SPR_DATEPICKER_LANG', 'en-US');			// datepicker language iso-code
 	define('SPR_DATEPICKER_FORMAT', 'yyyy-mm-dd');	// datepicker date format (you can use and combine yyyy, yy, mm, m, dd, d)
 
