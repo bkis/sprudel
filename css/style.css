@@ -288,6 +288,17 @@ button {
     margin-right: 5px;
 }
 
+input.field-with-btn{
+    padding-right: 25px;
+}
+
+img.btn-in-field{
+    width: 20px;
+    height: auto;
+    margin-left: -25px;
+    vertical-align: middle;
+}
+
 #btnDate{
     margin-left: 16px;
 }

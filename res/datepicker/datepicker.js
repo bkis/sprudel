@@ -1296,7 +1296,7 @@
         }
       }
 
-      return formatted;
+      return this.getDayName(date.getDay()) + ", " + formatted; //changed by bkis
     },
 
     // Destroy the datepicker and remove the instance from the target element

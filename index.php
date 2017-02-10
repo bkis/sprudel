@@ -36,6 +36,8 @@
 	}
 
 	$currDate = date("Y-m-d");
+	$btnDateHTML = "<input type='text' name='dates[]' maxlength='32' class='dateInput field-with-btn'
+		data-toggle='datepicker' required='true' style='margin-top: 4px;' /><button class='btn-in-field'>D</button>";
 	include "header.php";
 ?>
 
@@ -53,12 +55,11 @@
 		    </li>
 		    <li>
 		        <label><?php echo SPR_NEW_FORM_DATES ?> <span class="required">*</span></label>
-		        <input type="text" name="dates[]" maxlength="32" class="dateInput field-long" data-toggle="datepicker" required="true" placeholder="<?php echo SPR_NEW_FORM_DATES_PLACEHOLDER ?>" />
+		        <input type="text" name="dates[]" maxlength="32" class="dateInput field-long" data-toggle="datepicker" required="true" placeholder="<?php echo SPR_NEW_FORM_DATES_PLACEHOLDER ?>" style="margin-bottom: 5px;" />
 		    </li>
 		    <li>
 		    	<img src="img/icon-more.png" class="btnFormDate" id="btnMore"/>
 		    	<img src="img/icon-less-disabled.png" class="btnFormDate" id="btnLess"/>
-		    	<img src="img/icon-calendar.png" class="btnFormDate" id="btnDate"/>
 		    </li>
 		    <li class="content-right">
 		        <input type="submit" value="<?php echo SPR_NEW_FORM_SUBMIT ?>" />
@@ -76,18 +77,25 @@
 		$("#btnLess").css("cursor", "default");
 
 		var datepickerOptions = {
-			trigger: '#btnDate',
 			format: '<?php echo SPR_DATEPICKER_FORMAT ?>',
 			autoHide: 'true',
 			weekStart: 1,
-			language: '<?php echo SPR_DATEPICKER_LANG ?>'
+			language: '<?php echo SPR_DATEPICKER_LANG ?>',
+			days: ['<?php echo SPR_DATEPICKER_SUNDAY ?>',
+				   '<?php echo SPR_DATEPICKER_MONDAY ?>',
+				   '<?php echo SPR_DATEPICKER_TUESDAY ?>',
+				   '<?php echo SPR_DATEPICKER_WEDNESDAY ?>',
+				   '<?php echo SPR_DATEPICKER_THURSDAY ?>',
+				   '<?php echo SPR_DATEPICKER_FRIDAY ?>',
+				   '<?php echo SPR_DATEPICKER_SATURDAY ?>']
 		};
 
-		$(".dateInput").last().datepicker(datepickerOptions);
+		//init first datepicker
+		$(".dateInput").datepicker(datepickerOptions);
 
+		//add new date field
 		$("#btnMore").click(function() {
-			$(".dateInput").last().datepicker('destroy');
-            $(".dateInput").last().after("<input type='text' name='dates[]' maxlength='32' class='dateInput field-long' data-toggle='datepicker' required='true' style='margin-top: 4px;' />");
+            $(".dateInput").last().after($(".dateInput").last().clone());
             $(".dateInput").last().val($(".dateInput:nth-last-child(2)").val());
             $(".dateInput").last().focus();
             $(".dateInput").last().select();
@@ -96,6 +104,7 @@
 			$("#btnLess").css("cursor", "pointer");
         });
 
+		//remove one date field
         $("#btnLess").click(function() {
         	$(".dateInput").not(':first').last().datepicker('destroy');
             $(".dateInput").not(':first').last().detach();
