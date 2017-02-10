@@ -62,6 +62,7 @@
 	// poll view strings / labels
 	define('SPR_POLL_NAME', 'Your name?');			// placeholder for name input field
 	define('SPR_URL_COPY_ERROR', 'Error copying URL. Please copy it manually!');	// copy url error text
+	define('SPR_ENTRY_SAVE', 'Save');	// new entry save button text
 
 	//turn on/off footer text
 	define('SPR_SHOW_FOOTER_LINK', '1');				// insert 0 if you want to remove the footer link, but it would be nice to leave it there
