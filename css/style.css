@@ -135,10 +135,16 @@ td.schedule-header {
     background-color: #565656;
     width: 24px;
     vertical-align: bottom;
+    text-align: center;
 }
 
 div.schedule-header-date {
-    writing-mode: sideways-lr;
+    -ms-writing-mode: lr-tb;
+    -webkit-writing-mode: vertical-rl;
+    -moz-writing-mode: vertical-rl;
+    -ms-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
+
     display: inline-block;
     text-align: center;
     padding-top: 5px;
@@ -179,6 +185,7 @@ td.schedule-delete{
 
 td.schedule-submit{
     background-color: #565656;
+    height: 24px;
 }
 
 td.schedule-entry {
@@ -346,4 +353,38 @@ tr.schedule-new td.new-entry-choice-no{
     background: #cb4335 url(../img/icon-no.png) no-repeat;
     background-position: center center;
     cursor:pointer;
+}
+
+.rotated-text {
+    display: inline-block;
+    overflow: hidden;
+    width: 1.5em;
+    text-align: center;
+}
+.rotated-text__inner {
+    display: inline-block;
+    white-space: nowrap;
+    /* this is for shity "non IE" browsers
+       that dosn't support writing-mode */
+    -webkit-transform: translate(0.75em,0) rotate(90deg);
+       -moz-transform: translate(0.75em,0) rotate(90deg);
+         -o-transform: translate(0.75em,0) rotate(90deg);
+            transform: translate(0.75em,0) rotate(90deg);
+    -webkit-transform-origin: 0 0;
+       -moz-transform-origin: 0 0;
+         -o-transform-origin: 0 0;
+            transform-origin: 0 0;
+   /* IE9+ */
+   -ms-transform: none;
+   -ms-transform-origin: none;
+   /* IE8+ */
+   -ms-writing-mode: tb-rl;
+   /* IE7 and below */
+   *writing-mode: tb-rl;
+    text-align: center;
+}
+.rotated-text__inner:before {
+    content: "";
+    float: left;
+    margin-top: 100%;
 }

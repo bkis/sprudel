@@ -26,9 +26,13 @@
 		<td class="schedule-blank"></td>
 		<?php
 			foreach ($dates as $date) {
-				echo "<td class='schedule-header'><div class='schedule-header-date'>";
+				//echo "<td class='schedule-header'><div class='schedule-header-date'>";
+				//echo $date["date"];
+				//echo "</div></td>";
+
+				echo "<td class='schedule-header'><div class='rotated-text'><div class='rotated-text__inner'>";
 				echo $date["date"];
-				echo "</div></td>";
+				echo "</div></div></td>";
 			}
 		?>
 	</tr>
