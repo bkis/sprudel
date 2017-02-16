@@ -43,6 +43,10 @@
 
 
 <div class="centerBox">
+
+	<span><?php echo preg_replace("/\bn\b/", SPR_DELETE_AFTER, SPR_LIFESPAN) ?></span>
+	<br><br>
+
 	<form action="index.php" method="post">
 		<ul class="sprudelform">
 		    <li>

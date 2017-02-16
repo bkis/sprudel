@@ -37,7 +37,8 @@
 	define('SPR_COMMENT_SUBMIT', 'Send');				// comment submit button text
 	define('SPR_NO_JS_MSG', 'Please enable JavaScript in your browser and reload this page.');
 	define('SPR_404', 'Something went wrong...');		// poll not found page text
-	
+	define('SPR_LIFESPAN', 'Inactive polls will be deleted automatically after n days!');		// info about how long inactive polls are stored
+																		// (leave "n" as a placeholder for the number of days - it will be replaced automatically!)
 	// new poll form strings / labels
 	define('SPR_NEW_FORM_TITLE', 'Title');			
 	define('SPR_NEW_FORM_DESCRIPTION', 'Description');
