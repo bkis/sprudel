@@ -57,7 +57,7 @@ div.noscript{
 
 #header {
     padding: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     background-color: #363636;
     color: #fff;
     overflow: hidden;
@@ -95,6 +95,11 @@ p.details {
     cursor: pointer;
     margin-right: 10px;
     vertical-align: middle;
+}
+
+#btnDeletePoll{
+    cursor: pointer;
+    margin-right: 25px;
 }
 
 #footer{

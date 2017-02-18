@@ -18,6 +18,11 @@
 ?>
 
 
+<div class="content-right">
+	<img id="btnDeletePoll" src="img/icon-delete-poll.png" alt="delete"/>
+</div>
+
+
 <!-- POLL TABLE -->
 <table class="schedule">
 
@@ -179,11 +184,20 @@
 		    $("#name-input").focus();
 		});
 
-		//delete button functionality
+		//delete entry button functionality
 		$(".schedule-delete").click(function(){
 			if (confirm("<?php echo SPR_REMOVE_CONFIRM ?> '" + $(this).attr("data-name") + "' ?")){
 				$.post( "delete.php", { poll: $(this).attr("data-poll"), name: $(this).attr("data-name") } ).done( function() {
 					location.href = location.href;
+				});
+			}
+		});
+
+		//delete poll button functionality
+		$("#btnDeletePoll").click(function(){
+			if (confirm("<?php echo SPR_DELETE_POLL_CONFIRM ?>")){
+				$.post( "delete-poll.php", { poll: "<?php echo $id ?>" } ).done( function() {
+					location.href = "index.php";
 				});
 			}
 		});
