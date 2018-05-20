@@ -11,6 +11,13 @@
 	$persons = transformPollEntries($database->select("entries", "*", ["poll" => $id]));
 	$dates = transformPollDates($database->select("dates", "*", ["poll" => $id]));
 
+	for ($i=0; $i < sizeof($dates); $i++) {
+		//set confirmation count values
+		$dates[$i]["yes"] = 0;
+		$dates[$i]["maybe"] = 0;
+		$dates[$i]["no"] = 0;
+	}
+
 	if(!$poll)
 		header("Location: 404.php");
 
@@ -64,10 +71,13 @@
 				echo "</td>";
 
 				//count result
-				if ($value == "yes")
-					$dates[$i]["count"] += 1;
-				elseif ($value == "maybe")
-					$dates[$i]["count"] += 0.5;
+				if ($value == "yes"){
+					$dates[$i]["yes"]++;
+				} elseif ($value == "maybe"){
+					$dates[$i]["maybe"]++;
+				} else {
+					$dates[$i]["no"]++;
+				}
 			}
 
 			echo "<td class='schedule-delete' data-poll='$id' data-name='$pName'>";
@@ -99,21 +109,17 @@
 	</tr>
 
 	<!-- RESULTS -->
-	<?php
-		$max = 0;
-		foreach ($dates as $date) $max = max($max, $date["count"]);
-	?>
 	<tr class="schedule-results valign-middle">
 		<td>
 			<?php echo SPR_RESULTS ?>
 		</td>
 		<?php
 			foreach ($dates as $date) {
-				if ($max == $date["count"] && $date["count"] > 0){
-					echo "<td class='top'>" . $date["count"] . "</td>";
-				} else {
-					echo "<td>" . $date["count"] . "</td>";
-				}
+				echo "<td class='results-cell'>";
+				echo "<span class='r-yes'>" . $date["yes"] . "</span><br/>";
+				echo "<span class='r-maybe'>" . $date["maybe"] . "</span><br/>";
+				echo "<span class='r-no'>" . $date["no"] . "</span>";
+				echo "</td>";
 			}
 		?>
 	</tr>

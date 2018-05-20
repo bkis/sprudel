@@ -312,6 +312,25 @@ button {
     color: red;
 }
 
+.results-cell {
+    background-color: #ddd;
+}
+
+.r-yes {
+    font-weight: bold;
+    color: #229954;
+}
+
+.r-maybe {
+    font-weight: bold;
+    color: #888;
+}
+
+.r-no {
+    font-weight: bold;
+    color: #cb4335;
+}
+
 .comment-container{
     padding-top: 20px;
     padding-bottom: 20px;
