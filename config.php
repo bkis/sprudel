@@ -43,9 +43,11 @@
 	// new poll form strings / labels
 	define('SPR_NEW_FORM_TITLE', 'Title');			
 	define('SPR_NEW_FORM_DESCRIPTION', 'Description');
+	define('SPR_NEW_FORM_ADMIN', 'Admin');
 	define('SPR_NEW_FORM_DATES', 'Dates / Options');
 	define('SPR_NEW_FORM_TITLE_PLACEHOLDER', 'What about a title for your poll?');
 	define('SPR_NEW_FORM_DETAILS_PLACEHOLDER', 'Your participants may also like a short description of what this poll is all about, right?');
+	define('SPR_NEW_FORM_ADMIN_PLACEHOLDER', 'Only admin can change/delete the poll.');
 	define('SPR_NEW_FORM_DATES_PLACEHOLDER', 'Type what you want or pick a date with the calendar button!');
 	define('SPR_NEW_FORM_SUBMIT', 'Create');
 
@@ -64,6 +66,9 @@
 	define('SPR_POLL_NAME', 'Your name?');			// placeholder for name input field
 	define('SPR_URL_COPY_ERROR', 'Error copying URL. Please copy it manually!');	// copy url error text
 	define('SPR_ENTRY_SAVE', 'Save');	// new entry save button text
+
+	//turn on/off admin interface
+	define('SPR_ADMIN_INTERFACE', '1');					// insert 0 if you want to disable admin interface
 
 	//turn on/off footer text
 	define('SPR_SHOW_FOOTER_LINK', '1');				// insert 0 if you want to remove the footer link, but it would be nice to leave it there

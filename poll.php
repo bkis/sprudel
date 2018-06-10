@@ -11,6 +11,12 @@
 	$persons = transformPollEntries($database->select("entries", "*", ["poll" => $id]));
 	$dates = transformPollDates($database->select("dates", "*", ["poll" => $id]));
 
+	$admid = "NA";
+	if(isset($_GET["adm"]) && !empty($_GET['adm']))
+		$admid = htmlspecialchars($_GET["adm"]);
+
+	$dbadmid = $database->get("polls", "polladm", ["poll" => $id]);
+
 	for ($i=0; $i < sizeof($dates); $i++) {
 		//set confirmation count values
 		$dates[$i]["yes"] = 0;
@@ -22,12 +28,13 @@
 		header("Location: 404.php");
 
 	include "header.php";
+
+	if ("NA" == $dbadmid) {
+		echo "<div class='content-right'>";
+		echo "<img id='btnDeletePoll' src='img/icon-delete-poll.png' alt='delete'/>";
+		echo "</div>";
+	}
 ?>
-
-
-<div class="content-right">
-	<img id="btnDeletePoll" src="img/icon-delete-poll.png" alt="delete"/>
-</div>
 
 
 <!-- POLL TABLE -->
@@ -67,7 +74,7 @@
 
 				echo "<td class='schedule-entry schedule-entry-" . $value . "'>";
 				//echo "<img src='img/icon-" . $value . ".png' alt=''/>";
-				
+
 				echo "</td>";
 
 				//count result
@@ -80,8 +87,10 @@
 				}
 			}
 
-			echo "<td class='schedule-delete' data-poll='$id' data-name='$pName'>";
-			//echo "<img src='img/icon-delete.png' alt='delete row'/></td>";
+			if ($dbadmid == $admid){
+				echo "<td class='schedule-delete' data-poll='$id' data-name='$pName' poll-admid='$admid'>";
+			}
+
 			echo "</tr>";
 		}
 	?>
@@ -145,7 +154,7 @@
 		} else {
 			echo SPR_COMMENT_NONE;
 		}
-		
+
 	?>
 </div><br>
 
@@ -193,7 +202,7 @@
 		//delete entry button functionality
 		$(".schedule-delete").click(function(){
 			if (confirm("<?php echo SPR_REMOVE_CONFIRM ?> '" + $(this).attr("data-name") + "' ?")){
-				$.post( "delete.php", { poll: $(this).attr("data-poll"), name: $(this).attr("data-name") } ).done( function() {
+				$.post( "delete.php", { poll: $(this).attr("data-poll"), name: $(this).attr("data-name"), adm: $(this).attr("poll-admid") } ).done( function() {
 					location.href = location.href;
 				});
 			}
@@ -202,7 +211,7 @@
 		//delete poll button functionality
 		$("#btnDeletePoll").click(function(){
 			if (confirm("<?php echo SPR_DELETE_POLL_CONFIRM ?>")){
-				$.post( "delete-poll.php", { poll: "<?php echo $id ?>" } ).done( function() {
+				$.post( "delete-poll.php", { poll: "<?php echo $id ?>", adm: "NA" } ).done( function() {
 					location.href = "index.php";
 				});
 			}
@@ -223,7 +232,7 @@
 				$(this).addClass("new-entry-choice-maybe");
 				$(this).children(".entry-value").attr("value", "2");
 			}
-			
+
 		});
 
 	});
