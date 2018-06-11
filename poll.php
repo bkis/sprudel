@@ -15,7 +15,7 @@
 	if(isset($_GET["adm"]) && !empty($_GET['adm']))
 		$admid = htmlspecialchars($_GET["adm"]);
 
-	$dbadmid = $database->get("polls", "polladm", ["poll" => $id]);
+	$dbadmid = $poll["polladm"];
 
 	for ($i=0; $i < sizeof($dates); $i++) {
 		//set confirmation count values
@@ -29,7 +29,7 @@
 
 	include "header.php";
 
-	if ("NA" == $dbadmid) {
+	if (strcmp($dbadmid, $admid) == 0) {
 		echo "<div class='content-right'>";
 		echo "<img id='btnDeletePoll' src='img/icon-delete-poll.png' alt='delete'/>";
 		echo "</div>";
@@ -87,7 +87,7 @@
 				}
 			}
 
-			if ($dbadmid == $admid){
+			if (strcmp($dbadmid, $admid) == 0){
 				echo "<td class='schedule-delete' data-poll='$id' data-name='$pName' poll-admid='$admid'>";
 			}
 
@@ -186,7 +186,9 @@
 
 	$(document).ready(function() {
 		//show url
-		$("#urlInfo").text(window.location.href);
+		var pollUrl = window.location.protocol + "//" + window.location.hostname + window.location.pathname + "?poll=<?php echo $id ?>";
+		$("#urlInfo").text(pollUrl);
+		$("#admUrl").text(pollUrl);
 
 		//url clipboard copy feature
 		var clipboard = new Clipboard('#btnCopy');
