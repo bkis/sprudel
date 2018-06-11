@@ -1,12 +1,13 @@
 <?php
 
-	require_once 'db.php';
+	require_once '../db.php';
 
 	// INIT MYSQL DATABASE
 
 	// create table "polls"
 	$query = "CREATE TABLE `polls` (
 			`poll` varchar(32) NOT NULL,
+			`polladm` varchar(32) NOT NULL,
 			`title` text NOT NULL,
 			`details` text NOT NULL,
 			`changed` date NOT NULL,
@@ -57,7 +58,7 @@
 		if ($success){
 			echo "<span class='success'>Database initialized successfully.</span><br>";
 			echo "You should now try your new Sprudel installation and if everything works, delete install.php from the server!<br><br>";
-			echo "<a href='index.php'>Click here try out your Sprudel installation.</a>";
+			echo "<a href='../index.php'>Click here try out your Sprudel installation.</a>";
 		} else {
 			echo "<span class='fail'>Database couldn't be initialized.</span><br>";
 			echo "Please check your setup in config.php and make shure you create the database before you run install.php!";
@@ -66,4 +67,4 @@
 </div>
 
 
-<?php include "footer.php" ?>
+<?php include "../footer.php" ?>

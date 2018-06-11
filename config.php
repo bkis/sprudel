@@ -12,7 +12,7 @@
 
 	// database settings
 	define('SPR_DB_NAME', 'your_db_name');		// database name
-	define('SPR_DB_SERVER', 'your_db_server');		// database server ('localhost' in most cases)
+	define('SPR_DB_SERVER', 'your_db_host');		// database server ('localhost' in most cases)
 	define('SPR_DB_USERNAME', 'your_db_user');			// username to access database
 	define('SPR_DB_PASSWORD', 'your_db_password');	// password to access database
 
@@ -20,6 +20,12 @@
 	//// OPTIONAL
 	//// You can change these values if you want
 	//// to customize Sprudel or change the language
+
+	//turn on/off admin interface
+	define('SPR_ADMIN_INTERFACE', '0');		// insert 1 if you want to enable admin interface
+
+	//turn on/off admin link functionality
+	define('SPR_ADMIN_LINKS', '0');			// insert 1 if you want to enable admin links functionality
 
 	// lifespan of inactive polls
 	define('SPR_DELETE_AFTER', '180');	//delete inactive polls after x days (daily cronjob for cleanup.php needed!)
@@ -43,9 +49,11 @@
 	// new poll form strings / labels
 	define('SPR_NEW_FORM_TITLE', 'Title');			
 	define('SPR_NEW_FORM_DESCRIPTION', 'Description');
+	define('SPR_NEW_FORM_ADMIN', 'Use an Admin-Link?');
 	define('SPR_NEW_FORM_DATES', 'Dates / Options');
 	define('SPR_NEW_FORM_TITLE_PLACEHOLDER', 'What about a title for your poll?');
 	define('SPR_NEW_FORM_DETAILS_PLACEHOLDER', 'Your participants may also like a short description of what this poll is all about, right?');
+	define('SPR_NEW_FORM_ADMIN_CHECKBOX', 'Editing/deleting poll only with admin link');
 	define('SPR_NEW_FORM_DATES_PLACEHOLDER', 'Type what you want or pick a date with the calendar button!');
 	define('SPR_NEW_FORM_SUBMIT', 'Create');
 

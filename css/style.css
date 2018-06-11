@@ -91,6 +91,12 @@ p.details {
     vertical-align: middle;
 }
 
+#admin-url {
+    color: #cb4335;
+    font-size: 80%;
+    font-weight: bold;
+}
+
 #btnCopy{
     cursor: pointer;
     margin-right: 10px;
