@@ -18,7 +18,8 @@ Sprudel is meant to be easy to use and offers all the relevant features you need
 - easily customizable: all the labels can be set to custom strings, so you can change the language and all
 - cleanup-script included for deleting polls that have been inactive for more than X days (can be run via cronjob)
 - one-click copying of the poll URL
-- optional poll administration interface
+- optional admin link functionality to keep participants from editing/deleting the poll
+- optional poll administration interface for managing all the polls on the server
 
 # Requirements
 - PHP 5.4 or higher  
@@ -30,6 +31,7 @@ This is fairly easy *if* you know how to create a new MySql-database and how to 
 - Download Sprudel as .zip-archive from this repository
 - Extract the contents of the archive into a new directory (e.g. "sprudel")
 - Edit the config.php file and insert the database's credentials (read comments!)
+- __If you want to use the optional admin interface__ (to view and delete any polls without owning the poll) you have to set this in the config.php, too! If you do so, please secure the 'admin'-directory, so it cannot be accessed without a password! If you run Sprudel on an Apache webserver, you CAN use the '\_template'-files in this directory and change them to you needs. Please read about how to secure a directory on your web server before using the admin interface!
 - Upload the sprudel-directory to your server (root-directory or somewhere else)
 - Access the admin/install.php through your browser (e.g. domain.com/sprudel/admin/install.php)
 - If everything is fine, Sprudel will tell you so.
