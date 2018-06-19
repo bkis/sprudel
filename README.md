@@ -30,6 +30,7 @@ This is fairly easy *if* you know how to create a new MySql-database and how to 
 - Create an empty MySql database on your server
 - Download Sprudel as .zip-archive from this repository
 - Extract the contents of the archive into a new directory (e.g. "sprudel")
+- Copy the 'config.php_template' and rename the copy to 'config.php'
 - Edit the config.php file and insert the database's credentials (read comments!)
 - __If you want to use the optional admin interface__ (to view and delete any polls without owning the poll) you have to set this in the config.php, too! If you do so, please secure the 'admin'-directory, so it cannot be accessed without a password! If you run Sprudel on an Apache webserver, you CAN use the '\_template'-files in this directory and change them to you needs. Please read about how to secure a directory on your web server before using the admin interface!
 - Upload the sprudel-directory to your server (root-directory or somewhere else)
