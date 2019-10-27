@@ -1,5 +1,3 @@
-# in beta / feel free to try / not fully tested
-
 ![Sprudel Logo](https://raw.githubusercontent.com/bkis/sprudel/master/img/logo-dark.png)
 
 # Sprudel
@@ -26,18 +24,19 @@ Sprudel is meant to be easy to use and offers all the relevant features you need
 - A MySql database  
 
 # Installation
-This is fairly easy *if* you know how to create a new MySql-database and how to upload files to your webserver. If you don't, try to find out how these things are done beforehand - it's easy to find tutorials on this on the internet!
+This is fairly easy *if* you know how to create a new MySql-database and how to upload files to your webserver. If you don't, try to find out how these things are done beforehand - it's easy to find tutorials about this on the internet!
 - Create an empty MySql database on your server
 - Download Sprudel as .zip-archive from this repository
 - Extract the contents of the archive into a new directory (e.g. "sprudel")
-- Copy the 'config.php_template' and rename the copy to 'config.php'
-- Edit the config.php file and insert the database's credentials (read comments!)
-- __If you want to use the optional admin interface__ (to view and delete any polls without owning the poll) you have to set this in the config.php, too! If you do so, please secure the 'admin'-directory, so it cannot be accessed without a password! If you run Sprudel on an Apache webserver, you CAN use the '\_template'-files in this directory and change them to you needs. Please read about how to secure a directory on your web server before using the admin interface!
+- Copy the `config.php_template` and rename the copy to `config.php`
+- Edit the `config.php` and insert the database's credentials (read comments!)
+- **If you want to use the optional admin interface** (to view and delete any polls without owning the poll) you have to set this in the config.php, too! If you do so, please secure the 'admin'-directory, so it cannot be accessed without a password! If you run Sprudel on an Apache webserver, you may use the `_template`-files in this directory and change them to your needs. Please read about how to secure a directory on your web server before using the admin interface!
 - Upload the sprudel-directory to your server (root-directory or somewhere else)
-- Access the admin/install.php through your browser (e.g. domain.com/sprudel/admin/install.php)
+- Access the `admin/install.php` through your browser (e.g. `domain.com/sprudel/admin/install.php`)
 - If everything is fine, Sprudel will tell you so.
-- Delete the admin/install.php from your server
-- If you are using the admin interface, create .htaccess and .htpasswd file in admin/ to secure the access.
+- Delete the `admin/install.php` from your server
+- If you are using the admin interface and run an **Apache** web server, create `.htaccess` and `.htpasswd` file in `admin/` to secure the access.
+- If you use **Nginx**, [you can do the same](https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/).
 - Enjoy
 
 # Packaged Software/Media
