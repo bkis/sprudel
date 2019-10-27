@@ -78,8 +78,8 @@
 				if (isset($poll)){
 					echo "<br/><img src='img/icon-copy.png' id='btnCopy' data-clipboard-target='#urlInfo' /><span id='urlInfo'></span>";
 
-					if (strcmp($dbadmid, "NA") != 0 && strcmp($dbadmid, $admid) == 0) {
-						echo "<br/><br/><div id='admin-url'>ADMIN-LINK:<br/><br/><span id='admUrl'></span>&adm=" . $admid . "</div>";
+					if (strcmp($poll["polladm"], "NA") != 0 && strcmp($poll["polladm"], $adminId) == 0) {
+						echo "<br/><br/><div id='admin-url'>ADMIN-LINK:<br/><br/><span id='admUrl'></span>&adm=" . $adminId . "</div>";
 					}
 				}
 			?>

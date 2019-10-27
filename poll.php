@@ -11,11 +11,9 @@
 	$persons = transformPollEntries($database->select("entries", "*", ["poll" => $id]));
 	$dates = transformPollDates($database->select("dates", "*", ["poll" => $id]));
 
-	$admid = "NA";
+	$adminId = "NA";
 	if(isset($_GET["adm"]) && !empty($_GET['adm']))
-		$admid = htmlspecialchars($_GET["adm"]);
-
-	$dbadmid = $poll["polladm"];
+		$adminId = htmlspecialchars($_GET["adm"]);
 
 	for ($i=0; $i < sizeof($dates); $i++) {
 		//set confirmation count values
@@ -28,14 +26,21 @@
 		header("Location: 404.php");
 
 	include "header.php";
-
-	if (strcmp($dbadmid, $admid) == 0) {
-		echo "<div class='content-right'>";
-		echo "<img id='btnDeletePoll' src='img/icon-delete-poll.png' alt='delete'/>";
-		echo "</div>";
-	}
 ?>
 
+<!-- POLL CONTROLS -->
+<div id="poll-controls">
+	<!-- MINI VIEW TOGGLE -->
+	<button id="btnMiniView" type="button" data-miniview="off">
+		Mini View
+	</button>
+	<!-- DELETE POLL BUTTON -->
+	<?php if (strcmp($poll["polladm"], $adminId) == 0) { ?>
+		<button id="btnDeletePoll" type="button">
+			Delete Poll
+		</button>
+	<?php } ?>
+</div>
 
 <!-- POLL TABLE -->
 <table class="schedule">
@@ -87,8 +92,8 @@
 				}
 			}
 
-			if (strcmp($dbadmid, $admid) == 0){
-				echo "<td class='schedule-delete' data-poll='$id' data-name='$pName' poll-admid='$admid'>";
+			if (strcmp($poll["polladm"], $adminId) == 0){
+				echo "<td class='schedule-delete' data-poll='$id' data-name='$pName' poll-admid='$adminId'>";
 			}
 
 			echo "</tr>";
@@ -125,9 +130,9 @@
 		<?php
 			foreach ($dates as $date) {
 				echo "<td class='results-cell'>";
-				echo "<span class='r-yes'>" . $date["yes"] . "</span><br/>";
-				echo "<span class='r-maybe'>" . $date["maybe"] . "</span><br/>";
-				echo "<span class='r-no'>" . $date["no"] . "</span>";
+				echo "<div class='r r-yes'>" . $date["yes"] . "</div>";
+				echo "<div class='r r-maybe'>" . $date["maybe"] . "</div>";
+				echo "<div class='r r-no'>" . $date["no"] . "</div>";
 				echo "</td>";
 			}
 		?>
@@ -235,6 +240,19 @@
 				$(this).children(".entry-value").attr("value", "2");
 			}
 
+		});
+
+		//mini-view toggler
+		$("#btnMiniView").click(function(){
+			if ($("#btnMiniView").attr("data-miniview") == "off"){
+				$("table.schedule").addClass("mini");
+				$("#btnMiniView").attr("data-miniview", "on");
+				$("#btnMiniView").text("Normal View");
+			} else {
+				$("table.schedule").removeClass("mini");
+				$("#btnMiniView").attr("data-miniview", "off");
+				$("#btnMiniView").text("Mini View");
+			}
 		});
 
 	});

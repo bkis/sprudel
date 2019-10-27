@@ -118,6 +118,11 @@ p.details {
     border-top: solid 1px #ccc;
 }
 
+#poll-controls {
+    text-align: right;
+    margin-bottom: 2rem;
+}
+
 table.schedule {
     border: none;
     margin-bottom: 60px;
@@ -125,8 +130,16 @@ table.schedule {
     margin-right: auto;
 }
 
+table.schedule.mini {
+    font-size: 60%;
+}
+
 table.schedule tr {
     height: 16px;
+}
+
+table.schedule.mini tr {
+    height: 8px;
 }
 
 table.schedule td {
@@ -136,6 +149,11 @@ table.schedule td {
     line-height: 0;
     color: #fff;
     min-width: 24px;
+}
+
+table.schedule.mini td {
+    padding: 0px;
+    min-width: 16px;
 }
 
 tr.valign-middle td{
@@ -149,6 +167,12 @@ td.schedule-header {
     text-align: center;
 }
 
+table.schedule.mini td.schedule-header {
+    width: 16px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
 div.schedule-header-date {
     -ms-writing-mode: lr-tb;
     -webkit-writing-mode: vertical-rl;
@@ -158,8 +182,6 @@ div.schedule-header-date {
 
     display: inline-block;
     text-align: center;
-    padding-top: 5px;
-    padding-bottom: 5px;
     vertical-align: bottom;
 }
 
@@ -177,9 +199,17 @@ tr.schedule-results {
     border-top: 15px solid #fff;
 }
 
+table.schedule.mini tr.schedule-results {
+    font-size: 100%;
+}
+
 tr.schedule-results td {
-    line-height: 1;
-    height: 24px;
+    line-height: 1.2;
+}
+
+table.schedule.mini tr.schedule-results td {
+    font-size: 100%;
+    line-height: 1.5;
 }
 
 tr.schedule-results td.top {
@@ -194,6 +224,13 @@ td.schedule-delete{
     background-position: center center;
 }
 
+table.schedule.mini td.schedule-delete {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    background-size: contain;
+}
+
 td.schedule-submit{
     background-color: #565656;
     height: 24px;
@@ -203,6 +240,12 @@ td.schedule-entry {
     width: 24px;
     height: 24px;
     padding: 0px;
+}
+
+table.schedule.mini td.schedule-entry {
+    width: 16px;
+    height: 16px;
+    background-image: none !important;
 }
 
 td.schedule-entry-yes {
@@ -322,18 +365,20 @@ button {
     background-color: #ddd;
 }
 
-.r-yes {
+.r {
+    text-align: center;
     font-weight: bold;
+}
+
+.r-yes {
     color: #229954;
 }
 
 .r-maybe {
-    font-weight: bold;
     color: #888;
 }
 
 .r-no {
-    font-weight: bold;
     color: #cb4335;
 }
 
@@ -418,3 +463,4 @@ tr.schedule-new td.new-entry-choice-no{
     float: left;
     margin-top: 100%;
 }
+
