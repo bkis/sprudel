@@ -258,16 +258,8 @@ td.schedule-name-input {
     border-bottom-left-radius: var(--border-radius-big);
 }
 
-tr.schedule-results td {
-    border-top: 12px solid var(--col-background-light);
-}
-
 table.schedule.mini tr.schedule-results {
     font-size: 100%;
-}
-
-tr.schedule-results td {
-    line-height: 1.2;
 }
 
 tr.schedule-results td.top {
@@ -469,14 +461,6 @@ td.schedule-blank {
     line-height: 110%;
 }
 
-table.schedule td.new-entry-box {
-    padding: 0px;
-}
-
-tr.schedule-new {
-    margin-top: 20px;
-}
-
 tr.schedule-new td.new-entry-choice {
     cursor:pointer;
 }
@@ -491,6 +475,12 @@ tr.schedule-new td.new-entry-choice-maybe{
 
 tr.schedule-new td.new-entry-choice-no{
     background: var(--col-reaction-negative) url(../img/icon-no.png) no-repeat center center;
+}
+
+tr.table-spacer-row {
+    padding: 0;
+    margin: 0;
+    border: 12px solid var(--col-background-light);
 }
 
 

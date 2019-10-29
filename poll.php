@@ -96,6 +96,8 @@
 		}
 	?>
 
+	<!-- SPACER ROW -->
+	<tr class="table-row-spacer"></tr>
 
 	<!-- NEW ENTRY -->
 	<tr class="schedule-new valign-middle">
@@ -106,7 +108,7 @@
 			</td>
 			<?php
 				foreach ($dates as $date) {
-					echo "<td class='new-entry-box new-entry-choice new-entry-choice-maybe'>";
+					echo "<td class='new-entry-choice new-entry-choice-maybe'>";
 					echo "<input class='entry-value' type='hidden' name='values[]' value='2'/>";
 					echo "<input class='entry-date' type='hidden' name='dates[]' value='" . $date["date"] . "'/>";
 					echo "</td>";
@@ -117,6 +119,9 @@
 			</td>
 		</form>
 	</tr>
+
+	<!-- SPACER ROW -->
+	<tr class="table-row-spacer"></tr>
 
 	<!-- RESULTS -->
 	<tr class="schedule-results valign-middle">
