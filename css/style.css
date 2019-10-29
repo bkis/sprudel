@@ -1,4 +1,6 @@
-
+* {
+    transition: .2s;
+}
 
 html, body {
     width: 100%;
@@ -143,7 +145,6 @@ table.schedule.mini tr {
 }
 
 table.schedule td {
-    text-align: center;
     border: 2px solid #fff;
     padding: 4px;
     line-height: 0;
@@ -160,8 +161,11 @@ tr.valign-middle td{
     vertical-align: middle;
 }
 
+
+/* POLL HEADER (DATES, OPTIONS, ...) */
+
 td.schedule-header {
-    background-color: #565656;
+    background-color: #363636;
     width: 24px;
     vertical-align: bottom;
     text-align: center;
@@ -173,30 +177,56 @@ table.schedule.mini td.schedule-header {
     padding-bottom: 2px;
 }
 
-div.schedule-header-date {
-    -ms-writing-mode: lr-tb;
-    -webkit-writing-mode: vertical-rl;
-    -moz-writing-mode: vertical-rl;
-    -ms-writing-mode: vertical-rl;
-    writing-mode: vertical-rl;
-
+td.schedule-header > div {
     display: inline-block;
+    overflow: hidden;
+    width: 1.5em;
     text-align: center;
-    vertical-align: bottom;
 }
 
+td.schedule-header > div > div {
+    display: inline-block;
+    white-space: nowrap;
+    /* this is for shity "non IE" browsers
+       that dosn't support writing-mode */
+    -webkit-transform: translate(0.75em,0) rotate(90deg);
+       -moz-transform: translate(0.75em,0) rotate(90deg);
+         -o-transform: translate(0.75em,0) rotate(90deg);
+            transform: translate(0.75em,0) rotate(90deg);
+    -webkit-transform-origin: 0 0;
+       -moz-transform-origin: 0 0;
+         -o-transform-origin: 0 0;
+            transform-origin: 0 0;
+   /* IE9+ */
+   -ms-transform: none;
+   -ms-transform-origin: none;
+   /* IE8+ */
+   -ms-writing-mode: tb-rl;
+   /* IE7 and below */
+   *writing-mode: tb-rl;
+    text-align: center;
+}
+
+td.schedule-header > div > div:before {
+    content: "";
+    float: left;
+    margin-top: 100%;
+}
+
+
+/* POLL ENTRY NAMES */
+
 td.schedule-names {
-    background-color: #565656;
+    text-align: right;
+    background-color: #363636;
 }
 
 td.schedule-name-input {
-    background-color: #565656;
+    background-color: #363636;
 }
 
 tr.schedule-results {
-    font-size: 80%;
-    background-color: #999;
-    border-top: 15px solid #fff;
+    border-top: 12px solid #fff;
 }
 
 table.schedule.mini tr.schedule-results {
@@ -207,11 +237,6 @@ tr.schedule-results td {
     line-height: 1.2;
 }
 
-table.schedule.mini tr.schedule-results td {
-    font-size: 100%;
-    line-height: 1.5;
-}
-
 tr.schedule-results td.top {
     background-color: #229954;
 }
@@ -220,7 +245,7 @@ td.schedule-delete{
     width: 24px;
     height: 24px;
     cursor: pointer;
-    background: #565656 url(../img/icon-delete.png) no-repeat;
+    background: #363636 url(../img/icon-delete.png) no-repeat;
     background-position: center center;
 }
 
@@ -228,12 +253,22 @@ table.schedule.mini td.schedule-delete {
     width: 16px;
     height: 16px;
     cursor: pointer;
-    background-size: contain;
+    background-size: 12px;
 }
 
-td.schedule-submit{
-    background-color: #565656;
+td.schedule-delete:hover {
+    background: #565656 url(../img/icon-delete.png) no-repeat;
+    background-position: center center;
+}
+
+td.schedule-submit {
+    background-color: #363636;
     height: 24px;
+    transition: .2s;
+}
+
+td.schedule-submit:hover {
+    background-color: #565656;
 }
 
 td.schedule-entry {
@@ -297,6 +332,11 @@ button {
     border: none;
     color: #fff;
     cursor: pointer;
+    transition: .2s;
+}
+
+button:hover {
+    background: #565656;
 }
 
 .schedule input[type=submit], .schedule input[type=button]{
@@ -308,24 +348,34 @@ button {
 }
 
 .schedule input[type=submit].save {
-    background-color: #565656;
+    font-size: inherit;
+    background-color: transparent;
     cursor:pointer;
     width: auto;
     height: 24px;
+    transition: .2s;
 }
 
 .schedule input[type=submit].delete {
     background:url(../img/icon-delete.png) no-repeat;
     background-position: center center;
+    background-origin: content-box;
     cursor:pointer;
     width: 24px;
     height: 24px;
 }
 
 .schedule input[type=text]{
-    width: 100px;
+    font-size: inherit;
+    max-width: 200px;
+    min-width: 150px;
     margin: 2px;
-    text-align: center;
+    text-align: right;
+}
+
+.schedule.mini input[type=text]{
+    max-width: 100px;
+    min-width: 50px;
 }
 
 .centerBox{
@@ -354,32 +404,37 @@ button {
 }
 
 .success{
-    color: green;
-}
-
-.fail{
-    color: red;
-}
-
-.results-cell {
-    background-color: #ddd;
-}
-
-.r {
-    text-align: center;
-    font-weight: bold;
-}
-
-.r-yes {
     color: #229954;
 }
 
+.fail{
+    color: #cb4335;
+}
+
+.results-cell {
+    padding: 0;
+}
+
+.r {
+    padding-top: 2px;
+    margin-bottom: 2px;
+    text-align: center;
+    width: 100%;
+}
+
+.r-yes {
+    color: #fff;
+    background-color: #229954;
+}
+
 .r-maybe {
-    color: #888;
+    color: #fff;
+    background-color: #888;
 }
 
 .r-no {
-    color: #cb4335;
+    color: #fff;
+    background-color: #cb4335;
 }
 
 .comment-container{
@@ -409,7 +464,7 @@ table.schedule td.new-entry-box {
 }
 
 tr.schedule-new td {
-    border-top: 6px solid #fff;
+    border-top: 12px solid #fff;
 }
 
 tr.schedule-new td.new-entry-choice-yes{
@@ -428,39 +483,5 @@ tr.schedule-new td.new-entry-choice-no{
     background: #cb4335 url(../img/icon-no.png) no-repeat;
     background-position: center center;
     cursor:pointer;
-}
-
-.rotated-text {
-    display: inline-block;
-    overflow: hidden;
-    width: 1.5em;
-    text-align: center;
-}
-.rotated-text__inner {
-    display: inline-block;
-    white-space: nowrap;
-    /* this is for shity "non IE" browsers
-       that dosn't support writing-mode */
-    -webkit-transform: translate(0.75em,0) rotate(90deg);
-       -moz-transform: translate(0.75em,0) rotate(90deg);
-         -o-transform: translate(0.75em,0) rotate(90deg);
-            transform: translate(0.75em,0) rotate(90deg);
-    -webkit-transform-origin: 0 0;
-       -moz-transform-origin: 0 0;
-         -o-transform-origin: 0 0;
-            transform-origin: 0 0;
-   /* IE9+ */
-   -ms-transform: none;
-   -ms-transform-origin: none;
-   /* IE8+ */
-   -ms-writing-mode: tb-rl;
-   /* IE7 and below */
-   *writing-mode: tb-rl;
-    text-align: center;
-}
-.rotated-text__inner:before {
-    content: "";
-    float: left;
-    margin-top: 100%;
 }
 

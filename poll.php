@@ -50,11 +50,7 @@
 		<td class="schedule-blank"></td>
 		<?php
 			foreach ($dates as $date) {
-				//echo "<td class='schedule-header'><div class='schedule-header-date'>";
-				//echo $date["date"];
-				//echo "</div></td>";
-
-				echo "<td class='schedule-header'><div class='rotated-text'><div class='rotated-text__inner'>";
+				echo "<td class='schedule-header'><div><div>";
 				echo $date["date"];
 				echo "</div></div></td>";
 			}
@@ -124,9 +120,7 @@
 
 	<!-- RESULTS -->
 	<tr class="schedule-results valign-middle">
-		<td>
-			<?php echo SPR_RESULTS ?>
-		</td>
+		<td></td>
 		<?php
 			foreach ($dates as $date) {
 				echo "<td class='results-cell'>";

@@ -55,6 +55,9 @@ select{
     color: #fff;
     cursor: pointer;
 }
+.sprudelform input[type=submit]:hover, .sprudelform input[type=button]:hover{
+    background-color: #565656;
+}
 .sprudelform .required{
     color: #cb4335;
 }
