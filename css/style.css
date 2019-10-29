@@ -371,6 +371,11 @@ td.schedule-blank {
 .schedule.mini input[type=text]{
     max-width: 100px;
     min-width: 50px;
+    height: 16px;
+}
+
+.schedule input[type=submit], .schedule button {
+    padding: 0 10px;
 }
 
 .centerBox{
@@ -463,6 +468,12 @@ td.schedule-blank {
 
 tr.schedule-new td.new-entry-choice {
     cursor:pointer;
+}
+
+table.schedule.mini tr.schedule-new > td.new-entry-choice {
+    width: 16px;
+    height: 16px;
+    background-image: none !important;
 }
 
 tr.schedule-new td.new-entry-choice-yes{
