@@ -106,7 +106,7 @@
 			</td>
 			<?php
 				foreach ($dates as $date) {
-					echo "<td class='new-entry-box new-entry-choice-maybe'>";
+					echo "<td class='new-entry-box new-entry-choice new-entry-choice-maybe'>";
 					echo "<input class='entry-value' type='hidden' name='values[]' value='2'/>";
 					echo "<input class='entry-date' type='hidden' name='dates[]' value='" . $date["date"] . "'/>";
 					echo "</td>";
@@ -120,7 +120,11 @@
 
 	<!-- RESULTS -->
 	<tr class="schedule-results valign-middle">
-		<td></td>
+		<td>
+			<div class="r r-legend r-yes"><?php echo SPR_POLL_RESULTS_YES ?></div>
+			<div class="r r-legend r-maybe"><?php echo SPR_POLL_RESULTS_MAYBE ?></div>
+			<div class="r r-legend r-no"><?php echo SPR_POLL_RESULTS_NO ?></div>
+		</td>
 		<?php
 			foreach ($dates as $date) {
 				echo "<td class='results-cell'>";
@@ -159,9 +163,9 @@
 
 <!-- COMMENTS FORM -->
 <div class="centerBox">
-	<form action="comment.php" method="post" class="sprudelform">
+	<form action="comment.php" method="post" class="form">
 		<input type="hidden" name="poll" value="<?php echo $id ?>"/>
-		<ul class="sprudelform">
+		<ul class="form">
 		    <li>
 		        <label><?php echo SPR_COMMENT_NAME ?> <span class="required">*</span></label>
 		        <input type="text" name="name" maxlength="32" class="field-long" required="true" />

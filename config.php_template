@@ -36,6 +36,9 @@
 	define('SPR_INDEX_SUBTITLE', 'scheduling polls');	// subtitle shown in page header area
 	define('SPR_REMOVE_CONFIRM', 'Do you really want to remove');	// confirmation text when removing an entry (followed by name)
 	define('SPR_DELETE_POLL_CONFIRM', 'Do you really want to delete this poll?');	// confirmation text when deleting a poll
+	define('SPR_POLL_RESULTS_YES', 'Yes:');		// poll results: yes
+	define('SPR_POLL_RESULTS_MAYBE', 'Maybe:');		// poll results: maybe
+	define('SPR_POLL_RESULTS_NO', 'No:');		// poll results: no
 	define('SPR_COMMENT_HEADING', 'Comments');		// comments section heading
 	define('SPR_COMMENT_NONE', 'No comments, yet.');	// no comments message
 	define('SPR_COMMENT_NAME', 'Name');				// comment name field label

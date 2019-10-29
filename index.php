@@ -58,7 +58,7 @@
 	<br><br>
 
 	<form action="index.php" method="post">
-		<ul class="sprudelform">
+		<ul class="form">
 		    <li>
 		        <label><?php echo SPR_NEW_FORM_TITLE ?> <span class="required">*</span></label>
 		        <input type="text" name="title" class="field-long" required="true" id="titleInput" placeholder="<?php echo SPR_NEW_FORM_TITLE_PLACEHOLDER ?>" />

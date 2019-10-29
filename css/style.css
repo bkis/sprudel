@@ -1,3 +1,23 @@
+/* GLOBAL CSS CUSTOM PROPERTIES */
+
+:root {
+    --col-background-light: #fff;
+    --col-background-dark: #363636;
+    --col-background-dark-hover: #565656;
+    --col-font-light: #fff;
+    --col-font-dark: #363636;
+    --col-decorative: #229954;
+    --col-reaction-positive: #229954;
+    --col-reaction-neutral: #888;
+    --col-reaction-negative: #cb4335;
+    --poll-table-gutters: 2px;
+    --border-radius-big: 6px;
+    --border-radius-small: 3px;
+}
+
+
+/* GENERAL */
+
 * {
     transition: .2s;
 }
@@ -5,8 +25,8 @@
 html, body {
     width: 100%;
     height: 100%;
-    background-color: #fff;
-    color: #363636;
+    background-color: var(--col-background-light);
+    color: var(--col-font-dark);
     font-size: 100%;
     font-family: sans-serif;
     box-sizing: border-box;
@@ -22,21 +42,24 @@ h2 {
 }
 
 a:link {
-    color: #229954;
+    color: var(--col-decorative);
     text-decoration: underline dotted;
 }
 a:visited {
-    color: #229954;
+    color: var(--col-decorative);
     text-decoration: underline dotted;
 }
 a:hover {
-    color: #229954;
+    color: var(--col-decorative);
     text-decoration: underline dotted;
 }
 a:active {
-    color: #229954;
+    color: var(--col-decorative);
     text-decoration: underline dotted;
 }
+
+
+/* TO BE CATEGORIZED AND SORTED */
 
 textarea {
     font-family: sans-serif;
@@ -49,36 +72,39 @@ div.noscript{
     position: absolute;
     top: 0px;
     left: 0px;
-    background-color: rgba(0,0,0,0.7);
+    background-color: var(--col-background-dark);
     z-index: 9999;
-    color: #fff;
+    color: var(--col-font-light);
     font-size: 200%;
     text-shadow: 0px 0px 4px rgba(255, 255, 255, 0.4);
     text-align: center;
 }
 
 #header {
+    display: flex;
+    justify-content: start;
+    align-items: center;
     padding: 10px;
     margin-bottom: 30px;
-    background-color: #363636;
-    color: #fff;
+    background-color: var(--col-background-dark);
+    color: var(--col-font-light);
     overflow: hidden;
 
     -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 
-    border-bottom: 3px solid #229954;
+    border-bottom: 5px solid var(--col-decorative);
 }
 
 #logo {
-    padding-left: 20px;
-    padding-right: 20px;
-    float: left;
+    height: 64px;
+    padding: 20px;
+    margin-right: 20px;
 }
 
-#info {
-    margin-left: 100px;
+#logo a, #logo img {
+    height: 100%;
 }
 
 p.details {
@@ -89,12 +115,12 @@ p.details {
 #urlInfo{
     word-wrap: break-word;
     font-size: 100%;
-    color: #999;
+    color: var(--col-reaction-neutral);
     vertical-align: middle;
 }
 
 #admin-url {
-    color: #cb4335;
+    color: var(--col-reaction-negative);
     font-size: 80%;
     font-weight: bold;
 }
@@ -126,6 +152,7 @@ p.details {
 }
 
 table.schedule {
+    border-collapse: separate;
     border: none;
     margin-bottom: 60px;
     margin-left: auto;
@@ -145,10 +172,10 @@ table.schedule.mini tr {
 }
 
 table.schedule td {
-    border: 2px solid #fff;
+    border: var(--poll-table-gutters) solid var(--col-background-light);
     padding: 4px;
     line-height: 0;
-    color: #fff;
+    color: var(--col-font-light);
     min-width: 24px;
 }
 
@@ -165,10 +192,12 @@ tr.valign-middle td{
 /* POLL HEADER (DATES, OPTIONS, ...) */
 
 td.schedule-header {
-    background-color: #363636;
+    background-color: var(--col-background-dark);
     width: 24px;
     vertical-align: bottom;
     text-align: center;
+    border-top-left-radius: var(--border-radius-big);
+    border-top-right-radius: var(--border-radius-big);
 }
 
 table.schedule.mini td.schedule-header {
@@ -218,15 +247,19 @@ td.schedule-header > div > div:before {
 
 td.schedule-names {
     text-align: right;
-    background-color: #363636;
+    background-color: var(--col-background-dark);
+    border-top-left-radius: var(--border-radius-big);
+    border-bottom-left-radius: var(--border-radius-big);
 }
 
 td.schedule-name-input {
-    background-color: #363636;
+    background-color: var(--col-background-dark);
+    border-top-left-radius: var(--border-radius-big);
+    border-bottom-left-radius: var(--border-radius-big);
 }
 
-tr.schedule-results {
-    border-top: 12px solid #fff;
+tr.schedule-results td {
+    border-top: 12px solid var(--col-background-light);
 }
 
 table.schedule.mini tr.schedule-results {
@@ -238,15 +271,17 @@ tr.schedule-results td {
 }
 
 tr.schedule-results td.top {
-    background-color: #229954;
+    background-color: var(--col-reaction-positive);
 }
 
 td.schedule-delete{
     width: 24px;
     height: 24px;
     cursor: pointer;
-    background: #363636 url(../img/icon-delete.png) no-repeat;
+    background: var(--col-background-dark) url(../img/icon-delete.png) no-repeat;
     background-position: center center;
+    border-top-right-radius: var(--border-radius-big);
+    border-bottom-right-radius: var(--border-radius-big);
 }
 
 table.schedule.mini td.schedule-delete {
@@ -257,18 +292,19 @@ table.schedule.mini td.schedule-delete {
 }
 
 td.schedule-delete:hover {
-    background: #565656 url(../img/icon-delete.png) no-repeat;
-    background-position: center center;
+    background-color: var(--col-background-dark-hover);
 }
 
 td.schedule-submit {
-    background-color: #363636;
+    background-color: var(--col-background-dark);
     height: 24px;
     transition: .2s;
+    border-top-right-radius: var(--border-radius-big);
+    border-bottom-right-radius: var(--border-radius-big);
 }
 
 td.schedule-submit:hover {
-    background-color: #565656;
+    background-color: var(--col-background-dark-hover);
 }
 
 td.schedule-entry {
@@ -284,22 +320,22 @@ table.schedule.mini td.schedule-entry {
 }
 
 td.schedule-entry-yes {
-    background: #229954 url(../img/icon-yes.png) no-repeat;
+    background: var(--col-reaction-positive) url(../img/icon-yes.png) no-repeat;
     background-position: center center;
 }
 
 td.schedule-entry-no {
-    background: #cb4335 url(../img/icon-no.png) no-repeat;
+    background: var(--col-reaction-negative) url(../img/icon-no.png) no-repeat;
     background-position: center center;
 }
 
 td.schedule-entry-maybe {
-    background: #999 url(../img/icon-maybe.png) no-repeat;
+    background: var(--col-reaction-neutral) url(../img/icon-maybe.png) no-repeat;
     background-position: center center;
 }
 
 td.schedule-blank {
-    background-color: #fff;
+    background-color: var(--col-background-light);
 }
 
 .schedule input[type=checkbox]{
@@ -307,53 +343,17 @@ td.schedule-blank {
     vertical-align: -3px;
 }
 
-.schedule input[type=text],
-.schedule input[type=date],
-.schedule input[type=datetime],
-.schedule input[type=number],
-.schedule input[type=search],
-.schedule input[type=time],
-.schedule input[type=url],
-.schedule input[type=email],
-textarea,
-select{
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    border:1px solid #BEBEBE;
-    padding: 2px;
-    margin:0px;
-    outline: none; 
-}
-
-button {
-    background: #363636;
-    padding: 8px 15px 8px 15px;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    transition: .2s;
-}
-
-button:hover {
-    background: #565656;
-}
-
-.schedule input[type=submit], .schedule input[type=button]{
-    background-color: #363636;
-    width: 36px;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-}
-
 .schedule input[type=submit].save {
     font-size: inherit;
     background-color: transparent;
-    cursor:pointer;
+    border: none;
+    cursor: pointer;
     width: auto;
-    height: 24px;
+    height: 100%;
+    line-height: .5;
     transition: .2s;
+    border-top-right-radius: var(--border-radius-big);
+    border-bottom-right-radius: var(--border-radius-big);
 }
 
 .schedule input[type=submit].delete {
@@ -369,8 +369,11 @@ button:hover {
     font-size: inherit;
     max-width: 200px;
     min-width: 150px;
-    margin: 2px;
+    height: 20px;
+    margin: 0;
     text-align: right;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .schedule.mini input[type=text]{
@@ -404,11 +407,11 @@ button:hover {
 }
 
 .success{
-    color: #229954;
+    color: var(--col-reaction-positive);
 }
 
 .fail{
-    color: #cb4335;
+    color: var(--col-reaction-negative);
 }
 
 .results-cell {
@@ -416,31 +419,38 @@ button:hover {
 }
 
 .r {
+    height: 24px;
     padding-top: 2px;
     margin-bottom: 2px;
     text-align: center;
     width: 100%;
+    color: var(--col-font-light);
+}
+
+.schedule.mini .r {
+    height: 16px;
+}
+
+.r-legend {
+    text-align: right;
 }
 
 .r-yes {
-    color: #fff;
-    background-color: #229954;
+    color: var(--col-reaction-positive);
 }
 
 .r-maybe {
-    color: #fff;
-    background-color: #888;
+    color: var(--col-reaction-neutral);
 }
 
 .r-no {
-    color: #fff;
-    background-color: #cb4335;
+    color: var(--col-reaction-negative);
 }
 
 .comment-container{
     padding-top: 20px;
     padding-bottom: 20px;
-    color: #363636;
+    color: var(--col-font-dark);
     font-size: 90%;
     border-bottom: dotted 1px #ccc;
 }
@@ -463,25 +473,103 @@ table.schedule td.new-entry-box {
     padding: 0px;
 }
 
-tr.schedule-new td {
-    border-top: 12px solid #fff;
+tr.schedule-new {
+    margin-top: 20px;
+}
+
+tr.schedule-new td.new-entry-choice {
+    cursor:pointer;
 }
 
 tr.schedule-new td.new-entry-choice-yes{
-    background: #229954 url(../img/icon-yes.png) no-repeat;
-    background-position: center center;
-    cursor:pointer;
+    background: var(--col-reaction-positive) url(../img/icon-yes.png) no-repeat center center;
 }
 
 tr.schedule-new td.new-entry-choice-maybe{
-    background: #999 url(../img/icon-maybe.png) no-repeat;
-    background-position: center center;
-    cursor:pointer;
+    background: var(--col-reaction-neutral) url(../img/icon-maybe.png) no-repeat center center;
 }
 
 tr.schedule-new td.new-entry-choice-no{
-    background: #cb4335 url(../img/icon-no.png) no-repeat;
-    background-position: center center;
-    cursor:pointer;
+    background: var(--col-reaction-negative) url(../img/icon-no.png) no-repeat center center;
 }
 
+
+/* FORM CSS */
+
+.form {
+    margin: 0px auto;
+    width: 400px;
+    max-width: 100%;
+}
+
+li {
+    padding: 0;
+    display: block;
+    list-style: none;
+    margin: 10px 0 0 0;
+}
+
+label{
+    margin:0 0 3px 0;
+    padding:0px;
+    display:block;
+}
+
+input[type=text],
+input[type=date],
+input[type=datetime],
+input[type=number],
+input[type=search],
+input[type=time],
+input[type=url],
+input[type=email],
+textarea,
+select{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border:1px solid #bebebe;
+    padding: 7px;
+    margin:0px;
+    border-radius: var(--border-radius-small);
+    outline: none; 
+}
+
+.field-divided{
+    width: 49%;
+}
+
+.field-long{
+    width: 100%;
+}
+
+.field-select{
+    width: 100%;
+}
+
+.field-textarea{
+    height: 100px;
+}
+
+input[type=submit],
+input[type=button],
+button[type=submit],
+button[type=button]{
+    background: var(--col-background-dark);
+    padding: 8px 15px 8px 15px;
+    border: none;
+    color: var(--col-font-light);
+    cursor: pointer;
+    border-radius: var(--border-radius-small);
+}
+
+input[type=submit]:hover,
+input[type=button]:hover,
+button[type=submit]:hover,
+button[type=button]:hover{
+    background-color: var(--col-background-dark-hover);
+}
+
+.required{
+    color: #cb4335;
+}
