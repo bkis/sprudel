@@ -1,4 +1,4 @@
-/* GLOBAL CSS CUSTOM PROPERTIES */
+/* ==== GLOBAL CSS CUSTOM PROPERTIES ==== */
 
 :root {
     --col-background-light: #fff;
@@ -16,10 +16,19 @@
 }
 
 
-/* GENERAL */
+/* ==== FONTS ==== */
+
+@font-face {
+    font-family: 'Quicksand';
+    src: url('../fonts/Quicksand-Regular.ttf') format('truetype');
+}
+
+
+/* ==== GENERAL ==== */
 
 * {
     transition: .2s;
+    font-family: 'Quicksand', sans-serif;
 }
 
 html, body {
@@ -28,7 +37,7 @@ html, body {
     background-color: var(--col-background-light);
     color: var(--col-font-dark);
     font-size: 100%;
-    font-family: sans-serif;
+    font-family: 'Quicksand', sans-serif;
     box-sizing: border-box;
 }
 
@@ -45,24 +54,31 @@ a:link {
     color: var(--col-decorative);
     text-decoration: underline dotted;
 }
+
 a:visited {
     color: var(--col-decorative);
     text-decoration: underline dotted;
 }
+
 a:hover {
     color: var(--col-decorative);
     text-decoration: underline dotted;
 }
+
 a:active {
     color: var(--col-decorative);
     text-decoration: underline dotted;
 }
 
+.pale {
+    opacity: 0.6;
+}
 
-/* TO BE CATEGORIZED AND SORTED */
+
+/* ==== TO BE CATEGORIZED AND SORTED ==== */
 
 textarea {
-    font-family: sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-size: 80%;
 }
 
@@ -125,18 +141,18 @@ p.details {
     font-weight: bold;
 }
 
-#btnCopy{
+#btnCopy {
     cursor: pointer;
     margin-right: 10px;
     vertical-align: middle;
 }
 
-#btnDeletePoll{
+#btnDeletePoll {
     cursor: pointer;
     margin-right: 25px;
 }
 
-#footer{
+#footer {
     text-align: center;
     margin-top: 50px;
     padding-top: 15px;
@@ -154,13 +170,18 @@ p.details {
 table.schedule {
     border-collapse: separate;
     border: none;
-    margin-bottom: 60px;
+    margin-bottom: 2rem;
     margin-left: auto;
     margin-right: auto;
 }
 
 table.schedule.mini {
     font-size: 60%;
+    font-weight: bold;
+}
+
+table.schedule.mini input {
+    font-weight: bold;
 }
 
 table.schedule tr {
@@ -202,15 +223,19 @@ td.schedule-header {
 
 table.schedule.mini td.schedule-header {
     width: 16px;
-    padding-top: 2px;
-    padding-bottom: 2px;
+    padding-top: 4px;
+    padding-bottom: 4px;
 }
 
 td.schedule-header > div {
     display: inline-block;
     overflow: hidden;
-    width: 1.5em;
+    width: 1.4rem;
     text-align: center;
+}
+
+table.schedule.mini td.schedule-header > div {
+    width: .8rem;
 }
 
 td.schedule-header > div > div {
@@ -250,6 +275,10 @@ td.schedule-names {
     background-color: var(--col-background-dark);
     border-top-left-radius: var(--border-radius-big);
     border-bottom-left-radius: var(--border-radius-big);
+}
+
+table.schedule.mini td.schedule-names {
+    padding: 0 4px;
 }
 
 td.schedule-name-input {
@@ -430,6 +459,7 @@ td.schedule-submit {
 
 .schedule.mini .r {
     height: 16px;
+    font-weight: bold;
 }
 
 .r-legend {
@@ -502,8 +532,16 @@ tr.table-spacer-row-big > td {
     border: 16px solid var(--col-background-light);
 }
 
+table.schedule.mini tr.table-spacer-row > td {
+    border: 4px solid var(--col-background-light);
+}
 
-/* FORM CSS */
+table.schedule.mini tr.table-spacer-row-big > td {
+    border: 8px solid var(--col-background-light);
+}
+
+
+/* ==== FORM CSS ==== */
 
 .form {
     margin: 0px auto;

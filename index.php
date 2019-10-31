@@ -54,8 +54,7 @@
 
 <div class="centerBox">
 
-	<span><?php echo preg_replace("/\bn\b/", SPR_DELETE_AFTER, SPR_LIFESPAN) ?></span>
-	<br><br>
+	<h2><?php echo SPR_INDEX_HEADING ?></h2><br/>
 
 	<form action="index.php" method="post">
 		<ul class="form">
@@ -81,12 +80,16 @@
 		    <li>
 		    	<img src="img/icon-more.png" class="btnFormDate" id="btnMore"/>
 		    	<img src="img/icon-less-disabled.png" class="btnFormDate" id="btnLess"/>
-		    </li>
+			</li>
+			<li>
+				<br/><span class="pale"><?php echo preg_replace("/\bn\b/", SPR_DELETE_AFTER, SPR_LIFESPAN) ?></span>
+			</li>
 		    <li class="content-right">
 		        <input type="submit" value="<?php echo SPR_NEW_FORM_SUBMIT ?>" />
 		    </li>
 		</ul>
 	</form>
+
 </div>
 
 

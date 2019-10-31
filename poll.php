@@ -142,8 +142,6 @@
 	</tr>
 
 </table>
-<br>
-
 
 
 <!-- COMMENTS LIST -->
@@ -164,7 +162,8 @@
 		}
 
 	?>
-</div><br>
+</div>
+
 
 <!-- COMMENTS FORM -->
 <div class="centerBox">
