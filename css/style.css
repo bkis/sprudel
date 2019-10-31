@@ -287,14 +287,6 @@ td.schedule-delete:hover {
     background-color: var(--col-background-dark-hover);
 }
 
-td.schedule-submit {
-    background-color: var(--col-background-dark);
-    height: 24px;
-    transition: .2s;
-    border-top-right-radius: var(--border-radius-big);
-    border-bottom-right-radius: var(--border-radius-big);
-}
-
 td.schedule-submit:hover {
     background-color: var(--col-background-dark-hover);
 }
@@ -335,6 +327,18 @@ td.schedule-blank {
     vertical-align: -3px;
 }
 
+td.schedule-submit {
+    background-color: var(--col-background-dark);
+    height: 24px;
+    transition: .2s;
+    border-top-right-radius: var(--border-radius-big);
+    border-bottom-right-radius: var(--border-radius-big);
+}
+
+.schedule.mini td.schedule-submit {
+    height: 16px;
+}
+
 .schedule input[type=submit].save {
     font-size: inherit;
     background-color: transparent;
@@ -360,8 +364,8 @@ td.schedule-blank {
 .schedule input[type=text]{
     font-size: inherit;
     max-width: 200px;
-    min-width: 150px;
-    height: 20px;
+    min-width: 100px;
+    height: 24px;
     margin: 0;
     text-align: right;
     border-top-right-radius: 0;
@@ -369,9 +373,9 @@ td.schedule-blank {
 }
 
 .schedule.mini input[type=text]{
+    height: 16px;
     max-width: 100px;
     min-width: 50px;
-    height: 16px;
 }
 
 .schedule input[type=submit], .schedule button {
@@ -488,10 +492,14 @@ tr.schedule-new td.new-entry-choice-no{
     background: var(--col-reaction-negative) url(../img/icon-no.png) no-repeat center center;
 }
 
-tr.table-spacer-row {
+tr.table-spacer-row > td {
     padding: 0;
     margin: 0;
-    border: 12px solid var(--col-background-light);
+    border: 8px solid var(--col-background-light);
+}
+
+tr.table-spacer-row-big > td {
+    border: 16px solid var(--col-background-light);
 }
 
 
