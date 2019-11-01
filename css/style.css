@@ -26,7 +26,7 @@
 
 /* ==== GENERAL ==== */
 
-* {
+input, button, .schedule * {
     transition: .2s;
     font-family: 'Quicksand', sans-serif;
 }
@@ -68,6 +68,10 @@ a:hover {
 a:active {
     color: var(--col-decorative);
     text-decoration: underline dotted;
+}
+
+em {
+    font-weight: bold;
 }
 
 .pale {
@@ -147,11 +151,6 @@ p.details {
     vertical-align: middle;
 }
 
-#btnDeletePoll {
-    cursor: pointer;
-    margin-right: 25px;
-}
-
 #footer {
     text-align: center;
     margin-top: 50px;
@@ -165,6 +164,12 @@ p.details {
 #poll-controls {
     text-align: right;
     margin-bottom: 2rem;
+    margin-right: 2rem;
+}
+
+#poll-controls button {
+    margin-left: 1rem;
+    cursor: pointer;
 }
 
 table.schedule {

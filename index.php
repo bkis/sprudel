@@ -1,50 +1,4 @@
 <?php
-	if (isset($_POST["title"]) && strlen($_POST["title"]) > 0
-		&& isset($_POST["dates"])){
-		
-		require_once 'db.php';
-
-		$title = htmlspecialchars($_POST["title"]);
-		$details = htmlspecialchars($_POST["details"]);
-		$dates = array_values(array_unique($_POST["dates"]));
-		$id = hash("md4", time() . $title);
-
-		$idadm = "NA";
-		if (isset($_POST["adminonly"])) {
-			if (strcmp("true", $_POST["adminonly"]) == 0) {
-				$idadm = hash("md4", time() . $title . "admin");
-			}
-		}
-
-		//write data to polls table
-		$database->action(function($database) use ($id, $idadm, $title, $details) {
-			$database->insert("polls", [
-				"poll" => $id,
-				"polladm" => $idadm,
-				"title" => $title,
-				"details" => $details,
-				"changed" => date("Y-m-d H:i:s")
-			]);
-		});
-
-		//prepare dates
-		$datesArr = array();
-		for ($i=0; $i < sizeof($dates); $i++) { 
-			array_push($datesArr, array("poll" => $id, "date" => $dates[$i], "sort" => $i));
-		}
-
-		//write data to dates table
-		$database->action(function($database) use ($datesArr) {
-			$database->insert("dates", $datesArr);
-		});
-
-		//redirect to poll
-		$redir = "poll.php?poll=" . $id;
-		if (strcmp($idadm, "NA") != 0) $redir .= "&adm=" . $idadm;
-		header("Location: " . $redir);
-		exit();
-	}
-
 	$currDate = date("Y-m-d");
 	$btnDateHTML = "<input type='text' name='dates[]' maxlength='32' class='dateInput field-with-btn'
 		data-toggle='datepicker' required='true' style='margin-top: 4px;' /><button class='btn-in-field'>D</button>";
@@ -56,7 +10,7 @@
 
 	<h2><?php echo SPR_INDEX_HEADING ?></h2><br/>
 
-	<form action="index.php" method="post">
+	<form action="poll.new.php" method="post">
 		<ul class="form">
 		    <li>
 		        <label><?php echo SPR_NEW_FORM_TITLE ?> <span class="required">*</span></label>
@@ -69,7 +23,7 @@
 				<?php if (SPR_ADMIN_LINKS == 1) {
 						echo "<li>";
 						echo "<label>" . SPR_NEW_FORM_ADMIN . "</label>";
-						echo "<input type='checkbox' name='adminonly' value='true' id='adminInput' /> " . SPR_NEW_FORM_ADMIN_CHECKBOX;
+						echo "<input type='checkbox' name='adminLink' value='true' id='adminInput' /> " . SPR_NEW_FORM_ADMIN_CHECKBOX;
 						echo "</li><br/>";
 				}
 				?>
@@ -92,58 +46,8 @@
 
 </div>
 
+<!-- INDEX PAGE JS -->
+<?php include "index.js.php" ?>
 
-<script type="text/javascript">
-
-	$(document).ready(function() {
-
-		$("#titleInput").focus();
-		$("#btnLess").css("cursor", "default");
-
-		var datepickerOptions = {
-			format: '<?php echo SPR_DATEPICKER_FORMAT ?>',
-			autoHide: 'true',
-			weekStart: 1,
-			language: '<?php echo SPR_DATEPICKER_LANG ?>',
-			days: ['<?php echo SPR_DATEPICKER_SUNDAY ?>',
-				   '<?php echo SPR_DATEPICKER_MONDAY ?>',
-				   '<?php echo SPR_DATEPICKER_TUESDAY ?>',
-				   '<?php echo SPR_DATEPICKER_WEDNESDAY ?>',
-				   '<?php echo SPR_DATEPICKER_THURSDAY ?>',
-				   '<?php echo SPR_DATEPICKER_FRIDAY ?>',
-				   '<?php echo SPR_DATEPICKER_SATURDAY ?>']
-		};
-
-		//init first datepicker
-		$(".dateInput").datepicker(datepickerOptions);
-
-		//add new date field
-		$("#btnMore").click(function() {
-            $(".dateInput").last().after($(".dateInput").last().clone());
-            $(".dateInput").last().val($(".dateInput:nth-last-child(2)").val());
-            $(".dateInput").last().focus();
-            $(".dateInput").last().select();
-			$(".dateInput").last().datepicker(datepickerOptions);
-			$("#btnLess").attr("src", "img/icon-less.png");
-			$("#btnLess").css("cursor", "pointer");
-        });
-
-		//remove one date field
-        $("#btnLess").click(function() {
-        	$(".dateInput").not(':first').last().datepicker('destroy');
-            $(".dateInput").not(':first').last().detach();
-            $(".dateInput").last().focus();
-            $(".dateInput").last().select();
-            $(".dateInput").last().datepicker(datepickerOptions);
-            if ($(".dateInput").size() == 1){
-            	$("#btnLess").attr("src", "img/icon-less-disabled.png");
-            	$("#btnLess").css("cursor", "default");
-            }
-        });
-
-	});
-
-</script>
-
-
+<!-- PAGE FOOTER -->
 <?php include "footer.php" ?>

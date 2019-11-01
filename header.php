@@ -1,4 +1,12 @@
-<?php require_once 'config.php' ?>
+<?php
+
+	// FOR DEVELOPMENT: UN-COMMENT TO PRINT ERRORS AND WARNINGS
+	ini_set('display_errors', 1);
+	ini_set('display_startup_errors', 1);
+	error_reporting(E_ALL);
+
+	require_once 'config.php'
+?>
 
 
 <!DOCTYPE html>
@@ -50,7 +58,6 @@
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<script src="res/clipboard/clipboard.min.js"></script>
 
-
 </head>
 <body>
 
@@ -65,22 +72,38 @@
 	</noscript>
 
 	<div id="header">
+	
 		<div id="logo">
 			<a href="index.php">
 				<img src="img/logo.png" alt=""/>
 			</a>
 		</div>
-		<div id="info">
-			<h1><?php echo (isset($poll) ? $poll["title"] : SPR_INDEX_TITLE); ?></h1>
-			<p class="details"><?php echo (isset($poll) ? $poll["details"] : SPR_INDEX_SUBTITLE); ?></p>
-			<?php
-				if (isset($poll)){
-					echo "<br/><img src='img/icon-copy.png' id='btnCopy' data-clipboard-target='#urlInfo' /><span id='urlInfo'></span>";
 
-					if (strcmp($poll["polladm"], "NA") != 0 && strcmp($poll["polladm"], $adminId) == 0) {
-						echo "<br/><br/><div id='admin-url'>ADMIN-LINK:<br/><br/><span id='admUrl'></span>&adm=" . $adminId . "</div>";
+		<div id="info">
+
+			<!-- HEADER IS USED IN POLL VIEW -->
+			<?php if (isset($poll)) { ?>
+				<h1><?php echo $poll->getTitle(); ?></h1>
+				<p class="details"><?php echo $poll->getDetails(); ?></p>
+				<br/>
+				<img src='img/icon-copy.png' id='btnCopy' data-clipboard-target='#urlInfo' />
+				<span id='urlInfo'></span>
+
+				<!-- If admin links are enabled and the correct one came with the request, show admin link -->
+				<?php
+					if (strcmp($poll->getAdminId(), "NA") != 0
+					 && strcmp($poll->getAdminId(), $adminId) == 0) {
+				?>
+						<br/><br/><div id='admin-url'>ADMIN-LINK:<br/><br/><span id='admUrl'></span>&adm=<?php echo $adminId ?></div>
+				<?php
 					}
-				}
-			?>
+				?>
+
+			<!-- HEADER IS USED IN OTHER VIEW -->
+			<?php } else { ?>
+				<h1><?php echo SPR_INDEX_TITLE; ?></h1>
+				<p class="details"><?php echo SPR_INDEX_SUBTITLE; ?></p>
+			<?php } ?>
+
 		</div>
 	</div>

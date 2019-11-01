@@ -5,7 +5,7 @@
 	require_once '../config.php';
 	require_once '../medoo.php';
 
-	$database = new medoo([
+	$db = new medoo([
 		'database_type' => 'mysql',
 		'database_name' => SPR_DB_NAME,
 		'server' => SPR_DB_SERVER,
@@ -26,27 +26,27 @@
 	$minDate = date("Y-m-d H:i:s", strtotime('-' . SPR_DELETE_AFTER . ' days', time()));
 
 	//get IDs of polls to delete
-	$trash = $database->select("polls", "poll", ["changed[<]" => $minDate]);
+	$trash = $db->select("polls", "pollId", ["changed[<]" => $minDate]);
 
 	//remove old polls
 	foreach ($trash as $id) {
 		echo "Deleting poll: " . $id . " ..." . PHP_EOL;
 
-		$database->action(function($database) use ($id) {
+		$db->action(function($db) use ($id) {
 			//delete from polls table
-			$database->delete("polls", ["poll" => $id]);
+			$db->delete("polls", ["pollId" => $id]);
 
 			//delete from entries table
-			$database->delete("entries", ["poll" => $id]);
+			$db->delete("entries", ["pollId" => $id]);
 
 			//delete from dates table
-			$database->delete("dates", ["poll" => $id]);
+			$db->delete("dates", ["pollId" => $id]);
 
 			//delete from comments table
-			$database->delete("comments", ["poll" => $id]);
+			$db->delete("comments", ["pollId" => $id]);
 
 			//removed poll?
-			if ($database->has("polls", ["poll" => $id])){
+			if ($db->has("polls", ["pollId" => $id])){
 				echo "ERROR: Something went wrong..." . PHP_EOL;
 				return false;
 			}
