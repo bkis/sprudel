@@ -56,7 +56,7 @@
 	define('SPR_NEW_FORM_DATES', 'Dates / Options');
 	define('SPR_NEW_FORM_TITLE_PLACEHOLDER', 'What about a title for your poll?');
 	define('SPR_NEW_FORM_DETAILS_PLACEHOLDER', 'Your participants may also like a short description of what this poll is all about, right?');
-	define('SPR_NEW_FORM_ADMIN_CHECKBOX', 'Editing/deleting poll only with admin link');
+	define('SPR_NEW_FORM_ADMIN_CHECKBOX', 'Deleting poll/entries only via admin link');
 	define('SPR_NEW_FORM_DATES_PLACEHOLDER', 'Type what you want or pick a date!');
 	define('SPR_NEW_FORM_SUBMIT', 'Create poll!');
 

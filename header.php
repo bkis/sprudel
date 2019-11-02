@@ -47,7 +47,7 @@
 
 	<!-- JQUERY
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-	<script type="text/javascript" src="res/jquery/jquery-1.12.3.min.js"></script>
+	<script type="text/javascript" src="res/jquery/jquery-3.4.1.min.js"></script>
 
 	<!-- DATEPICKER
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->

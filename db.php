@@ -1,7 +1,9 @@
 <?php
 
+	require_once 'Medoo.php';
+	use Medoo\Medoo;
+
 	require_once 'config.php';
-	require_once 'medoo.php';
 	require_once 'poll.model.php';
 
 	class DB {

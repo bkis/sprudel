@@ -8,7 +8,7 @@
         $("#admUrl").text(pollUrl);
         
         // url clipboard copy feature
-        var clipboard = new Clipboard('#btnCopy');
+        var clipboard = new ClipboardJS('#btnCopy');
         clipboard.on('success', function(e) {
             $("#btnCopy").attr("src", "img/icon-copied.png");
             $("#name-input").focus();
