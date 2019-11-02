@@ -35,7 +35,13 @@
         function getDatesForDisplay(){
             $preparedDates = array();
             foreach ($this->dates as $date) {
-				$preparedDates[$date["sort"]] = array("date" => $date["date"], "yes" => 0, "maybe" => 0, "no" => 0);
+				$preparedDates[$date["sort"]] = array(
+                    "date" => $date["date"],
+                    "yes" => 0,
+                    "maybe" => 0,
+                    "no" => 0,
+                    "total" => 0
+                );
 			}
             return $preparedDates;
         }

@@ -22,12 +22,5 @@
 	if(isset($_GET["adm"]) && !empty($_GET["adm"]))
 		$adminId = htmlspecialchars($_GET["adm"]);
 
-	//set zero entry count values
-	for ($i=0; $i < sizeof($poll->getDates()); $i++) {
-		$poll->getDates()[$i]["yes"] = 0;
-		$poll->getDates()[$i]["maybe"] = 0;
-		$poll->getDates()[$i]["no"] = 0;
-	}
-
 	include "poll.view.php";
 ?>

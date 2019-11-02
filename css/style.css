@@ -26,8 +26,17 @@
 
 /* ==== GENERAL ==== */
 
-input, button, .schedule * {
-    transition: .2s;
+* {
+    -webkit-transition: background-color .2s;
+    -ms-transition: background-color .2s;
+    transition: background-color .2s;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.schedule td {
+    -webkit-transition: height .2s;
+    -ms-transition: height .2s;
+    transition: height .2s;
     font-family: 'Quicksand', sans-serif;
 }
 
@@ -79,7 +88,91 @@ em {
 }
 
 
+/* DATEPICKER COLORS */
+
+.datepicker-container * {
+    font-size: 16px;
+}
+
+.datepicker-top-left,
+.datepicker-top-right {
+    border-top-color: var(--col-decorative) !important;
+}
+
+.datepicker-top-left::before,
+.datepicker-top-right::before {
+    border-bottom-color: var(--col-decorative) !important;
+}
+
+.datepicker-panel > ul > li:hover {
+    background-color: #bbb !important;
+}
+
+.datepicker-panel > ul > li.picked,
+.datepicker-panel > ul > li.picked:hover {
+    color: var(--col-decorative) !important;
+}
+
+.datepicker-panel > ul > li.highlighted,
+.datepicker-panel > ul > li.highlighted:hover {
+    background-color: var(--col-decorative) !important;
+    color: var(--col-font-light) !important;
+}
+
+
 /* ==== TO BE CATEGORIZED AND SORTED ==== */
+
+.poll-url-container {
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.poll-url-container span {
+    min-width: 100px;
+    font-weight: bold;
+    font-size: 80%;
+}
+
+.poll-url-container input {
+    margin-right: 4px;
+    height: 24px;
+    width: 256px;
+    max-width: 50%;
+    color: var(--col-font-light);
+    background-color: var(--col-background-dark-hover);
+    border: unset !important;
+}
+
+.poll-url-container button {
+    margin-left: 10px;
+    line-height: .5;
+    height: 24px;
+    background: var(--col-background-dark) url(../img/icon-copy.png) no-repeat center center !important;
+    background-size: 16px !important;
+}
+
+.poll-url-container button:hover {
+    background: var(--col-background-dark-hover) url(../img/icon-copy.png) no-repeat center center !important;
+    background-size: 16px !important;
+}
+
+.poll-url-container button.copy-success,
+.poll-url-container button.copy-success:hover {
+    background: var(--col-reaction-positive) url(../img/icon-copy.png) no-repeat center center !important;
+    background-size: 16px !important;
+}
+
+.poll-url-container button.copy-fail,
+.poll-url-container button.copy-fail:hover {
+    background: var(--col-reaction-negative) url(../img/icon-copy.png) no-repeat center center !important;
+    background-size: 16px !important;
+}
+
+.poll-url-container img {
+    margin-left: 10px;
+    cursor: pointer;
+}
 
 textarea {
     font-family: 'Quicksand', sans-serif;
@@ -117,6 +210,10 @@ div.noscript{
     border-bottom: 5px solid var(--col-decorative);
 }
 
+#header h1 {
+    margin-top: 10px;
+}
+
 #logo {
     height: 64px;
     padding: 20px;
@@ -130,13 +227,6 @@ div.noscript{
 p.details {
     font-size: 90%;
     max-width: 768px;
-}
-
-#urlInfo{
-    word-wrap: break-word;
-    font-size: 100%;
-    color: var(--col-reaction-neutral);
-    vertical-align: middle;
 }
 
 #admin-url {
@@ -162,13 +252,13 @@ p.details {
 }
 
 #poll-controls {
-    text-align: right;
+    text-align: left;
+    margin-left: 2rem;
     margin-bottom: 2rem;
-    margin-right: 2rem;
 }
 
 #poll-controls button {
-    margin-left: 1rem;
+    margin: 0 .5rem;
     cursor: pointer;
 }
 
@@ -187,10 +277,6 @@ table.schedule.mini {
 
 table.schedule.mini input {
     font-weight: bold;
-}
-
-table.schedule tr {
-    height: 16px;
 }
 
 table.schedule.mini tr {
@@ -338,18 +424,15 @@ table.schedule.mini td.schedule-entry {
 }
 
 td.schedule-entry-yes {
-    background: var(--col-reaction-positive) url(../img/icon-yes.png) no-repeat;
-    background-position: center center;
+    background: var(--col-reaction-positive) url(../img/icon-yes.png) no-repeat center center;
 }
 
 td.schedule-entry-no {
-    background: var(--col-reaction-negative) url(../img/icon-no.png) no-repeat;
-    background-position: center center;
+    background: var(--col-reaction-negative) url(../img/icon-no.png) no-repeat center center;
 }
 
 td.schedule-entry-maybe {
-    background: var(--col-reaction-neutral) url(../img/icon-maybe.png) no-repeat;
-    background-position: center center;
+    background: var(--col-reaction-neutral) url(../img/icon-maybe.png) no-repeat center center;
 }
 
 td.schedule-blank {
@@ -364,7 +447,6 @@ td.schedule-blank {
 td.schedule-submit {
     background-color: var(--col-background-dark);
     height: 24px;
-    transition: .2s;
     border-top-right-radius: var(--border-radius-big);
     border-bottom-right-radius: var(--border-radius-big);
 }
@@ -442,11 +524,11 @@ td.schedule-submit {
 }
 
 .success{
-    color: var(--col-reaction-positive);
+    color: var(--col-reaction-positive) !important;
 }
 
 .fail{
-    color: var(--col-reaction-negative);
+    color: var(--col-reaction-negative) !important;
 }
 
 .results-cell {
@@ -454,21 +536,21 @@ td.schedule-submit {
 }
 
 .r {
+    font-size: 110%;
     height: 24px;
-    padding-top: 2px;
-    margin-bottom: 2px;
     text-align: center;
-    width: 100%;
     color: var(--col-font-light);
 }
 
 .schedule.mini .r {
+    font-size: 130%;
     height: 16px;
     font-weight: bold;
 }
 
 .r-legend {
     text-align: right;
+    font-weight: bold;
 }
 
 .r-yes {
@@ -481,6 +563,10 @@ td.schedule-submit {
 
 .r-no {
     color: var(--col-reaction-negative);
+}
+
+.r-total {
+    background: transparent url(../img/icon-star.png) no-repeat center center;
 }
 
 .comment-container{

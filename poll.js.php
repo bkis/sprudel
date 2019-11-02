@@ -4,18 +4,21 @@
     $(document).ready(function() {
         // show poll url
         var pollUrl = window.location.protocol + "//" + window.location.hostname + window.location.pathname + "?poll=<?php echo $poll->getId() ?>";
-        $("#urlInfo").text(pollUrl);
-        $("#admUrl").text(pollUrl);
+        $("#urlInfo").val(pollUrl);
+        $("#admUrl").val(pollUrl + "&adm=<?php echo $adminId ?>");
         
         // url clipboard copy feature
-        var clipboard = new ClipboardJS('#btnCopy');
-        clipboard.on('success', function(e) {
-            $("#btnCopy").attr("src", "img/icon-copied.png");
-            $("#name-input").focus();
+        var clipboard = new ClipboardJS(".copy-trigger");
+        clipboard.on("success", function(e) {
+            $(e.trigger).addClass("copy-success").addClass("copy-success").delay(600).queue(function(){
+                $(this).removeClass("copy-success").dequeue();
+            });
         });
-        clipboard.on('error', function(e) {
+        clipboard.on("error", function(e) {
             alert("<?php echo SPR_URL_COPY_ERROR ?>");
-            $("#name-input").focus();
+            $(e.trigger).addClass("copy-fail").delay(2000).queue(function(){
+                $(this).removeClass("copy-fail").dequeue();
+            });
         });
         
         // delete entry button functionality

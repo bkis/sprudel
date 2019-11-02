@@ -11,10 +11,10 @@
 	//// following values to use Sprudel	
 
 	// database settings
-	define('SPR_DB_NAME', 'your_db_name');		// database name
-	define('SPR_DB_SERVER', 'your_db_host');		// database server ('localhost' in most cases)
-	define('SPR_DB_USERNAME', 'your_db_user');			// username to access database
-	define('SPR_DB_PASSWORD', 'your_db_password');	// password to access database
+	define('SPR_DB_NAME', 'db_sprudel');		// database name
+	define('SPR_DB_SERVER', 'localhost');		// database server ('localhost' in most cases)
+	define('SPR_DB_USERNAME', 'web');			// username to access database
+	define('SPR_DB_PASSWORD', 'web');	// password to access database
 
 
 	//// OPTIONAL
@@ -25,7 +25,7 @@
 	define('SPR_ADMIN_INTERFACE', '0');		// insert 1 if you want to enable admin interface
 
 	//turn on/off admin link functionality
-	define('SPR_ADMIN_LINKS', '0');			// insert 1 if you want to enable admin links functionality
+	define('SPR_ADMIN_LINKS', '1');			// insert 1 if you want to enable admin links functionality
 
 	// lifespan of inactive polls
 	define('SPR_DELETE_AFTER', '180');	//delete inactive polls after x days (daily cronjob for cleanup.php needed!)
@@ -35,6 +35,7 @@
 	define('SPR_INDEX_TITLE', 'Sprudel');				// title shown in page header area
 	define('SPR_INDEX_SUBTITLE', 'scheduling polls');	// subtitle shown in page header area
 	define('SPR_INDEX_HEADING', 'Create a new poll ...');	// heading for index page
+	define('SPR_RESULTS', 'Result');					// poll results row text
 	define('SPR_REMOVE_CONFIRM', 'Do you really want to remove');	// confirmation text when removing an entry (followed by name)
 	define('SPR_DELETE_POLL_CONFIRM', 'Do you really want to delete this poll?');	// confirmation text when deleting a poll
 	define('SPR_POLL_RESULTS_YES', 'Yes:');		// poll results: yes
@@ -46,18 +47,18 @@
 	define('SPR_COMMENT_TEXT', 'Comment');			// comment text field label
 	define('SPR_COMMENT_SUBMIT', 'Send');				// comment submit button text
 	define('SPR_NO_JS_MSG', 'Please enable JavaScript in your browser and reload this page.');
-	define('SPR_404', 'Whoops... did you use a wrong link?');	// poll not found page text
+	define('SPR_404', 'Whoops... did you use a wrong link?');		// poll not found page text
 	define('SPR_LIFESPAN', 'Attention! Inactive polls will be deleted automatically after n days!');		// info about how long inactive polls are stored
 																		// (leave "n" as a placeholder for the number of days - it will be replaced automatically!)
 	// new poll form strings / labels
 	define('SPR_NEW_FORM_TITLE', 'Title');			
 	define('SPR_NEW_FORM_DESCRIPTION', 'Description');
-	define('SPR_NEW_FORM_ADMIN', 'Use an Admin-Link?');
 	define('SPR_NEW_FORM_DATES', 'Dates / Options');
 	define('SPR_NEW_FORM_TITLE_PLACEHOLDER', 'What about a title for your poll?');
 	define('SPR_NEW_FORM_DETAILS_PLACEHOLDER', 'Your participants may also like a short description of what this poll is all about, right?');
-	define('SPR_NEW_FORM_ADMIN_CHECKBOX', 'Deleting poll/entries only via admin link');
-	define('SPR_NEW_FORM_DATES_PLACEHOLDER', 'Type what you want or pick a date!');
+	define('SPR_NEW_FORM_ADMIN', 'Admin Link');
+	define('SPR_NEW_FORM_ADMIN_CHECKBOX', 'Deleting poll/entries only with admin link');
+	define('SPR_NEW_FORM_DATES_PLACEHOLDER', 'Type whatever you want or pick a date!');
 	define('SPR_NEW_FORM_SUBMIT', 'Create poll!');
 
 	//datepicker
@@ -79,5 +80,16 @@
 	//turn on/off footer text
 	define('SPR_SHOW_FOOTER_LINK', '1');				// insert 0 if you want to remove the footer link, but it would be nice to leave it there
 
+
+
+	/////////////////////////////////////////////////////
+	//// figure out the base URL (DON'T TOUCH THIS!) ////
+	/////////////////////////////////////////////////////
+
+	$doc_root = preg_replace("!${_SERVER['SCRIPT_NAME']}$!", '', $_SERVER['SCRIPT_FILENAME']);
+	$protocol = empty($_SERVER['HTTPS']) ? 'http' : 'https';
+	$domain = $_SERVER['SERVER_NAME'];
+	$base_url = preg_replace("!^${doc_root}!", '', __DIR__);
+	define('SPR_BASE_URL', "${protocol}://${domain}${base_url}/");
 
 ?>

@@ -22,19 +22,19 @@
 	
 	<!-- Favicon
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-	<link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
-	<link rel="icon" type="image/png" sizes="192x192"  href="img/favicon/android-icon-192x192.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+	<link rel="apple-touch-icon" sizes="57x57" href="<?php echo SPR_BASE_URL ?>img/favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="<?php echo SPR_BASE_URL ?>img/favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="<?php echo SPR_BASE_URL ?>img/favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="<?php echo SPR_BASE_URL ?>img/favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="<?php echo SPR_BASE_URL ?>img/favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="<?php echo SPR_BASE_URL ?>img/favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="<?php echo SPR_BASE_URL ?>img/favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="<?php echo SPR_BASE_URL ?>img/favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo SPR_BASE_URL ?>img/favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="<?php echo SPR_BASE_URL ?>img/favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="<?php echo SPR_BASE_URL ?>img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="<?php echo SPR_BASE_URL ?>img/favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="<?php echo SPR_BASE_URL ?>img/favicon/favicon-16x16.png">
 	<link rel="manifest" href="/manifest.json">
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
@@ -42,21 +42,21 @@
 
 	<!-- CSS
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-	<link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="<?php echo SPR_BASE_URL ?>css/reset.css">
+	<link rel="stylesheet" href="<?php echo SPR_BASE_URL ?>css/style.css">
 
 	<!-- JQUERY
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-	<script type="text/javascript" src="res/jquery/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="<?php echo SPR_BASE_URL ?>res/jquery/jquery-3.4.1.min.js"></script>
 
 	<!-- DATEPICKER
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-	<link rel="stylesheet" href="res/datepicker/datepicker.min.css">
-	<script type="text/javascript" src="res/datepicker/datepicker.min.js"></script>
+	<link rel="stylesheet" href="<?php echo SPR_BASE_URL ?>res/datepicker/datepicker.min.css">
+	<script type="text/javascript" src="<?php echo SPR_BASE_URL ?>res/datepicker/datepicker.min.js"></script>
 
 	<!-- CLIPBOARD
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-	<script src="res/clipboard/clipboard.min.js"></script>
+	<script src="<?php echo SPR_BASE_URL ?>res/clipboard/clipboard.min.js"></script>
 
 </head>
 <body>
@@ -73,11 +73,13 @@
 
 	<div id="header">
 	
-		<div id="logo">
-			<a href="index.php">
-				<img src="img/logo.png" alt=""/>
-			</a>
-		</div>
+		<?php if (!isset($poll)) { ?>
+			<div id="logo">
+				<a href="index.php">
+					<img src="<?php echo SPR_BASE_URL ?>img/logo.png" alt=""/>
+				</a>
+			</div>
+		<?php } ?>
 
 		<div id="info">
 
@@ -86,15 +88,21 @@
 				<h1><?php echo $poll->getTitle(); ?></h1>
 				<p class="details"><?php echo $poll->getDetails(); ?></p>
 				<br/>
-				<img src='img/icon-copy.png' id='btnCopy' data-clipboard-target='#urlInfo' />
-				<span id='urlInfo'></span>
-
+				<div class="poll-url-container">
+					<span class="success">Public URL:</span>
+					<input type="text" id="urlInfo" readonly/>
+					<button type="button" class="copy-trigger" data-clipboard-target="#urlInfo" title="copy!"></button>
+				</div>
 				<!-- If admin links are enabled and the correct one came with the request, show admin link -->
 				<?php
 					if (strcmp($poll->getAdminId(), "NA") != 0
 					 && strcmp($poll->getAdminId(), $adminId) == 0) {
 				?>
-						<br/><br/><div id='admin-url'>ADMIN-LINK:<br/><br/><span id='admUrl'></span>&adm=<?php echo $adminId ?></div>
+					<div class="poll-url-container">
+						<span class="fail">Admin URL:</span>
+						<input type="text" id="admUrl" readonly/>
+						<button type="button" class="copy-trigger" data-clipboard-target="#admUrl" title="copy!"></button>
+					</div>
 				<?php
 					}
 				?>

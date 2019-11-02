@@ -6,17 +6,17 @@
 		$("#btnLess").css("cursor", "default");
 
 		var datepickerOptions = {
-			format: '<?php echo SPR_DATEPICKER_FORMAT ?>',
-			autoHide: 'true',
+			format: "<?php echo SPR_DATEPICKER_FORMAT ?>",
+			autoHide: "true",
 			weekStart: 1,
-			language: '<?php echo SPR_DATEPICKER_LANG ?>',
-			days: ['<?php echo SPR_DATEPICKER_SUNDAY ?>',
-				   '<?php echo SPR_DATEPICKER_MONDAY ?>',
-				   '<?php echo SPR_DATEPICKER_TUESDAY ?>',
-				   '<?php echo SPR_DATEPICKER_WEDNESDAY ?>',
-				   '<?php echo SPR_DATEPICKER_THURSDAY ?>',
-				   '<?php echo SPR_DATEPICKER_FRIDAY ?>',
-				   '<?php echo SPR_DATEPICKER_SATURDAY ?>']
+			language: "<?php echo SPR_DATEPICKER_LANG ?>",
+			days: ["<?php echo SPR_DATEPICKER_SUNDAY ?>",
+				   "<?php echo SPR_DATEPICKER_MONDAY ?>",
+				   "<?php echo SPR_DATEPICKER_TUESDAY ?>",
+				   "<?php echo SPR_DATEPICKER_WEDNESDAY ?>",
+				   "<?php echo SPR_DATEPICKER_THURSDAY ?>",
+				   "<?php echo SPR_DATEPICKER_FRIDAY ?>",
+				   "<?php echo SPR_DATEPICKER_SATURDAY ?>"]
 		};
 
 		//init first datepicker
@@ -35,8 +35,8 @@
 
 		//remove one date field
         $("#btnLess").click(function() {
-        	$(".dateInput").not(':first').last().datepicker('destroy');
-            $(".dateInput").not(':first').last().detach();
+        	$(".dateInput").not(":first").last().datepicker("destroy");
+            $(".dateInput").not(":first").last().detach();
             $(".dateInput").last().focus();
             $(".dateInput").last().select();
             $(".dateInput").last().datepicker(datepickerOptions);

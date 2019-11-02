@@ -20,8 +20,10 @@
             //count result
             if ($value == "yes"){
                 $displayDates[$i]["yes"]++;
+                $displayDates[$i]["total"] += 2;
             } elseif ($value == "maybe"){
                 $displayDates[$i]["maybe"]++;
+                $displayDates[$i]["total"] += 1;
             } else {
                 $displayDates[$i]["no"]++;
             }

@@ -1,3 +1,4 @@
+
 <!-- PAGE HEADER -->
 <?php include "header.php" ?>
 
@@ -51,16 +52,17 @@
 			<div class="r r-legend r-yes"><?php echo SPR_POLL_RESULTS_YES ?></div>
 			<div class="r r-legend r-maybe"><?php echo SPR_POLL_RESULTS_MAYBE ?></div>
 			<div class="r r-legend r-no"><?php echo SPR_POLL_RESULTS_NO ?></div>
+			<div class="r r-legend"></div>
 		</td>
-		<?php
-			foreach ($displayDates as $date) {
-				echo "<td class='results-cell'>";
-				echo "<div class='r r-yes'>" . $date["yes"] . "</div>";
-				echo "<div class='r r-maybe'>" . $date["maybe"] . "</div>";
-				echo "<div class='r r-no'>" . $date["no"] . "</div>";
-				echo "</td>";
-			}
-		?>
+		<?php foreach ($displayDates as $date) { ?>
+			<td class='results-cell'>
+				<div class="r r-yes"><?php echo $date["yes"] ?></div>
+				<div class="r r-maybe"><?php echo $date["maybe"] ?></div>
+				<div class="r r-no"><?php echo $date["no"] ?></div>
+				<!-- date/option strength value visualization -->
+				<div class="r r-total" style="opacity: <?php echo ($date["total"] / (sizeof($poll->getEntries())*2)) ?>"></div>
+			</td>
+		<?php }	?>
 	</tr>
 
 </table>

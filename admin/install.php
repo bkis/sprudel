@@ -11,7 +11,7 @@
 	// init MySql DB
 	$success = $db->install();
 
-	include "header.php";
+	include "../header.php";
 ?>
 
 <div class="centerBox">
