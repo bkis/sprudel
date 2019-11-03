@@ -90,9 +90,10 @@
 				<p class="details"><?php echo $poll->getDetails(); ?></p>
 				<br/>
 				<div class="poll-url-container">
-					<span class="success">Public URL:</span>
+					<span class="success"><em><?php echo SPR_PUBLIC_LINK; ?></em></span>
 					<input type="text" id="urlInfo" readonly/>
 					<button type="button" class="copy-trigger" data-clipboard-target="#urlInfo" title="copy!"></button>
+					<span class="pale">&nbsp;&larr; <?php echo SPR_PUBLIC_LINK_DESC; ?></span>
 				</div>
 				<!--
 					If admin links are enabled and the correct admin
@@ -103,9 +104,10 @@
 					 && strcmp($poll->getAdminId(), $adminId) == 0) {
 				?>
 					<div class="poll-url-container">
-						<span class="fail">Admin URL:</span>
+						<span class="fail"><em><?php echo SPR_ADMIN_LINK; ?></em></span>
 						<input type="text" id="admUrl" readonly/>
 						<button type="button" class="copy-trigger" data-clipboard-target="#admUrl" title="copy!"></button>
+						<span class="pale">&nbsp;&larr; <?php echo SPR_ADMIN_LINK_DESC; ?></span>
 					</div>
 				<?php
 					}
