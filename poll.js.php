@@ -63,11 +63,11 @@
             if ($("#btnMiniView").attr("data-miniview") == "off"){
                 $("table.schedule").addClass("mini");
                 $("#btnMiniView").attr("data-miniview", "on");
-                $("#btnMiniView").text("Normal View");
+                $("#btnMiniView").text("<?php echo SPR_POLL_CONTROL_NORMAL_VIEW ?>");
             } else {
                 $("table.schedule").removeClass("mini");
                 $("#btnMiniView").attr("data-miniview", "off");
-                $("#btnMiniView").text("Mini View");
+                $("#btnMiniView").text("<?php echo SPR_POLL_CONTROL_MINI_VIEW ?>");
             }
         });
         

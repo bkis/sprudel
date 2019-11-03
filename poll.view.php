@@ -6,12 +6,12 @@
 <div id="poll-controls">
 	<!-- MINI VIEW TOGGLE -->
 	<button id="btnMiniView" type="button" data-miniview="off">
-		Mini View
+		<?php echo SPR_POLL_CONTROL_MINI_VIEW ?>
 	</button>
 	<!-- DELETE POLL BUTTON -->
 	<?php if (strcmp($poll->getAdminId(), $adminId) == 0) { ?>
 		<button id="btnDeletePoll" type="button">
-			Delete Poll
+			<?php echo SPR_POLL_CONTROL_DELETE ?>
 		</button>
 	<?php } ?>
 </div>
