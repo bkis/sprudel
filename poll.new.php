@@ -23,7 +23,7 @@
             // title
             htmlspecialchars($_POST["title"]),
             // details
-            htmlspecialchars($_POST["details"]),
+            preg_replace("/\s+/", " ", htmlspecialchars($_POST["details"])),
             // changed (null - will be set when written to db)
             null
         );

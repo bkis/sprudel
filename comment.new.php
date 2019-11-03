@@ -10,7 +10,7 @@
 
 	$pollId = htmlspecialchars($_POST["pollId"]);
 	$name = htmlspecialchars($_POST["name"]);
-	$text = preg_replace("/\s(?=\s)/", " ", htmlspecialchars($_POST["text"]));
+	$text = preg_replace("/\s+/", " ", htmlspecialchars($_POST["text"]));
 
 	// prapare comment data
 	$comment = array(

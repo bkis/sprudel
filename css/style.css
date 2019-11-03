@@ -237,7 +237,10 @@ div.noscript{
 
 p.details {
     font-size: 90%;
+    white-space: pre-line;
+    word-wrap: break-word;
     max-width: 768px;
+    line-height: 1.5;
 }
 
 #admin-url {
@@ -259,6 +262,11 @@ p.details {
     font-size: 80%;
     color: var(--col-font-dark);
     opacity: 0.75;
+    transition: opacity .2s;
+}
+
+#footer:hover {
+    opacity: 1;
 }
 
 #footer img {
