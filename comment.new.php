@@ -1,15 +1,20 @@
 <?php
 
+	// FOR DEVELOPMENT: UN-COMMENT TO PRINT ERRORS AND WARNINGS
+	ini_set('display_errors', 1);
+	ini_set('display_startup_errors', 1);
+	error_reporting(E_ALL);
+
 	require_once 'db.php';
 	$db = new DB();
 
-	$id = htmlspecialchars($_POST["pollId"]);
+	$pollId = htmlspecialchars($_POST["pollId"]);
 	$name = htmlspecialchars($_POST["name"]);
 	$text = preg_replace("/\s(?=\s)/", " ", htmlspecialchars($_POST["text"]));
 
 	// prapare comment data
 	$comment = array(
-		"pollId" => $id,
+		"pollId" => $pollId,
 		"name" => $name,
 		"text" => $text
 	);
@@ -18,7 +23,8 @@
 	$db->saveComment($comment);
 	
 	//redirect to poll
-	header("Location: poll.php?poll=" . $id);
+	echo $pollId;
+	header("Location: poll.php?poll=" . $pollId . "#comments");
 	exit();
 
 ?>

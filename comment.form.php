@@ -1,6 +1,6 @@
 <div class="centerBox">
 	<form action="comment.new.php" method="post" class="form">
-		<input type="hidden" name="pollId" value="<?php echo $id ?>"/>
+		<input type="hidden" name="pollId" value="<?php echo $poll->getId() ?>"/>
 		<ul class="form">
 		    <li>
 		        <label><?php echo SPR_COMMENT_NAME ?> <span class="required">*</span></label>
