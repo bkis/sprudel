@@ -15,10 +15,10 @@
         require_once "poll.model.php";
         $poll = new Poll(
             // id
-            hash("md4", time() . htmlspecialchars($_POST["title"])),
+            hash("crc32", time() . htmlspecialchars($_POST["title"])),
             // adminId
             isset($_POST["adminLink"]) && strcmp("true", $_POST["adminLink"]) == 0
-                ? hash("md4", time() . $title . "admin")
+                ? hash("crc32", time() . $title . "admin")
                 : "NA",
             // title
             htmlspecialchars($_POST["title"]),

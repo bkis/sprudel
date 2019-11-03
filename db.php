@@ -162,8 +162,8 @@
 			$query = "CREATE TABLE `polls` (
 				`pollId` varchar(32) NOT NULL,
 				`pollAdminId` varchar(32) NOT NULL,
-				`title` text NOT NULL,
-				`details` text NOT NULL,
+				`title` varchar(256) NOT NULL,
+				`details` varchar(512) NOT NULL,
 				`changed` date NOT NULL,
 				PRIMARY KEY (`pollId`)
 			) ENGINE=InnoDB DEFAULT CHARSET=utf8";

@@ -14,11 +14,22 @@
 		<ul class="form">
 		    <li>
 		        <label><?php echo SPR_NEW_FORM_TITLE ?> <span class="required">*</span></label>
-		        <input type="text" name="title" class="field-long" required="true" id="titleInput" placeholder="<?php echo SPR_NEW_FORM_TITLE_PLACEHOLDER ?>" />
+				<input
+					type="text"
+					name="title"
+					class="field-long"
+					required="true"
+					id="titleInput"
+					maxlength="256"
+					placeholder="<?php echo SPR_NEW_FORM_TITLE_PLACEHOLDER ?>" />
 		    </li>
 		    <li>
 		        <label><?php echo SPR_NEW_FORM_DESCRIPTION ?> </label>
-		        <textarea name="details" class="field-long field-textarea" placeholder="<?php echo SPR_NEW_FORM_DETAILS_PLACEHOLDER ?>"></textarea>
+				<textarea
+					name="details"
+					class="field-long field-textarea"
+					maxlength="512"
+					placeholder="<?php echo SPR_NEW_FORM_DETAILS_PLACEHOLDER ?>"></textarea>
 		    </li>
 		    <li>
 		        <label><?php echo SPR_NEW_FORM_OPTIONS ?> <span class="required">*</span></label>
