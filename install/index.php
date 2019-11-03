@@ -19,7 +19,7 @@
 	<?php if ($success){ ?>
 		<h1 class='success'>Database initialized successfully.</h1>
 		You should now try your new Sprudel installation!<br/>
-		If everything works, <em>delete 'sprudel/admin/install.php'</em> from the server!<br/><br/>
+		If everything works, <em>delete '/install'</em> directory from the server!<br/><br/>
 		<a href='../index.php'>Click here to create the first Sprudel poll on this fresh instance!</a>
 	<?php } else { ?>
 		<h1 class='fail'>Database couldn't be initialized.</h1>
