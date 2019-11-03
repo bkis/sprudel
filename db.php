@@ -202,6 +202,10 @@
 			return $success;
 		}
 
+		function getPollsInactiveSince($date){
+			return $this->db->select("polls", "pollId", ["changed[<]" => $date]);
+		}
+
 	}
 
 ?>
