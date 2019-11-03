@@ -72,14 +72,6 @@
 	</noscript>
 
 	<div id="header">
-	
-		<?php if (!isset($poll)) { ?>
-			<div id="logo">
-				<a href="index.php">
-					<img src="<?php echo SPR_BASE_URL ?>img/logo.png" alt=""/>
-				</a>
-			</div>
-		<?php } ?>
 
 		<div id="info">
 
@@ -91,8 +83,8 @@
 				<br/>
 				<div class="poll-url-container">
 					<span class="success"><em><?php echo SPR_PUBLIC_LINK ?></em></span>
-					<input type="text" id="urlInfo" readonly/>
-					<button type="button" class="copy-trigger" data-clipboard-target="#urlInfo" title="copy!"></button>
+					<input type="text" id="urlInfo" title="<?php echo SPR_PUBLIC_LINK_DESC ?>" readonly/>
+					<button type="button" class="copy-trigger" data-clipboard-target="#urlInfo" title="<?php echo SPR_LINK_COPY_TITLE ?>"></button>
 					<span class="pale">&nbsp;&larr; <?php echo SPR_PUBLIC_LINK_DESC ?></span>
 				</div>
 				<!--
@@ -105,8 +97,8 @@
 				?>
 					<div class="poll-url-container">
 						<span class="fail"><em><?php echo SPR_ADMIN_LINK ?></em></span>
-						<input type="text" id="admUrl" readonly/>
-						<button type="button" class="copy-trigger" data-clipboard-target="#admUrl" title="copy!"></button>
+						<input type="text" id="admUrl" title="<?php echo SPR_ADMIN_LINK_DESC ?>" readonly/>
+						<button type="button" class="copy-trigger" data-clipboard-target="#admUrl" title="<?php echo SPR_LINK_COPY_TITLE ?>"></button>
 						<span class="pale">&nbsp;&larr; <?php echo SPR_ADMIN_LINK_DESC ?></span>
 					</div>
 				<?php
@@ -120,4 +112,13 @@
 			<?php } ?>
 
 		</div>
+
+		<?php if (SPR_SHOW_HEADER_LOGO == 1) { ?>
+			<div id="logo">
+				<a href="index.php" title="<?php echo SPR_INDEX_HEADING ?>">
+					<img src="<?php echo SPR_BASE_URL ?>img/logo.png" alt=""/>
+				</a>
+			</div>
+		<?php } ?>
+
 	</div>
