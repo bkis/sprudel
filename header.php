@@ -85,6 +85,7 @@
 
 			<!-- HEADER IS USED IN POLL VIEW -->
 			<?php if (isset($poll)) { ?>
+
 				<h1><?php echo $poll->getTitle(); ?></h1>
 				<p class="details"><?php echo $poll->getDetails(); ?></p>
 				<br/>
@@ -93,7 +94,10 @@
 					<input type="text" id="urlInfo" readonly/>
 					<button type="button" class="copy-trigger" data-clipboard-target="#urlInfo" title="copy!"></button>
 				</div>
-				<!-- If admin links are enabled and the correct one came with the request, show admin link -->
+				<!--
+					If admin links are enabled and the correct admin
+					id came with the request, show admin link
+				-->
 				<?php
 					if (strcmp($poll->getAdminId(), "NA") != 0
 					 && strcmp($poll->getAdminId(), $adminId) == 0) {

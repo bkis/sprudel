@@ -210,10 +210,6 @@ div.noscript{
     border-bottom: 5px solid var(--col-decorative);
 }
 
-#header h1 {
-    margin-top: 10px;
-}
-
 #logo {
     height: 64px;
     padding: 20px;
