@@ -57,22 +57,22 @@ h2 {
 
 a:link {
     color: var(--col-decorative);
-    text-decoration: underline dotted;
+    text-decoration: none;
 }
 
 a:visited {
     color: var(--col-decorative);
-    text-decoration: underline dotted;
+    text-decoration: none;
 }
 
 a:hover {
     color: var(--col-decorative);
-    text-decoration: underline dotted;
+    text-decoration: none;
 }
 
 a:active {
     color: var(--col-decorative);
-    text-decoration: underline dotted;
+    text-decoration: none;
 }
 
 em {
@@ -242,10 +242,14 @@ p.details {
 
 #footer {
     background: transparent;
-    text-align: center;
-    padding: 15px 0px;
+    text-align: right;
+    padding: 15px;
     font-size: 80%;
     color: var(--col-font-dark)
+}
+
+#footer img {
+    vertical-align: middle;
 }
 
 #poll-controls {
