@@ -7,11 +7,13 @@
 	<?php
 		if (sizeof($poll->getComments()) > 0){
 			foreach ($poll->getComments() as $comment) {
-				echo "<div class='comment-container'>";
-				echo "<span class='comment-name'>" . $comment["name"] . "</span>";
-				echo "<div class='comment-date'>" . $comment["date"] . "</div>";
-				echo "<div class='comment-text'>" . nl2br($comment["text"]) . "</div>";
-				echo "</div>";
+	?>
+		<div class='comment-container'>
+			<span class='comment-name'><?php echo $comment["name"] ?></span>
+			<div class='comment-date'><?php echo $comment["date"] ?></div>
+			<div class='comment-text'><?php echo nl2br($comment["text"]) ?></div>
+		</div>
+	<?php
 			}
 		} else {
 			echo SPR_COMMENT_NONE;
