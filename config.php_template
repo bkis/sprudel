@@ -88,16 +88,7 @@
 	//turn on/off footer text
 	define('SPR_SHOW_FOOTER_LINK', 1);				// insert 0 if you want to remove the footer link, but it would be nice to leave it there
 
-
-
-	/////////////////////////////////////////////////////
-	//// figure out the base URL (DON'T TOUCH THIS!) ////
-	/////////////////////////////////////////////////////
-
-	$doc_root = preg_replace("!${_SERVER['SCRIPT_NAME']}$!", '', $_SERVER['SCRIPT_FILENAME']);
-	$protocol = empty($_SERVER['HTTPS']) ? 'http' : 'https';
-	$domain = $_SERVER['SERVER_NAME'];
-	$base_url = preg_replace("!^${doc_root}!", '', __DIR__);
-	define('SPR_BASE_URL', "${protocol}://${domain}${base_url}/");
+	// internal config
+	include "internal.config.php";
 
 ?>
