@@ -67,11 +67,8 @@
 
 </table>
 
-<!-- COMMENTS LIST -->
-<?php include "comment.list.php" ?>
-
-<!-- COMMENTS FORM -->
-<?php include "comment.form.php" ?>
+<!-- COMMENTS VIEW -->
+<?php include "comment.view.php" ?>
 
 <!-- POLL JS -->
 <?php include "poll.js.php" ?>

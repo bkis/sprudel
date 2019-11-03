@@ -71,7 +71,7 @@
 		</div>
 	</noscript>
 
-	<div id="header">
+	<div id="header" class="right-to-left">
 
 		<div id="info">
 
