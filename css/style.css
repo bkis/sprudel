@@ -33,13 +33,6 @@
     font-family: 'Quicksand', sans-serif;
 }
 
-.schedule td {
-    -webkit-transition: height .2s;
-    -ms-transition: height .2s;
-    transition: height .2s;
-    font-family: 'Quicksand', sans-serif;
-}
-
 html, body {
     width: 100%;
     height: 100%;
@@ -267,8 +260,7 @@ table.schedule {
 }
 
 table.schedule.mini {
-    font-size: 60%;
-    font-weight: bold;
+    font-size: 80%;
 }
 
 table.schedule.mini input {
@@ -322,7 +314,7 @@ td.schedule-header > div {
 }
 
 table.schedule.mini td.schedule-header > div {
-    width: .8rem;
+    width: 1.1rem;
 }
 
 td.schedule-header > div > div {
@@ -459,7 +451,6 @@ td.schedule-submit {
     width: auto;
     height: 100%;
     line-height: .5;
-    transition: .2s;
     border-top-right-radius: var(--border-radius-big);
     border-bottom-right-radius: var(--border-radius-big);
 }
@@ -539,7 +530,7 @@ td.schedule-submit {
 }
 
 .schedule.mini .r {
-    font-size: 130%;
+    font-size: 110%;
     height: 16px;
     font-weight: bold;
 }
