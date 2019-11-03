@@ -73,6 +73,17 @@ a:hover {
 a:active {
     color: var(--col-decorative);
     text-decoration: none;
+    outline: none;
+}
+
+a:focus {
+    color: var(--col-decorative);
+    text-decoration: none;
+    outline: none;
+}
+
+button::-moz-focus-inner {
+    border: 0;
 }
 
 em {
@@ -219,8 +230,9 @@ div.noscript{
     opacity: 0.4;
 }
 
-#logo a, #logo img {
+#logo img {
     height: 100%;
+    max-height: 80px;
 }
 
 p.details {
@@ -441,7 +453,6 @@ td.schedule-blank {
 
 .schedule input[type=checkbox]{
     margin-left: 3px;
-    vertical-align: -3px;
 }
 
 td.schedule-submit {
@@ -646,6 +657,10 @@ table.schedule.mini tr.table-spacer-row-big > td {
     margin: 0px auto;
     width: 400px;
     max-width: 100%;
+}
+
+.form input[type=checkbox]{
+    vertical-align: middle;
 }
 
 li {

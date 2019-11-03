@@ -40,7 +40,7 @@
             $(".dateInput").last().focus();
             $(".dateInput").last().select();
             $(".dateInput").last().datepicker(datepickerOptions);
-            if ($(".dateInput").size() == 1){
+            if ($(".dateInput").length == 1){
             	$("#btnLess").attr("src", "img/icon-less-disabled.png");
             	$("#btnLess").css("cursor", "default");
             }

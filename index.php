@@ -20,25 +20,27 @@
 		        <label><?php echo SPR_NEW_FORM_DESCRIPTION ?> </label>
 		        <textarea name="details" class="field-long field-textarea" placeholder="<?php echo SPR_NEW_FORM_DETAILS_PLACEHOLDER ?>"></textarea>
 		    </li>
-				<?php if (SPR_ADMIN_LINKS == 1) {
-						echo "<li>";
-						echo "<label>" . SPR_NEW_FORM_ADMIN . "</label>";
-						echo "<input type='checkbox' name='adminLink' value='true' id='adminInput' /> " . SPR_NEW_FORM_ADMIN_CHECKBOX;
-						echo "</li><br/>";
-				}
-				?>
 		    <li>
-		        <label><?php echo SPR_NEW_FORM_DATES ?> <span class="required">*</span></label>
+		        <label><?php echo SPR_NEW_FORM_OPTIONS ?> <span class="required">*</span></label>
 				<input
 					type="text" name="dates[]" maxlength="32"
 					class="dateInput field-long datepicker-here"
-					required="true" placeholder="<?php echo SPR_NEW_FORM_DATES_PLACEHOLDER ?>"
+					required="true" placeholder="<?php echo SPR_NEW_FORM_OPTIONS_PLACEHOLDER ?>"
 					style="margin-bottom: 8px;" />
 		    </li>
 		    <li>
-		    	<img src="img/icon-more.png" class="btnFormDate" id="btnMore"/>
-		    	<img src="img/icon-less-disabled.png" class="btnFormDate" id="btnLess"/>
+				<div style="text-align: right">
+					<img src="img/icon-more.png" class="btnFormDate" id="btnMore"/>
+					<img src="img/icon-less-disabled.png" class="btnFormDate" id="btnLess"/>
+				</div>
 			</li>
+			<?php if (SPR_ADMIN_LINKS == 1) { ?>
+				<li>
+					<label><?php echo SPR_NEW_FORM_ADMIN ?></label>
+					<input type='checkbox' name='adminLink' value='true' id='adminInput' checked />
+					<span style="font-size: 90%;"><?php echo SPR_NEW_FORM_ADMIN_CHECKBOX ?></span>
+				</li>
+			<?php } ?>
 			<li>
 				<br/><span class="pale"><?php echo preg_replace("/\bn\b/", SPR_DELETE_AFTER, SPR_LIFESPAN) ?></span>
 			</li>
