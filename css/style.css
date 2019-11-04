@@ -162,25 +162,25 @@ em {
     margin-left: 10px;
     line-height: .5;
     height: 24px;
-    background: var(--color-background-secondary) url(../img/icon-copy.png) no-repeat center center !important;
-    background-size: 16px !important;
+    background-color: var(--color-background-secondary);
+    background-image: url('../img/icon-copy.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 16px;
 }
 
 .poll-url-container button:hover {
-    background: var(--color-background-secondary-hover) url(../img/icon-copy.png) no-repeat center center !important;
-    background-size: 16px !important;
+    background-color: var(--color-background-secondary-hover);
 }
 
 .poll-url-container button.copy-success,
 .poll-url-container button.copy-success:hover {
-    background: var(--color-feedback-positive) url(../img/icon-copy.png) no-repeat center center !important;
-    background-size: 16px !important;
+    background-color: var(--color-feedback-positive);
 }
 
 .poll-url-container button.copy-fail,
 .poll-url-container button.copy-fail:hover {
-    background: var(--color-feedback-negative) url(../img/icon-copy.png) no-repeat center center !important;
-    background-size: 16px !important;
+    background-color: var(--color-feedback-negative);
 }
 
 .poll-url-container img {
@@ -287,6 +287,22 @@ p.details {
 #poll-controls button {
     margin: 0 .5rem;
     cursor: pointer;
+    background-color: var(--color-background-secondary);
+    background-repeat: no-repeat;
+    background-position: 10px 45%;
+    padding-left: 36px;
+}
+
+#poll-controls button:hover {
+    background-color: var(--color-background-secondary-hover);
+}
+
+#poll-controls button#ctrl-delete-poll {
+    background-image: url('../img/icon-delete.png');
+}
+
+#poll-controls button#ctrl-mini-view {
+    background-image: url('../img/icon-eye.png');
 }
 
 table.schedule {
@@ -731,7 +747,7 @@ input[type=submit],
 input[type=button],
 button[type=submit],
 button[type=button] {
-    background: var(--color-background-secondary);
+    background-color: var(--color-background-secondary);
     padding: 8px 15px 8px 15px;
     border: none;
     color: var(--color-font-secondary);

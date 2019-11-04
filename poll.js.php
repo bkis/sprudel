@@ -31,7 +31,7 @@
         });
         
         // delete poll button functionality
-        $("#btnDeletePoll").click(function(){
+        $("#ctrl-delete-poll").click(function(){
             if (confirm("<?php echo SPR_DELETE_POLL_CONFIRM ?>")){
                 $.post( "poll.delete.php", { pollId: "<?php echo $poll->getId() ?>", adm: "<?php echo $poll->getAdminId() ?>" } ).done( function() {
                     location.href = "index.php";
@@ -59,15 +59,15 @@
         });
         
         // mini-view toggler
-        $("#btnMiniView").click(function(){
-            if ($("#btnMiniView").attr("data-miniview") == "off"){
+        $("#ctrl-mini-view").click(function(){
+            if ($("#ctrl-mini-view").attr("data-miniview") == "off"){
                 $("table.schedule").addClass("mini");
-                $("#btnMiniView").attr("data-miniview", "on");
-                $("#btnMiniView").text("<?php echo SPR_POLL_CONTROL_NORMAL_VIEW ?>");
+                $("#ctrl-mini-view").attr("data-miniview", "on");
+                $("#ctrl-mini-view").text("<?php echo SPR_POLL_CONTROL_NORMAL_VIEW ?>");
             } else {
                 $("table.schedule").removeClass("mini");
-                $("#btnMiniView").attr("data-miniview", "off");
-                $("#btnMiniView").text("<?php echo SPR_POLL_CONTROL_MINI_VIEW ?>");
+                $("#ctrl-mini-view").attr("data-miniview", "off");
+                $("#ctrl-mini-view").text("<?php echo SPR_POLL_CONTROL_MINI_VIEW ?>");
             }
         });
         
