@@ -10,11 +10,14 @@
 
 	$pollId = htmlspecialchars($_POST["pollId"]);
 	$name = htmlspecialchars($_POST["name"]);
-	$dates = $_POST["dates"];
-	$values = $_POST["values"];
-
-	// save entry to db
-	$db->saveEntry($pollId, $name, $dates, $values);
+	
+	// save entry if input is valid
+	$db->saveEntry(
+		$pollId,
+		$name,
+		$_POST["dates"],
+		$_POST["values"]
+	);
 	
 	//redirect to poll
 	header("Location: poll.php?poll=" . $pollId);

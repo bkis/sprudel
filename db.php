@@ -109,6 +109,9 @@
 		}
 
 		function saveEntry($pollId, $name, $dates, $values){
+			$name = trim($name);
+			if (strlen($name) == 0) return;
+
 			$db = $this->db;
 
 			//prepare distinct entries
@@ -123,7 +126,7 @@
 				array_push($entries, array("pollId" => $pollId, "date" => $dummy, "name" => $name));
 			}
 
-			$db->action(function($db) use ($pollId, $entries) {
+			return $db->action(function($db) use ($pollId, $entries) {
 				//write data to entries table
 				$db->insert("entries", $entries);
 				//update change date in polls table
