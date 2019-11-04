@@ -3,9 +3,12 @@
 
     $(document).ready(function() {
         // show poll url
-        var pollUrl = window.location.protocol + "//" + window.location.hostname + window.location.pathname + "?poll=<?php echo $poll->getId() ?>";
-        $("#urlInfo").val(pollUrl);
-        $("#admUrl").val(pollUrl + "&adm=<?php echo $adminId ?>");
+        var pollUrl = window.location.protocol + "//" +
+                      window.location.hostname +
+                      window.location.pathname +
+                      "?poll=<?php echo $poll->getId() ?>";
+        $("#public-url-field").val(pollUrl);
+        $("#admin-url-field").val(pollUrl + "&adm=<?php echo $adminId ?>");
         
         // url clipboard copy feature
         var clipboard = new ClipboardJS(".copy-trigger");
