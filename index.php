@@ -8,7 +8,7 @@
 
 <div class="centerBox">
 
-	<h2><?php echo SPR_INDEX_HEADING ?></h2><br/>
+	<h2><?php echo SPR_NEW_FORM_HEADING ?></h2><br/>
 
 	<form action="poll.new.php" method="post">
 		<ul class="form">
@@ -24,7 +24,7 @@
 					placeholder="<?php echo SPR_NEW_FORM_TITLE_PLACEHOLDER ?>" />
 		    </li>
 		    <li>
-		        <label><?php echo SPR_NEW_FORM_DESCRIPTION ?> </label>
+		        <label><?php echo SPR_NEW_FORM_DETAILS ?> </label>
 				<textarea
 					name="details"
 					class="field-long field-textarea"

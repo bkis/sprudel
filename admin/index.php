@@ -1,5 +1,6 @@
 <?php
-	require_once '../db.php';
+	require_once "../db.php";
+	require_once "../config/config.features.php";
 	
 	if (SPR_ADMIN_INTERFACE != 1){
 		header("Location: ../404.php");

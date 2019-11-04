@@ -3,7 +3,7 @@
 	require_once 'res/medoo/Medoo.php';
 	use Medoo\Medoo;
 
-	require_once 'config.php';
+	require_once 'config/config.db.php';
 	require_once 'poll.model.php';
 
 	class DB {

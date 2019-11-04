@@ -6,7 +6,7 @@
 		exit();
 	}
 	chdir(__DIR__);
-	require_once "config.php";
+	require_once "config/config.features.php";
 	require_once "db.php";
 
 	$db = new DB;
@@ -19,7 +19,7 @@
 	echo "***********************" . PHP_EOL;
 	echo PHP_EOL;
 	echo "This will delete every poll that was inactive" . PHP_EOL . "since " . $minDate . " (for at least " . SPR_DELETE_AFTER . " days)." . PHP_EOL;
-	echo "You may change this value in config.php" . PHP_EOL;
+	echo "You may change this value in 'config/config.features.php'" . PHP_EOL;
 	echo PHP_EOL;
 
 	//get IDs of polls to delete

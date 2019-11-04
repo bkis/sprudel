@@ -1,11 +1,11 @@
 <?php
 
 	// FOR DEVELOPMENT: UN-COMMENT TO PRINT ERRORS AND WARNINGS
-	// ini_set('display_errors', 1);
-	// ini_set('display_startup_errors', 1);
-	// error_reporting(E_ALL);
+	ini_set('display_errors', 1);
+	ini_set('display_startup_errors', 1);
+	error_reporting(E_ALL);
 
-	require_once 'config.php'
+	require_once 'config/config.all.php';
 ?>
 
 
@@ -115,7 +115,7 @@
 
 		<?php if (SPR_SHOW_HEADER_LOGO == 1) { ?>
 			<div id="logo">
-				<a href="index.php" title="<?php echo SPR_INDEX_HEADING ?>">
+				<a href="index.php" title="<?php echo SPR_NEW_FORM_HEADING ?>">
 					<img src="<?php echo SPR_BASE_URL ?>img/logo.png" alt=""/>
 				</a>
 			</div>

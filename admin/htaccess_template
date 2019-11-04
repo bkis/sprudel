@@ -1,4 +1,0 @@
-AuthType Basic
-AuthName "Sprudel Admin"
-AuthUserFile /PATH_TO_SPRUDEL/sprudel/admin/.htpasswd
-Require valid-user
