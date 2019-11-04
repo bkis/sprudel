@@ -4,16 +4,18 @@
 
 <!-- POLL CONTROLS -->
 <div id="poll-controls">
-	<!-- MINI VIEW TOGGLE -->
-	<button id="ctrl-mini-view" type="button" data-miniview="off">
-		<?php echo SPR_POLL_CONTROL_MINI_VIEW ?>
-	</button>
-	<!-- DELETE POLL BUTTON -->
-	<?php if (strcmp($poll->getAdminId(), $adminId) == 0) { ?>
-		<button id="ctrl-delete-poll" type="button">
-			<?php echo SPR_POLL_CONTROL_DELETE ?>
+	<div>
+		<!-- MINI VIEW TOGGLE -->
+		<button id="ctrl-mini-view" type="button" data-miniview="off">
+			<?php echo SPR_POLL_CONTROL_MINI_VIEW ?>
 		</button>
-	<?php } ?>
+		<!-- DELETE POLL BUTTON -->
+		<?php if (strcmp($poll->getAdminId(), $adminId) == 0) { ?>
+			<button id="ctrl-delete-poll" type="button">
+				<?php echo SPR_POLL_CONTROL_DELETE ?>
+			</button>
+		<?php } ?>
+	</div>
 </div>
 
 <!-- POLL TABLE -->

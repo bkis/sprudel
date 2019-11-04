@@ -14,7 +14,7 @@
     --poll-table-gutters: 2px;
     --border-radius-big: 6px;
     --border-radius-small: 3px;
-    --animation-duration: .2s;
+    --animation-duration: .1s;
 }
 
 
@@ -279,10 +279,16 @@ p.details {
 }
 
 #poll-controls {
-    padding: 1.2rem .8rem;
-    margin-bottom: 2rem;
-    background-color: var(--color-background-comments);
+    margin-bottom: .5rem;
     text-align: right;
+    border-top: 1.2rem solid var(--color-background-comments);
+}
+
+#poll-controls > div {
+    display: inline-block;
+    padding: 0 1.2rem 1.2rem 1.2rem;
+    border-bottom-left-radius: var(--border-radius-big);
+    background-color: var(--color-background-comments);
 }
 
 #poll-controls button {
@@ -309,7 +315,7 @@ p.details {
 table.schedule {
     border-collapse: separate;
     border: none;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     margin-left: auto;
     margin-right: auto;
 }
@@ -366,6 +372,7 @@ td.schedule-header > div {
     overflow: hidden;
     width: 1.4rem;
     text-align: center;
+    margin: 5px 0;
 }
 
 table.schedule.mini td.schedule-header > div {
@@ -406,13 +413,14 @@ td.schedule-header > div > div:before {
 
 td.schedule-names {
     text-align: right;
+    padding: 4px 6px !important;
     background-color: var(--color-background-secondary);
     border-top-left-radius: var(--border-radius-big);
     border-bottom-left-radius: var(--border-radius-big);
 }
 
 table.schedule.mini td.schedule-names {
-    padding: 0 4px;
+    padding: 4px 4px;
 }
 
 td.schedule-name-input {
@@ -542,9 +550,8 @@ td.schedule-submit {
 .center-box {
     width: 90%;
     max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 2rem 1rem;
+    margin: 0 auto;
+    padding: 1rem 0;
 }
 
 .content-right {
@@ -612,6 +619,7 @@ td.schedule-submit {
 
 #comments-wrapper {
     margin-top: 2rem;
+    padding: 1rem 0;
     background-color: var(--color-background-comments);
 }
 
