@@ -62,12 +62,9 @@
 <body>
 
 	<noscript>
-		<div class="noscript" style="display: table; overflow: hidden;">
-			<div style="display: table-cell; vertical-align: middle;">
-				<div>
-				 	<?php echo SPR_NO_JS_MSG ?>
-				</div>
-			</div>
+		<div id="noscript">
+			<img src="<?php echo SPR_BASE_URL ?>img/logo.png" alt=""/>
+			<span><?php echo SPR_NO_JS_MSG ?></span>
 		</div>
 	</noscript>
 
