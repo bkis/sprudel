@@ -16,9 +16,8 @@
 - cleanup-script included for deleting polls that have been inactive for more than a certain number of days (can be run via cronjob)
 - optional poll administration interface for managing all the polls on the server
 
-| Create a poll  | ... and share it |
-| ------------- | ------------- |
-| ![Create a poll](img/readme/screen-create.png)  | ![Share a poll](img/readme/screen-poll.png)  |
+## Have a look!
+![Poll screenshot](img/screenshot.png)
 
 ## Requirements
 - PHP 5.4 or higher

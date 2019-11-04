@@ -8,7 +8,6 @@
     require_once "config/config.features.php";
 
     if (isset($_POST["title"])
-     && isset($_POST["details"])
      && isset($_POST["dates"])
      && sizeof($_POST["dates"]) > 0
      && sizeof($_POST["dates"] <= SPR_MAX_POLL_DATES)){
