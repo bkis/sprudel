@@ -14,7 +14,7 @@
 	include "header.php";
 ?>
 
-<div class="centerBox">
+<div class="center-box">
 	<br>
 	<?php if ($success){ ?>
 		<h1 class='success'>Database initialized successfully.</h1>

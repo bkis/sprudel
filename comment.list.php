@@ -1,4 +1,4 @@
-<div class="centerBox">
+<div class="center-box">
 
 	<h2><a name="comments"><?php echo SPR_COMMENT_HEADING ?></a></h2>
 	

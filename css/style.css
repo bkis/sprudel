@@ -1,21 +1,20 @@
 /* ==== GLOBAL CSS CUSTOM PROPERTIES ==== */
 
 :root {
-    --col-background-light: #fff;
-    --col-background-dark: #363636;
-    --col-background-dark-hover: #565656;
-    --col-background-comments: #f0f0f0;
-    --col-font-light: #fff;
-    --col-font-dark: #363636;
-    --col-decorative: #229954;
-    --col-reaction-positive: #229954;
-    --col-reaction-neutral: #888;
-    --col-reaction-negative: #cb4335;
+    --color-background-primary: #fff;
+    --color-background-secondary: #363636;
+    --color-background-secondary-hover: #565656;
+    --color-background-comments: #f0f0f0;
+    --color-font-primary: #363636;
+    --color-font-secondary: #fff;
+    --color-decorative: #229954;
+    --color-feedback-positive: #229954;
+    --color-feedback-neutral: #888;
+    --color-feedback-negative: #cb4335;
     --poll-table-gutters: 2px;
     --border-radius-big: 6px;
     --border-radius-small: 3px;
-    --box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.4);
-    --box-shadow-inset: inset 0px 0px 6px 0px rgba(0,0,0,0.4);
+    --animation-duration: .2s;
 }
 
 
@@ -30,17 +29,23 @@
 /* ==== GENERAL ==== */
 
 * {
-    -webkit-transition: background-color .2s;
-    -ms-transition: background-color .2s;
-    transition: background-color .2s;
+    -webkit-transition: background-color var(--animation-duration);
+    -ms-transition: background-color var(--animation-duration);
+    transition: background-color var(--animation-duration);
     font-family: 'Quicksand', sans-serif;
+}
+
+.schedule td {
+    -webkit-transition: var(--animation-duration);
+    -ms-transition: var(--animation-duration);
+    transition: var(--animation-duration);
 }
 
 html, body {
     width: 100%;
     height: 100%;
-    background-color: var(--col-background-light);
-    color: var(--col-font-dark);
+    background-color: var(--color-background-primary);
+    color: var(--color-font-primary);
     font-size: 100%;
     font-family: 'Quicksand', sans-serif;
     box-sizing: border-box;
@@ -56,28 +61,28 @@ h2 {
 }
 
 a:link {
-    color: var(--col-decorative);
+    color: var(--color-decorative);
     text-decoration: none;
 }
 
 a:visited {
-    color: var(--col-decorative);
+    color: var(--color-decorative);
     text-decoration: none;
 }
 
 a:hover {
-    color: var(--col-decorative);
+    color: var(--color-decorative);
     text-decoration: none;
 }
 
 a:active {
-    color: var(--col-decorative);
+    color: var(--color-decorative);
     text-decoration: none;
     outline: none;
 }
 
 a:focus {
-    color: var(--col-decorative);
+    color: var(--color-decorative);
     text-decoration: none;
     outline: none;
 }
@@ -103,12 +108,12 @@ em {
 
 .datepicker-top-left,
 .datepicker-top-right {
-    border-top-color: var(--col-decorative) !important;
+    border-top-color: var(--color-decorative) !important;
 }
 
 .datepicker-top-left::before,
 .datepicker-top-right::before {
-    border-bottom-color: var(--col-decorative) !important;
+    border-bottom-color: var(--color-decorative) !important;
 }
 
 .datepicker-panel > ul > li:hover {
@@ -117,13 +122,13 @@ em {
 
 .datepicker-panel > ul > li.picked,
 .datepicker-panel > ul > li.picked:hover {
-    color: var(--col-decorative) !important;
+    color: var(--color-decorative) !important;
 }
 
 .datepicker-panel > ul > li.highlighted,
 .datepicker-panel > ul > li.highlighted:hover {
-    background-color: var(--col-decorative) !important;
-    color: var(--col-font-light) !important;
+    background-color: var(--color-decorative) !important;
+    color: var(--color-font-secondary) !important;
 }
 
 
@@ -145,8 +150,8 @@ em {
     height: 24px;
     width: 256px;
     max-width: 50%;
-    color: var(--col-font-light);
-    background-color: var(--col-background-dark-hover);
+    color: var(--color-font-secondary);
+    background-color: var(--color-background-secondary-hover);
     border: unset !important;
     white-space: nowrap;
     overflow: hidden;
@@ -157,24 +162,24 @@ em {
     margin-left: 10px;
     line-height: .5;
     height: 24px;
-    background: var(--col-background-dark) url(../img/icon-copy.png) no-repeat center center !important;
+    background: var(--color-background-secondary) url(../img/icon-copy.png) no-repeat center center !important;
     background-size: 16px !important;
 }
 
 .poll-url-container button:hover {
-    background: var(--col-background-dark-hover) url(../img/icon-copy.png) no-repeat center center !important;
+    background: var(--color-background-secondary-hover) url(../img/icon-copy.png) no-repeat center center !important;
     background-size: 16px !important;
 }
 
 .poll-url-container button.copy-success,
 .poll-url-container button.copy-success:hover {
-    background: var(--col-reaction-positive) url(../img/icon-copy.png) no-repeat center center !important;
+    background: var(--color-feedback-positive) url(../img/icon-copy.png) no-repeat center center !important;
     background-size: 16px !important;
 }
 
 .poll-url-container button.copy-fail,
 .poll-url-container button.copy-fail:hover {
-    background: var(--col-reaction-negative) url(../img/icon-copy.png) no-repeat center center !important;
+    background: var(--color-feedback-negative) url(../img/icon-copy.png) no-repeat center center !important;
     background-size: 16px !important;
 }
 
@@ -188,15 +193,15 @@ textarea {
     font-size: 80%;
 }
 
-div.noscript{
+div.noscript {
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0px;
     left: 0px;
-    background-color: var(--col-background-dark);
+    background-color: var(--color-background-secondary);
     z-index: 9999;
-    color: var(--col-font-light);
+    color: var(--color-font-secondary);
     font-size: 200%;
     text-shadow: 0px 0px 4px rgba(255, 255, 255, 0.4);
     text-align: center;
@@ -207,23 +212,22 @@ div.noscript{
     justify-content: start;
     align-items: center;
     padding: 1rem;
-    margin-bottom: 30px;
-    background-color: var(--col-background-dark);
-    color: var(--col-font-light);
+    background-color: var(--color-background-secondary);
+    color: var(--color-font-secondary);
     overflow: hidden;
 
-    -webkit-box-shadow: var(--box-shadow);
+/*     -webkit-box-shadow: var(--box-shadow);
     -moz-box-shadow: var(--box-shadow);
-    box-shadow: var(--box-shadow);
+    box-shadow: var(--box-shadow); */
 
-    border-bottom: 5px solid var(--col-decorative);
+    border-bottom: 5px solid var(--color-decorative);
 }
 
 #logo {
     margin-right: 20px;
     margin-left: auto;
     opacity: 0.15;
-    transition: opacity .2s;
+    transition: opacity var(--animation-duration);
 }
 
 #logo:hover {
@@ -244,7 +248,7 @@ p.details {
 }
 
 #admin-url {
-    color: var(--col-reaction-negative);
+    color: var(--color-feedback-negative);
     font-size: 80%;
     font-weight: bold;
 }
@@ -258,11 +262,11 @@ p.details {
 #footer {
     background: transparent;
     text-align: center;
-    padding: 2rem;
+    padding: 1.5rem;
     font-size: 80%;
-    color: var(--col-font-dark);
-    opacity: 0.75;
-    transition: opacity .2s;
+    color: var(--color-font-primary);
+    opacity: 0.5;
+    transition: opacity var(--animation-duration);
 }
 
 #footer:hover {
@@ -274,9 +278,10 @@ p.details {
 }
 
 #poll-controls {
-    text-align: left;
-    margin-left: 1rem;
+    padding: 1.5rem 1rem;
     margin-bottom: 2rem;
+    background-color: var(--color-background-comments);
+    text-align: right;
 }
 
 #poll-controls button {
@@ -305,10 +310,10 @@ table.schedule.mini tr {
 }
 
 table.schedule td {
-    border: var(--poll-table-gutters) solid var(--col-background-light);
+    border: var(--poll-table-gutters) solid var(--color-background-primary);
     padding: 4px;
     line-height: 0;
-    color: var(--col-font-light);
+    color: var(--color-font-secondary);
     min-width: 24px;
 }
 
@@ -317,7 +322,7 @@ table.schedule.mini td {
     min-width: 16px;
 }
 
-tr.valign-middle td{
+tr.valign-middle td {
     vertical-align: middle;
 }
 
@@ -325,7 +330,7 @@ tr.valign-middle td{
 /* POLL HEADER (DATES, OPTIONS, ...) */
 
 td.schedule-header {
-    background-color: var(--col-background-dark);
+    background-color: var(--color-background-secondary);
     width: 24px;
     vertical-align: bottom;
     text-align: center;
@@ -384,7 +389,7 @@ td.schedule-header > div > div:before {
 
 td.schedule-names {
     text-align: right;
-    background-color: var(--col-background-dark);
+    background-color: var(--color-background-secondary);
     border-top-left-radius: var(--border-radius-big);
     border-bottom-left-radius: var(--border-radius-big);
 }
@@ -394,7 +399,7 @@ table.schedule.mini td.schedule-names {
 }
 
 td.schedule-name-input {
-    background-color: var(--col-background-dark);
+    background-color: var(--color-background-secondary);
     border-top-left-radius: var(--border-radius-big);
     border-bottom-left-radius: var(--border-radius-big);
 }
@@ -404,14 +409,14 @@ table.schedule.mini tr.schedule-results {
 }
 
 tr.schedule-results td.top {
-    background-color: var(--col-reaction-positive);
+    background-color: var(--color-feedback-positive);
 }
 
-td.schedule-delete{
+td.schedule-delete {
     width: 24px;
     height: 24px;
     cursor: pointer;
-    background: var(--col-background-dark) url(../img/icon-delete.png) no-repeat;
+    background: var(--color-background-secondary) url(../img/icon-delete.png) no-repeat;
     background-position: center center;
     border-top-right-radius: var(--border-radius-big);
     border-bottom-right-radius: var(--border-radius-big);
@@ -425,11 +430,11 @@ table.schedule.mini td.schedule-delete {
 }
 
 td.schedule-delete:hover {
-    background-color: var(--col-background-dark-hover);
+    background-color: var(--color-background-secondary-hover);
 }
 
 td.schedule-submit:hover {
-    background-color: var(--col-background-dark-hover);
+    background-color: var(--color-background-secondary-hover);
 }
 
 td.schedule-entry {
@@ -445,27 +450,27 @@ table.schedule.mini td.schedule-entry {
 }
 
 td.schedule-entry-yes {
-    background: var(--col-reaction-positive) url(../img/icon-yes.png) no-repeat center center;
+    background: var(--color-feedback-positive) url(../img/icon-yes.png) no-repeat center center;
 }
 
 td.schedule-entry-no {
-    background: var(--col-reaction-negative) url(../img/icon-no.png) no-repeat center center;
+    background: var(--color-feedback-negative) url(../img/icon-no.png) no-repeat center center;
 }
 
 td.schedule-entry-maybe {
-    background: var(--col-reaction-neutral) url(../img/icon-maybe.png) no-repeat center center;
+    background: var(--color-feedback-neutral) url(../img/icon-maybe.png) no-repeat center center;
 }
 
 td.schedule-blank {
-    background-color: var(--col-background-light);
+    background-color: var(--color-background-primary);
 }
 
-.schedule input[type=checkbox]{
+.schedule input[type=checkbox] {
     margin-left: 3px;
 }
 
 td.schedule-submit {
-    background-color: var(--col-background-dark);
+    background-color: var(--color-background-secondary);
     height: 24px;
     border-top-right-radius: var(--border-radius-big);
     border-bottom-right-radius: var(--border-radius-big);
@@ -496,7 +501,7 @@ td.schedule-submit {
     height: 24px;
 }
 
-.schedule input[type=text]{
+.schedule input[type=text] {
     font-size: inherit;
     max-width: 200px;
     min-width: 100px;
@@ -507,7 +512,7 @@ td.schedule-submit {
     border-bottom-right-radius: 0;
 }
 
-.schedule.mini input[type=text]{
+.schedule.mini input[type=text] {
     height: 16px;
     max-width: 100px;
     min-width: 50px;
@@ -517,7 +522,7 @@ td.schedule-submit {
     padding: 0 10px;
 }
 
-.centerBox{
+.center-box {
     width: 90%;
     max-width: 400px;
     margin-left: auto;
@@ -525,11 +530,11 @@ td.schedule-submit {
     padding: 10px;
 }
 
-.content-right{
+.content-right {
     text-align: right;
 }
 
-.content-centered{
+.content-centered {
     text-align: center;
 }
 
@@ -538,16 +543,16 @@ td.schedule-submit {
     margin-right: 5px;
 }
 
-#btnDate{
+#btnDate {
     margin-left: 16px;
 }
 
-.success{
-    color: var(--col-reaction-positive) !important;
+.success {
+    color: var(--color-feedback-positive) !important;
 }
 
-.fail{
-    color: var(--col-reaction-negative) !important;
+.fail {
+    color: var(--color-feedback-negative) !important;
 }
 
 .results-cell {
@@ -558,7 +563,7 @@ td.schedule-submit {
     font-size: 110%;
     height: 24px;
     text-align: center;
-    color: var(--col-font-light);
+    color: var(--color-font-secondary);
 }
 
 .schedule.mini .r {
@@ -573,15 +578,15 @@ td.schedule-submit {
 }
 
 .r-yes {
-    color: var(--col-reaction-positive);
+    color: var(--color-feedback-positive);
 }
 
 .r-maybe {
-    color: var(--col-reaction-neutral);
+    color: var(--color-feedback-neutral);
 }
 
 .r-no {
-    color: var(--col-reaction-negative);
+    color: var(--color-feedback-negative);
 }
 
 .r-total {
@@ -589,32 +594,33 @@ td.schedule-submit {
 }
 
 #comments-wrapper {
-    padding: 1rem 0;
-    background-color: var(--col-background-comments);
+    padding: 1.5rem 1rem;
+    margin-top: 2rem;
+    background-color: var(--color-background-comments);
 
-    -webkit-box-shadow: var(--box-shadow-inset);
+    /* -webkit-box-shadow: var(--box-shadow-inset);
     -moz-box-shadow: var(--box-shadow-inset);
-    box-shadow: var(--box-shadow-inset);
+    box-shadow: var(--box-shadow-inset); */
 }
 
-.comment-container{
+.comment-container {
     padding-top: 20px;
     padding-bottom: 20px;
-    color: var(--col-font-dark);
+    color: var(--color-font-primary);
     font-size: 90%;
     border-bottom: dotted 1px #ccc;
 }
 
-.comment-name{
+.comment-name {
     font-weight: bold;
 }
 
-.comment-date{
+.comment-date {
     float: right;
     color: #666;
 }
 
-.comment-text{
+.comment-text {
     margin-top: 8px;
     line-height: 110%;
 }
@@ -629,34 +635,34 @@ table.schedule.mini tr.schedule-new > td.new-entry-choice {
     background-image: none !important;
 }
 
-tr.schedule-new td.new-entry-choice-yes{
-    background: var(--col-reaction-positive) url(../img/icon-yes.png) no-repeat center center;
+tr.schedule-new td.new-entry-choice-yes {
+    background: var(--color-feedback-positive) url(../img/icon-yes.png) no-repeat center center;
 }
 
-tr.schedule-new td.new-entry-choice-maybe{
-    background: var(--col-reaction-neutral) url(../img/icon-maybe.png) no-repeat center center;
+tr.schedule-new td.new-entry-choice-maybe {
+    background: var(--color-feedback-neutral) url(../img/icon-maybe.png) no-repeat center center;
 }
 
-tr.schedule-new td.new-entry-choice-no{
-    background: var(--col-reaction-negative) url(../img/icon-no.png) no-repeat center center;
+tr.schedule-new td.new-entry-choice-no {
+    background: var(--color-feedback-negative) url(../img/icon-no.png) no-repeat center center;
 }
 
 tr.table-spacer-row > td {
     padding: 0;
     margin: 0;
-    border: 8px solid var(--col-background-light);
+    border: 8px solid var(--color-background-primary);
 }
 
 tr.table-spacer-row-big > td {
-    border: 16px solid var(--col-background-light);
+    border: 16px solid var(--color-background-primary);
 }
 
 table.schedule.mini tr.table-spacer-row > td {
-    border: 4px solid var(--col-background-light);
+    border: 4px solid var(--color-background-primary);
 }
 
 table.schedule.mini tr.table-spacer-row-big > td {
-    border: 8px solid var(--col-background-light);
+    border: 8px solid var(--color-background-primary);
 }
 
 
@@ -668,7 +674,7 @@ table.schedule.mini tr.table-spacer-row-big > td {
     max-width: 100%;
 }
 
-.form input[type=checkbox]{
+.form input[type=checkbox] {
     vertical-align: middle;
 }
 
@@ -679,7 +685,7 @@ li {
     margin: 10px 0 0 0;
 }
 
-label{
+label {
     margin:0 0 3px 0;
     padding:0px;
     display:block;
@@ -694,7 +700,7 @@ input[type=time],
 input[type=url],
 input[type=email],
 textarea,
-select{
+select {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -705,30 +711,30 @@ select{
     outline: none; 
 }
 
-.field-divided{
+.field-divided {
     width: 49%;
 }
 
-.field-long{
+.field-long {
     width: 100%;
 }
 
-.field-select{
+.field-select {
     width: 100%;
 }
 
-.field-textarea{
+.field-textarea {
     height: 100px;
 }
 
 input[type=submit],
 input[type=button],
 button[type=submit],
-button[type=button]{
-    background: var(--col-background-dark);
+button[type=button] {
+    background: var(--color-background-secondary);
     padding: 8px 15px 8px 15px;
     border: none;
-    color: var(--col-font-light);
+    color: var(--color-font-secondary);
     cursor: pointer;
     border-radius: var(--border-radius-small);
 }
@@ -736,10 +742,10 @@ button[type=button]{
 input[type=submit]:hover,
 input[type=button]:hover,
 button[type=submit]:hover,
-button[type=button]:hover{
-    background-color: var(--col-background-dark-hover);
+button[type=button]:hover {
+    background-color: var(--color-background-secondary-hover);
 }
 
-.required{
+.required {
     color: #cb4335;
 }

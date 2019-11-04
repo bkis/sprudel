@@ -1,4 +1,4 @@
-<div class="centerBox">
+<div class="center-box">
 	<form action="comment.new.php" method="post" class="form">
 		<input type="hidden" name="pollId" value="<?php echo $poll->getId() ?>"/>
 		<ul class="form">

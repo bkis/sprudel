@@ -6,7 +6,7 @@
 ?>
 
 
-<div class="centerBox">
+<div class="center-box">
 
 	<h2><?php echo SPR_NEW_FORM_HEADING ?></h2><br/>
 
