@@ -3,13 +3,13 @@
 :root {
     --color-background-primary: #fff;
     --color-background-secondary: #363636;
-    --color-background-secondary-hover: #565656;
+    --color-background-secondary-hover: #616161;
     --color-background-comments: #f0f0f0;
     --color-font-primary: #363636;
     --color-font-secondary: #fff;
     --color-decorative: #229954;
     --color-feedback-positive: #229954;
-    --color-feedback-neutral: #888;
+    --color-feedback-neutral: #999;
     --color-feedback-negative: #cb4335;
     --poll-table-gutters: 2px;
     --border-radius-big: 6px;
