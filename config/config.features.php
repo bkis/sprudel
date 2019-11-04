@@ -9,7 +9,7 @@
 
 	// Turn on(1)/off(0) admin interface
 	// (read README.md for further instructions!)
-	define('SPR_ADMIN_INTERFACE', 1);
+	define('SPR_ADMIN_INTERFACE', 0);
 
 	// Turn on(1)/off(0) admin link functionality (recommended)
 	define('SPR_ADMIN_LINKS', 1);
