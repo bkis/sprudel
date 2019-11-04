@@ -5,12 +5,20 @@
 	// ini_set('display_startup_errors', 1);
     // error_reporting(E_ALL);
     
+    require_once "config/config.features.php";
 
-    if (isset($_POST["title"]) && strlen($_POST["title"]) > 0
-     && isset($_POST["dates"]) && sizeof($_POST["dates"]) > 0){
+    if (isset($_POST["title"])
+     && isset($_POST["details"])
+     && isset($_POST["dates"])
+     && sizeof($_POST["dates"]) > 0
+     && sizeof($_POST["dates"] <= SPR_MAX_POLL_DATES)){
 
         require_once "db.php";
         $db = new DB();
+
+        //prep data
+        $title = trim(htmlspecialchars($_POST["title"]));
+        $details = trim(preg_replace("/\s+/", " ", htmlspecialchars($_POST["details"])));
         
         require_once "poll.model.php";
         $poll = new Poll(
@@ -21,9 +29,9 @@
                 ? hash("crc32", time() . $title . "admin")
                 : "NA",
             // title
-            htmlspecialchars($_POST["title"]),
+            strlen($title) > 0 ? $title : "Sprudel",
             // details
-            preg_replace("/\s+/", " ", htmlspecialchars($_POST["details"])),
+            $details,
             // changed (null - will be set when written to db)
             null
         );
@@ -32,9 +40,7 @@
         $poll->setDates(
             $db->transformPollDates(
                 $poll->getId(),
-                array_values(
-                    array_unique($_POST["dates"])
-                )
+                $_POST["dates"]
             )
         );
 

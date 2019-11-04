@@ -93,9 +93,17 @@
 		}
 
 		function transformPollDates($pollId, $datesRaw){
+			$datesRaw = array_unique(array_values($datesRaw));
 			$datesPrepared = array();
 			for ($i = 0; $i < sizeof($datesRaw); $i++) { 
-				array_push($datesPrepared, array("pollId" => $pollId, "date" => $datesRaw[$i], "sort" => $i));
+				array_push(
+					$datesPrepared,
+					array(
+						"pollId" => $pollId,
+						"date" => trim($datesRaw[$i]),
+						"sort" => $i
+					)
+				);
 			}
 			return $datesPrepared;
 		}

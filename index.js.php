@@ -24,6 +24,7 @@
 
 		//add new date field
 		$("#btnMore").click(function() {
+			if ($(".dateInput").length >= <?php echo SPR_MAX_POLL_DATES ?>) return;
             $(".dateInput").last().after($(".dateInput").last().clone());
             $(".dateInput").last().val($(".dateInput:nth-last-child(2)").val());
             $(".dateInput").last().focus();

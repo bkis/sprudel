@@ -9,18 +9,17 @@
 	$db = new DB();
 
 	$pollId = htmlspecialchars($_POST["pollId"]);
-	$name = htmlspecialchars($_POST["name"]);
-	$text = preg_replace("/\s+/", " ", htmlspecialchars($_POST["text"]));
+	$name = trim(htmlspecialchars($_POST["name"]));
+	$text = trim(preg_replace("/\s+/", " ", htmlspecialchars($_POST["text"])));
 
-	// prapare comment data
-	$comment = array(
-		"pollId" => $pollId,
-		"name" => $name,
-		"text" => $text
-	);
-
-	// save comment to DB
-	$db->saveComment($comment);
+	// save comment to DB if content is valid
+	if (strlen($name) > 0 && strlen($text) > 0){
+		$db->saveComment([
+			"pollId" => $pollId,
+			"name" => $name,
+			"text" => $text
+		]);
+	}
 	
 	//redirect to poll
 	echo $pollId;
