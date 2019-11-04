@@ -10,7 +10,7 @@
 	//// GENERAL ////
 	
 	// Title of the HTML page
-	define('SPR_HTML_PAGE_TITLE', 'Sprudel'); 
+	define('SPR_HTML_PAGE_TITLE', 'Sprudel - scheduling polls'); 
 	// Title shown in index header area
 	define('SPR_INDEX_TITLE', 'Sprudel'); 
 	// Subtitle shown in index header area

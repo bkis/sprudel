@@ -13,7 +13,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title><?php echo SPR_HTML_PAGE_TITLE ?></title>
+	<title><?php echo (isset($poll) ? $poll->getTitle() : SPR_HTML_PAGE_TITLE); ?></title>
 	<meta name="robots" content="noindex,nofollow">
 
 	<!-- Mobile Specific Metas
