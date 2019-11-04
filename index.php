@@ -10,7 +10,7 @@
 
 	<h2><?php echo SPR_NEW_FORM_HEADING ?></h2><br/>
 
-	<form action="poll.new.php" method="post">
+	<form id="form-new-poll" action="poll.new.php" method="post">
 		<ul class="form">
 		    <li>
 		        <label><?php echo SPR_NEW_FORM_TITLE ?> <span class="required">*</span></label>
