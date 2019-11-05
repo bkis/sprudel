@@ -2,15 +2,15 @@
 
 :root {
     --color-background-primary: #fff;
-    --color-background-secondary: #363636;
-    --color-background-secondary-hover: #616161;
-    --color-background-comments: #f0f0f0;
-    --color-font-primary: #363636;
+    --color-background-secondary: #393e41;
+    --color-background-secondary-hover: #575f63;
+    --color-background-comments: #f4f3f2;
+    --color-font-primary: #393e41;
     --color-font-secondary: #fff;
-    --color-decorative: #229954;
-    --color-feedback-positive: #229954;
-    --color-feedback-neutral: #999;
-    --color-feedback-negative: #cb4335;
+    --color-decorative: #a2a79e;
+    --color-feedback-positive: #69b587;
+    --color-feedback-neutral: #bdbab8;
+    --color-feedback-negative: #db5753;
     --poll-table-gutters: 2px;
     --border-radius-big: 6px;
     --border-radius-small: 3px;
