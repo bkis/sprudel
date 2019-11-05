@@ -9,6 +9,7 @@
 	$db = new DB();
 
 	$pollId = htmlspecialchars($_POST["pollId"]);
+	$adminId = htmlspecialchars($_POST["pollAdminId"]);
 	$name = htmlspecialchars($_POST["name"]);
 	
 	// save entry if input is valid
@@ -20,7 +21,12 @@
 	);
 	
 	//redirect to poll
-	header("Location: poll.php?poll=" . $pollId);
+	$redir = "poll.php?poll=" . $pollId
+	. (strcmp($adminId, "NA") != 0
+		? ("&adm=" . $adminId)
+		: "");
+	
+	header("Location: " . $redir);
 	exit();
 
 ?>

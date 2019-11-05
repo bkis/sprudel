@@ -1,5 +1,6 @@
 <form action="entry.new.php" method="post">
-    <input type="hidden" name="pollId" value="<?php echo $poll->getId() ?>"/>
+<input type="hidden" name="pollId" value="<?php echo $poll->getId() ?>"/>
+<input type="hidden" name="pollAdminId" value="<?php echo $adminId ?>"/>
     <td class="schedule-name-input">
         <input type="text" id='name-input' name="name" maxlength="32" placeholder="<?php echo SPR_POLL_NAME ?>" required="true" />
     </td>
