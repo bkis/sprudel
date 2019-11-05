@@ -30,7 +30,7 @@
             $(".dateInput").last().focus();
             $(".dateInput").last().select();
 			$(".dateInput").last().datepicker(datepickerOptions);
-			$("#btnLess").attr("src", "img/icon-less.png");
+			$("#btnLess").prop("disabled", false);
 			$("#btnLess").css("cursor", "pointer");
         });
 
@@ -42,7 +42,7 @@
             $(".dateInput").last().select();
             $(".dateInput").last().datepicker(datepickerOptions);
             if ($(".dateInput").length == 1){
-            	$("#btnLess").attr("src", "img/icon-less-disabled.png");
+            	$("#btnLess").prop("disabled", true);
             	$("#btnLess").css("cursor", "default");
             }
         });

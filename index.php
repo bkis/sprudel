@@ -41,8 +41,8 @@
 		    </li>
 		    <li>
 				<div style="text-align: right">
-					<img src="img/icon-more.png" class="btnFormDate" id="btnMore"/>
-					<img src="img/icon-less-disabled.png" class="btnFormDate" id="btnLess"/>
+					<button type="button" id="btnMore"> </button>
+					<button type="button" id="btnLess" disabled> </button>
 				</div>
 			</li>
 			<?php if (SPR_ADMIN_LINKS == 1) { ?>

@@ -312,6 +312,23 @@ p.details {
     background-image: url('../img/icon-eye.png');
 }
 
+#form-new-poll button {
+    height: 28px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#form-new-poll button#btnMore {
+    background-color: var(--color-feedback-positive);
+    background-image: url('../img/icon-plus.png');
+}
+
+#form-new-poll button#btnLess {
+    background-color: var(--color-feedback-negative);
+    background-image: url('../img/icon-minus.png');
+}
+
 table.schedule {
     border-collapse: separate;
     border: none;
@@ -764,6 +781,13 @@ input[type=button]:hover,
 button[type=submit]:hover,
 button[type=button]:hover {
     background-color: var(--color-background-secondary-hover);
+}
+
+input[type=submit]:disabled,
+input[type=button]:disabled,
+button[type=submit]:disabled,
+button[type=button]:disabled {
+    background-color: #ccc !important;
 }
 
 .required {
