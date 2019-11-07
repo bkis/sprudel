@@ -78,7 +78,7 @@
 
 				<h1><?php echo $poll->getTitle(); ?></h1>
 				<p class="details"><?php echo $poll->getDetails(); ?></p>
-				<br/>
+
 				<div class="poll-url-container">
 					<span class="success"><em><?php echo SPR_PUBLIC_LINK ?></em></span>
 					<input type="text" id="public-url-field" title="<?php echo SPR_PUBLIC_LINK_DESC ?>" readonly/>
