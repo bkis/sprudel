@@ -222,7 +222,7 @@ textarea {
     background-color: var(--color-background-secondary);
     color: var(--color-font-secondary);
     overflow: hidden;
-    border-bottom: 4px solid var(--color-decorative);
+    border-bottom: 6px solid var(--color-decorative);
 }
 
 #header h1 {
