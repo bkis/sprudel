@@ -20,7 +20,7 @@
 		<h1 class='success'>Database initialized successfully.</h1>
 		You should now try your new Sprudel installation!<br/>
 		If everything works, <em>delete install.php</em> from your server!<br/><br/>
-		<a href='<?php echo SPR_BASE_URL ?>index.php'>Click here to create the first Sprudel poll on this fresh instance!</a>
+		<a href='index.php'>Click here to create the first Sprudel poll on this fresh instance!</a>
 	<?php } else { ?>
 		<h1 class='fail'>Database couldn't be initialized.</h1>
 		Please check your setup in <em>config/config.db.php</em> and make sure you <em>create the database before you visit install.php</em>!

@@ -4,7 +4,7 @@
 		<em>Sprudel</em> open source scheduling polls.
 		<a href="https://github.com/bkis/sprudel" target='_blank'>
 			<em>Visit on GitHub</em>
-			<img src="<?php echo SPR_BASE_URL ?>img/icon-github.png" alt=""/>
+			<img src="img/icon-github.png" alt=""/>
 		</a>
 	</div>
 <?php } ?>
