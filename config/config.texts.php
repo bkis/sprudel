@@ -17,6 +17,8 @@
 	define('SPR_INDEX_SUBTITLE', 'scheduling polls'); 
 	// Warning message to show if JavaScript is disabled
 	define('SPR_NO_JS_MSG', 'Please enable JavaScript in your browser and reload this page.');
+	// Info message of the anti-spam system if user is blocked
+	define('SPR_ANTISPAM_BLOCKED_MSG', 'You have been blocked the anti-spam system\nfor creating too many polls/entries/comments in fast succession :(');
 	
 	//// CREATE NEW POLL / LANDING PAGE ////
 

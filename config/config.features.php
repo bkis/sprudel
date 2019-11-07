@@ -31,5 +31,23 @@
 
 	// Maximum number of options / dates per poll
 	define('SPR_MAX_POLL_DATES', 32);
+	
+
+	// ANTI-SPAM-MECHANICS
+	// ON (1) or OFF (0)
+	define('SPR_ANTISPAM', 1);
+	// Minimum time between actions
+	// (create poll/entry/comment) in seconds
+	// (default is 60 = 1 minute)
+	define('SPR_ANTISPAM_SECONDS', 60);
+	// How many actions (create poll/entry/comment)
+	// in a row is one user allowed to take with less
+	// than n seconds (specified above) in between?
+	// (default is 5)
+	define('SPR_ANTISPAM_ACTIONS', 5);
+	// If a user violates the above rules, for how long
+	// should their actions be blocked (in seconds)?
+	// (default is 3600 = 1 hour)
+	define('SPR_ANTISPAM_BLOCKTIME', 3600);
 
 ?>

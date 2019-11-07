@@ -8,9 +8,22 @@
 	require_once 'db.php';
 	$db = new DB();
 
+	
 	$pollId = htmlspecialchars($_POST["pollId"]);
+	$adminId = htmlspecialchars($_POST["pollAdminId"]);
 	$name = trim(htmlspecialchars($_POST["name"]));
 	$text = trim(preg_replace("/\s+/", " ", htmlspecialchars($_POST["text"])));
+	
+	// try to pass anti-spam (if enabled)
+	if (!$db->antiSpam($_SERVER['REMOTE_ADDR'])){
+		//BLOCKED
+		$redir = "poll.php?poll=" . $pollId
+		. (strcmp($adminId, "NA") != 0
+			? ("&adm=" . $adminId)
+			: "") . "&blocked";
+		header("Location: " . $redir);
+		exit();
+	}
 
 	// save comment to DB if content is valid
 	if (strlen($name) > 0 && strlen($text) > 0){
@@ -22,8 +35,12 @@
 	}
 	
 	//redirect to poll
-	echo $pollId;
-	header("Location: poll.php?poll=" . $pollId . "#comments");
+	$redir = "poll.php?poll=" . $pollId
+	. (strcmp($adminId, "NA") != 0
+		? ("&adm=" . $adminId)
+		: "") . "#comments";
+	
+	header("Location: " . $redir);
 	exit();
 
 ?>

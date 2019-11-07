@@ -4,6 +4,7 @@
 	use Medoo\Medoo;
 
 	require_once 'config/config.db.php';
+	require_once 'config/config.features.php';
 	require_once 'poll.model.php';
 
 	class DB {
@@ -61,7 +62,7 @@
 					"pollAdminId" => $poll->getAdminId(),
 					"title" => $poll->getTitle(),
 					"details" => $poll->getDetails(),
-					"changed" => $this->getTime()
+					"changed" => $this->getDate()
 				]);
 			});
 
@@ -130,7 +131,7 @@
 				//write data to entries table
 				$db->insert("entries", $entries);
 				//update change date in polls table
-				$db->update("polls", array("changed" => $this->getTime()), array("pollId" => $pollId));
+				$db->update("polls", array("changed" => $this->getDate()), array("pollId" => $pollId));
 			});
 		}
 
@@ -148,21 +149,89 @@
 
 		function saveComment($comment){
 			$db = $this->db;
-			$comment["date"] = $this->getTime();
+			$comment["date"] = $this->getDateTime();
 			$db->action(function($db) use ($comment) {
 				//write data to comments table
 				$db->insert("comments", $comment);
 				//update change date in polls table
-				$db->update("polls", array("changed" => $this->getTime()), array("pollId" => $comment["pollId"]));
+				$db->update("polls", array("changed" => $this->getDate()), array("pollId" => $comment["pollId"]));
 			});
 		}
 
-		function getTime(){
+		function getDate(){
+            return date("Y-m-d");
+		}
+
+		function getDateTime(){
             return date("Y-m-d H:i:s");
 		}
 
 		function getAdminId($pollId){
 			return $this->db->get("polls", "pollAdminId", ["pollId" => $pollId]);
+		}
+
+		function antiSpam($ip){
+			//is anti-spam enabled at all?
+			if (!SPR_ANTISPAM) return true;
+
+			$db = $this->db; // db object ref
+			$pass = true; // action allowed
+			$ipHash = hash('md4', $ip); // create ip hash
+			$time = time(); // create timestamp
+			$record; // ip hash record
+
+			//// check if ip hash is known
+			if ($db->has("antispam", ["ipHash" => $ipHash])){
+				//// KNOWN
+				$record = $db->get("antispam", "*", ["ipHash" => $ipHash]);
+
+				// is ip already blocked?
+				if ($record["blocked"]){
+					// still within blocktime?
+					if ($time - $record["blocktime"] < SPR_ANTISPAM_BLOCKTIME){
+						//just keep blocking
+						return false;
+					} else {
+						// enough blocking, RESET record
+						$record["counter"] = 1;
+						$record["time"] = $time;
+						$record["blocked"] = false;
+						$record["blocktime"] = 0;
+					}
+				} else if ($time - $record["time"] <= SPR_ANTISPAM_SECONDS){
+					// last action was not long enough ago :(
+					// within set seconds
+					$record["counter"]++; // increment counter
+					if ($record["counter"] > SPR_ANTISPAM_ACTIONS){
+						$pass = false; // action not allowed, spam rules hit
+						$record["blocked"] = true;
+						$record["blocktime"] = $time;
+					}
+				} else {
+					// longer ago, RESET record
+					$record["counter"] = 1;
+					$record["time"] = $time;
+				}
+				// update record in db
+				$db->action(function($db) use ($record, $ipHash) {
+					$db->update("antispam", $record, ["ipHash" => $ipHash]);
+				});
+			} else {
+				//// UNKNOWN
+				$record = [
+					"ipHash" => $ipHash,
+					"time" => $time,
+					"counter" => 1,
+					"blocked" => false,
+					"blocktime" => 0
+				];
+				//write new record to db
+				$db->action(function($db) use ($record) {
+					$db->insert("antispam", $record);
+				});
+			}
+			// let the user pass or don't.
+			return $pass;
 		}
 		
 		function install(){
@@ -207,6 +276,17 @@
 					`date` varchar(32) NOT NULL,
 					KEY `pollId` (`pollId`)
 				) ENGINE=InnoDB DEFAULT CHARSET=utf8";
+			$success = $db->query($query) ? $success : false;
+
+			// create table "antispam"
+			$query = "CREATE TABLE `antispam` (
+				`ipHash` varchar(32) NOT NULL,
+				`time` bigint NOT NULL,
+				`counter` tinyint(4) NOT NULL,
+				`blocked` boolean,
+				`blocktime` bigint NOT NULL,
+				KEY `ipHash` (`ipHash`)
+			) ENGINE=InnoDB DEFAULT CHARSET=utf8";
 			$success = $db->query($query) ? $success : false;
 
 			// return true if everything went schmuhfli 

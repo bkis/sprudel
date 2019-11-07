@@ -1,9 +1,9 @@
 <?php
 
 	// FOR DEVELOPMENT: UN-COMMENT TO PRINT ERRORS AND WARNINGS
-	ini_set('display_errors', 1);
-	ini_set('display_startup_errors', 1);
-	error_reporting(E_ALL);
+	// ini_set('display_errors', 1);
+	// ini_set('display_startup_errors', 1);
+	// error_reporting(E_ALL);
 
 	require_once 'config/config.all.php';
 ?>
@@ -62,6 +62,7 @@
 </head>
 <body>
 
+	<!-- JavaScript CHECK -->
 	<noscript>
 		<div id="noscript">
 			<img src="img/logo.png" alt=""/>
@@ -69,6 +70,14 @@
 		</div>
 	</noscript>
 
+	<!-- ANTI-SPAM BLOCK-CHECK -->
+	<script>
+		if (window.location.href.includes("&blocked")){
+			alert("<?php echo SPR_ANTISPAM_BLOCKED_MSG ?>");
+		}
+	</script>
+
+	<!-- BEGIN PAGE HTML -->
 	<div id="header" class="right-to-left">
 
 		<div id="info">

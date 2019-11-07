@@ -15,6 +15,13 @@
         require_once "db.php";
         $db = new DB();
 
+        // try to pass anti-spam (if enabled)
+        if (!$db->antiSpam($_SERVER['REMOTE_ADDR'])){
+            //BLOCKED
+            header("Location: index.php?blocked");
+            exit();
+        }
+
         //prep data
         $title = trim(htmlspecialchars($_POST["title"]));
         $details = trim(preg_replace("/\s+/", " ", htmlspecialchars($_POST["details"])));
@@ -51,7 +58,7 @@
             . (strcmp($poll->getAdminId(), "NA") != 0
                 ? ("&adm=" . $poll->getAdminId())
                 : "");
-        //if (strcmp($adminId, "NA") != 0) $redir .= "&adm=" . $adminId;
+        
         header("Location: " . $redir);
         exit();
     }

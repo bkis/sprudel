@@ -10,13 +10,13 @@
 		    <li>
 		        <label><?php echo SPR_NEW_FORM_TITLE ?> <span class="required">*</span></label>
 				<input
-					type="text"
-					name="title"
-					class="field-long"
-					required="true"
-					id="titleInput"
-					maxlength="256"
-					placeholder="<?php echo SPR_NEW_FORM_TITLE_PLACEHOLDER ?>" />
+				type="text"
+				name="title"
+				class="field-long"
+				required="true"
+				id="titleInput"
+				maxlength="256"
+				placeholder="<?php echo SPR_NEW_FORM_TITLE_PLACEHOLDER ?>" />
 		    </li>
 		    <li>
 		        <label><?php echo SPR_NEW_FORM_DETAILS ?> </label>
