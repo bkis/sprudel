@@ -40,13 +40,13 @@
 				<td><?php echo $poll["pollId"] ?></td>
 				<td>
 					<!-- BTN: VIEW -->
-					<a href="../poll.php?poll=<?php echo $poll["pollId"] ?>" target="_blank">
+					<a href="poll.php?poll=<?php echo $poll["pollId"] ?>" target="_blank">
 						<button type="button">View</button>
 					</a>
 				</td>
 				<td>
 					<!-- BTN: EDIT -->
-					<a href="../poll.php?poll=<?php echo $poll["pollId"] ?>&adm=<?php echo $poll["pollAdminId"] ?>" target="_blank">
+					<a href="poll.php?poll=<?php echo $poll["pollId"] ?>&adm=<?php echo $poll["pollAdminId"] ?>" target="_blank">
 						<button type="button">Edit</button>
 					</a>
 				</td>
@@ -54,6 +54,7 @@
 					<!-- BTN: DELETE -->
 					<a href="javascript:void(0)">
 						<button
+						class="admin-schedule-delete"
 						type="button"
 						class="admin-schedule-delete"
 						poll-id="<?php echo $poll["pollId"] ?>"
@@ -81,8 +82,12 @@
 		//delete poll
 		$(".admin-schedule-delete").click(function(){
 			if (confirm("<?php echo SPR_DELETE_POLL_CONFIRM ?>")){
-				$.post( "../poll.delete.php", { pollId: $(this).attr("poll-id"), adm: $(this).attr("poll-adminId") } ).done( function() {
+				$.post( "poll.delete.php", { pollId: $(this).attr("poll-id"), adm: $(this).attr("poll-adminId") } )
+				.done( function() {
 					location.href = location.href;
+				})
+				.fail( function() {
+					alert("Error: Could not delete poll :(");
 				});
 			}
 		});
