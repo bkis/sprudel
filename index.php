@@ -8,7 +8,7 @@
 
 <div class="center-box">
 
-	<h2><?php echo SPR_NEW_FORM_HEADING ?></h2>
+	<h1><?php echo SPR_NEW_FORM_HEADING ?></h1>
 
 	<form id="form-new-poll" action="poll.new.php" method="post">
 		<ul class="form">

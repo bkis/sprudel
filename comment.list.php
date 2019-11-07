@@ -1,6 +1,6 @@
 <div class="center-box">
 
-	<h2><a name="comments"><?php echo SPR_COMMENT_HEADING ?></a></h2>
+	<h1><a name="comments"><?php echo SPR_COMMENT_HEADING ?></a></h1>
 	
 	<br>
 

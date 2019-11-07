@@ -9,7 +9,7 @@
     --color-font-secondary: #fff;
     --color-decorative: #a2a79e;
     --color-feedback-positive: #69b587;
-    --color-feedback-neutral: #bdbab8;
+    --color-feedback-neutral: #aaa7a5;
     --color-feedback-negative: #db5753;
     --poll-table-gutters: 2px;
     --border-radius-big: 6px;
@@ -52,13 +52,13 @@ html, body {
 }
 
 h1 {
-    font-size: 140%;
-    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    margin: 1.5rem 0;
 }
 
 h2 {
-    font-size: 120%;
-    margin: 2rem 0;
+    font-size: 1.2rem;
+    margin: 1rem 0;
 }
 
 a:link {
@@ -223,6 +223,12 @@ textarea {
     color: var(--color-font-secondary);
     overflow: hidden;
     border-bottom: 4px solid var(--color-decorative);
+}
+
+#header h1 {
+    font-size: 1.4rem;
+    margin: 0;
+    margin-bottom: 1rem;
 }
 
 #logo {
@@ -637,7 +643,7 @@ td.schedule-submit {
 
 #comments-wrapper {
     margin-top: 2rem;
-    padding: 1rem 0;
+    padding-bottom: 1rem;
     background-color: var(--color-background-comments);
 }
 
