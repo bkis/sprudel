@@ -46,15 +46,16 @@ In `config/config.texts.php`, you can not only set up the database connection an
 At the top of the CSS stylesheet (`css/style.css`), you'll find a list of [CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*) you can change to customize colors and some other layout/design related things.
 
 ## Administration
-### Poll administration interface
+### Poll administration interface (off by default)
 If you want to use the optional admin interface (to view and delete any polls on your server via a web interface under `/admin`) you have to enable this in `config/config.features.php`!  
 In this case, you'll have to **secure the** `admin` **directory, so it cannot be accessed publicly**! This process is different depending on the web server software you use. There are numerous tutorials about this online, e.g. for [Apache](https://www.tecmint.com/password-protect-apache-web-directories-using-htaccess/) or [Nginx](https://www.tecmint.com/password-protect-web-directories-in-nginx/). By the way, it is safe to rename the `admin` directory to anything less obvious!
-### Automatic deletion of inactive polls
+### Automatic deletion of inactive polls (needs cronjob!)
 You can set up a certain number of days in the `config.features.php` to mark the maximum age of an **inactive** poll ( *inactive* as in: no new answers and comments). Sprudel comes with a cleanup script (`cleanup.php`) that you can set up to be executed periodically via a cronjob, e.g.  
 `0 0 1 * * /usr/bin/php /var/www/html/sprudel/cleanup.php`  
 The cleanup script will then delete all inactive polls that became too old.
-### Anti-spam system
-The comments in `config/config.features.php` should be pretty self-explanatory. Here, you can turn on/off the anti-spam system and set it's parameters like the **number of actions** a user may take in a row without at least **a number of seconds** in between these actions and of course the **block time** in seconds to block a spamming user for a certain amount of time.
+### Anti-spam system (off by default)
+The comments in `config/config.features.php` should be pretty self-explanatory. Here, you can turn on/off the anti-spam system and set it's parameters like the **number of actions** a user may take in a row without at least **a number of seconds** in between these actions and of course the **block time** in seconds to block a spamming user for a certain amount of time. The default here is a number of `5` such actions in a row with less than `60` seconds in between, which, if exceeded, leads to a block from these actions for `3600` seconds (1 hour).  
+Of course the IPs are saved in a hashed form and **not in plain text**!
 
 ## Contribution
 I don't actually feel at home in PHP, but I chose this language anyway because it's still the most widely used backend scripting language and already installed on most web servers. It's always nice not to have to install an additional backend ecosystem on your server just because you want to try a new web app.  

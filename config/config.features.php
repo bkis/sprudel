@@ -35,7 +35,7 @@
 
 	// ANTI-SPAM-MECHANICS
 	// ON (1) or OFF (0)
-	define('SPR_ANTISPAM', 1);
+	define('SPR_ANTISPAM', 0);
 	// Minimum time between actions
 	// (create poll/entry/comment) in seconds
 	// (default is 60 = 1 minute)
