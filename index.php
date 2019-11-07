@@ -1,9 +1,4 @@
-<?php
-	$currDate = date("Y-m-d");
-	$btnDateHTML = "<input type='text' name='dates[]' maxlength='32' class='dateInput field-with-btn'
-		data-toggle='datepicker' required='true' style='margin-top: 4px;' /><button class='btn-in-field'>D</button>";
-	include "header.php";
-?>
+<?php include "header.php" ?>
 
 
 <div class="center-box">
