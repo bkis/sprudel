@@ -53,11 +53,12 @@ html, body {
 
 h1 {
     font-size: 140%;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
 }
 
 h2 {
     font-size: 120%;
+    margin: 2rem 0;
 }
 
 a:link {
