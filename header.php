@@ -71,11 +71,13 @@
 	</noscript>
 
 	<!-- ANTI-SPAM BLOCK-CHECK -->
-	<script>
-		if (window.location.href.includes("&blocked")){
-			alert("<?php echo SPR_ANTISPAM_BLOCKED_MSG ?>");
-		}
-	</script>
+	<?php if (SPR_ANTISPAM) { ?>
+		<script>
+			if (window.location.href.includes("&blocked")){
+				alert("<?php echo SPR_ANTISPAM_BLOCKED_MSG ?>");
+			}
+		</script>
+	<?php } ?>
 
 	<!-- BEGIN PAGE HTML -->
 	<div id="header" class="right-to-left">
