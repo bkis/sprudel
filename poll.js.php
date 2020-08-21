@@ -42,7 +42,7 @@
             }
         });
         
-        // cycle through options (ugly, but works for now)
+        // iterate options on click (ugly, but works for now)
         $(".new-entry-box").click(function(){
             console.log("yes")
             if ($(this).hasClass("new-entry-choice-maybe")){

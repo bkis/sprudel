@@ -57,13 +57,32 @@
 				<div class="r r-legend r-no"><?php echo SPR_POLL_RESULTS_NO ?></div>
 				<div class="r r-legend"></div>
 			</td>
-			<?php foreach ($displayDates as $date) { ?>
+			
+			<?php
+
+				$maxTotal = 0;
+				$entriesCount = sizeof($poll->getEntries());
+
+				foreach ($displayDates as $date) {
+					$maxTotal = max($date["total"] / ($entriesCount*2), $maxTotal);
+				}
+				
+				foreach ($displayDates as $date) {
+					$date["score"] = $date["total"] / ($entriesCount*2);
+					$date["score"] = $date["score"] / $maxTotal;
+					$dateDynStyles = "opacity: " . $date["score"]  . "; ";
+					$dateDynStyles .= "background-size: " . ($date["score"] * 100)  . "%; ";
+					$dateDynStyles .= $date["score"] == 1 ? "background-color: #fff; filter: invert(100%); border-radius: 50%;" : "";
+			?>
 				<td class='results-cell'>
 					<div class="r r-yes"><?php echo $date["yes"] ?></div>
 					<div class="r r-maybe"><?php echo $date["maybe"] ?></div>
 					<div class="r r-no"><?php echo $date["no"] ?></div>
-					<!-- date/option strength value visualization -->
-					<div class="r r-total" style="opacity: <?php echo ($date["total"] / (sizeof($poll->getEntries())*2)) ?>"></div>
+					<!-- date/option score visualization -->
+					<div
+						class="r r-total"
+						style="<?php echo $dateDynStyles ?>">
+					</div>
 				</td>
 			<?php }	?>
 		</tr>
