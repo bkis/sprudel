@@ -63,16 +63,18 @@
 				$maxTotal = 0;
 				$entriesCount = sizeof($poll->getEntries());
 
-				foreach ($displayDates as $date) {
-					$maxTotal = max($date["total"] / ($entriesCount*2), $maxTotal);
+				if ($entriesCount > 0){
+					foreach ($displayDates as $date) {
+						$maxTotal = max($date["total"] / ($entriesCount*2), $maxTotal);
+					}
 				}
 				
 				foreach ($displayDates as $date) {
-					$date["score"] = $date["total"] / ($entriesCount*2);
-					$date["score"] = $date["score"] / $maxTotal;
+					$date["score"] = $entriesCount > 0 ? ($date["total"] / ($entriesCount*2)) : 0;
+					$date["score"] = $maxTotal > 0 ? ($date["score"] / $maxTotal) : 0;
 					$dateDynStyles = "opacity: " . $date["score"]  . "; ";
-					$dateDynStyles .= "background-size: " . ($date["score"] * 100)  . "%; ";
-					$dateDynStyles .= $date["score"] == 1 ? "background-color: #fff; filter: invert(100%); border-radius: 50%;" : "";
+					$dateDynStyles .= "background-size: " . (($date["score"] * 100) - 10)  . "%; ";
+					$dateDynStyles .= $date["score"] == 1 ? "background-image: url('img/icon-heart.png');" : "";
 			?>
 				<td class='results-cell'>
 					<div class="r r-yes"><?php echo $date["yes"] ?></div>

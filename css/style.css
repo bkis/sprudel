@@ -39,6 +39,7 @@
     -webkit-transition: var(--animation-duration);
     -ms-transition: var(--animation-duration);
     transition: var(--animation-duration);
+    min-width: 36px;
 }
 
 html, body {
