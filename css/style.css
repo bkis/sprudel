@@ -319,6 +319,10 @@ p.details {
     background-image: url('../img/icon-eye.png');
 }
 
+#poll-container {
+    overflow-x: auto;
+}
+
 #form-new-poll button {
     height: 28px;
     cursor: pointer;
