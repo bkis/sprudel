@@ -404,6 +404,14 @@ td.schedule-header > div {
     margin: 5px 0;
 }
 
+td.schedule-header .date-delete {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    background: var(--color-background-secondary) url(../img/icon-delete.png) no-repeat;
+    background-position: center center;
+}
+
 table.schedule.mini td.schedule-header > div {
     width: 1.1rem;
 }

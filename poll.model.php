@@ -34,8 +34,13 @@
 
         function getDatesForDisplay(){
             $preparedDates = array();
+            //sort by "sort"
+			usort($this->dates, function($a, $b) {
+				return $a["sort"] - $b["sort"];
+            });
+            $count = 0;
             foreach ($this->dates as $date) {
-				$preparedDates[$date["sort"]] = array(
+				$preparedDates[$count++] = array(
                     "date" => $date["date"],
                     "yes" => 0,
                     "maybe" => 0,

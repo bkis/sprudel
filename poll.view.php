@@ -25,13 +25,23 @@
 		<!-- TABLE HEADER / DATES -->
 		<tr>
 			<td class="schedule-blank"></td>
-			<?php
-				foreach ($poll->getDates() as $date) {
-					echo "<td class='schedule-header'><div><div>";
-					echo $date["date"];
-					echo "</div></div></td>";
-				}
-			?>
+			<?php foreach ($poll->getDates() as $date) { ?>
+				<td class='schedule-header'>
+					<div>
+						<div>
+							<?php echo $date["date"] ?>
+						</div>
+					</div>
+					<!-- display "delete date" button if admin link used and there are more than 2 dates -->
+					<?php if (strcmp($poll->getAdminId(), $adminId) == 0 && sizeof($poll->getDates()) > 2){ ?>
+						<div
+						class="date-delete"
+						data-date="<?php echo $date["date"] ?>"
+						data-poll="<?php echo $poll->getId() ?>"
+						data-adminid="<?php echo $adminId ?>"></div>
+					<?php } ?>
+				</td>
+			<?php } ?>
 		</tr>
 
 

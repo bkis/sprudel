@@ -8,9 +8,10 @@
     require_once "config/config.features.php";
 
     if (isset($_POST["title"])
-     && isset($_POST["dates"])
-     && sizeof($_POST["dates"]) > 0
-     && sizeof($_POST["dates"] <= SPR_MAX_POLL_DATES)){
+        && isset($_POST["dates"])
+        && is_array($_POST["dates"])
+        && sizeof($_POST["dates"]) > 0
+        && sizeof($_POST["dates"]) <= SPR_MAX_POLL_DATES){
 
         require_once "db.php";
         $db = new DB();

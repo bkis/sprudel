@@ -32,6 +32,15 @@
                 });
             }
         });
+
+        // delete date/option button functionality
+        $(".date-delete").click(function(){
+            if (confirm("<?php echo SPR_REMOVE_CONFIRM ?> '" + $(this).attr("data-date") + "' ?")){
+                $.post( "date.delete.php", { pollId: $(this).attr("data-poll"), date: $(this).attr("data-date"), adm: $(this).attr("data-adminid") } ).done( function() {
+                    location.href = location.href;
+                });
+            }
+        });
         
         // delete poll button functionality
         $("#ctrl-delete-poll").click(function(){

@@ -147,6 +147,24 @@
 			});
 		}
 
+		function deleteDate($pollId, $date){
+			$db = $this->db;
+			$db->action(function($db) use ($pollId, $date) {
+				$db->delete("dates", [
+					"AND" => [
+						"pollId" => $pollId,
+						"date" => $date
+					]
+				]);
+				$db->delete("entries", [
+					"AND" => [
+						"pollId" => $pollId,
+						"date" => $date
+					]
+				]);
+			});
+		}
+
 		function saveComment($comment){
 			$db = $this->db;
 			$comment["date"] = $this->getDateTime();
