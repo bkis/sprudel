@@ -1,4 +1,8 @@
 # Sprudel
+
+> :warning: **Development of this (original) incarnation of Sprudel is discontinued!** [ElTh0r0](https://github.com/ElTh0r0) (a contributor to the Sprudel codebase) and [yours truly](https://github.com/bkis) decided, in mutual agreement, that the project needs a fundamental technical makeover for it's future development to make any sense.  
+> For this reason, the project has been ported to CakePHP, so it now uses a proper web framework in the backend. To mark this change and all the great new changes and features to come, it is now called **[PREFERendum](https://github.com/ElTh0r0/preferendum)** (click to get there!) and will be maintained by [ElTh0r0](https://github.com/ElTh0r0) :champagne:
+
 ## A flexible, self-hosted webapp for scheduling and polls
 
 - based on **PHP** and **MySql** (so it even runs on most managed hosting plans)
